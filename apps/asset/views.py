@@ -1,4 +1,5 @@
 #_*_encoding:utf-8_*_
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.backends import  ModelBackend
@@ -12,19 +13,12 @@ from django.views.decorators.csrf import csrf_exempt
 from . import core, models, asset_handle, utils,tables,adminx
 from .dashboard import  AssetDashboard
 from django.contrib.auth.decorators import login_required
-from .mixin_utils import LoginRequiredMixin
+from users.utils.mixin_utils import LoginRequiredMixin
 import json
 import xadmin
 from .models import NewAssetApprovalZone,Asset,CPU,RAM,Disk,Server
 # Create your views here.
-class CustomBackend(ModelBackend):
-    def authenticate(self, username=None, password=None, **kwargs):
-        try:
-            user = User.objects.get(Q(username=username)|Q(email=username))
-            if user.check_password(password):
-                return user
-        except Exception as e:
-            return None
+
 
 
 @csrf_exempt
@@ -35,13 +29,7 @@ def asset_report(request):
         if ass_handler.data_is_valid():
             print("----asset data valid:")
             ass_handler.data_inject()
-            # return HttpResponse(json.dumps(ass_handler.response))
-
         return HttpResponse(json.dumps(ass_handler.response))
-        # return render(request,'assets/asset_report_test.html',{'response':ass_handler.response})
-        # else:
-        # return HttpResponse(json.dumps(ass_handler.response))
-
     return HttpResponse('--test--')
 
 
@@ -50,8 +38,6 @@ def asset_with_no_asset_id(request):
     if request.method == 'POST':
         ass_handler = core.Asset(request)
         res = ass_handler.get_asset_id_by_sn()
-
-        # return render(request,'assets/acquire_asset_id_test.html',{'response':res})
         return HttpResponse(json.dumps(res))
 
 
@@ -60,7 +46,6 @@ def NewAssetApprovalView(request):
         request.POST = request.POST.copy()
         approved_asset_list = request.POST.getlist('approved_asset_list')
         approved_asset_list = NewAssetApprovalZone.objects.filter(id__in=approved_asset_list)
-        #print approved_asset_list
         response_dic = {}
         for obj in approved_asset_list:
             request.POST['asset_data'] = obj.data
@@ -80,15 +65,7 @@ def NewAssetApprovalView(request):
                     new_os = Server.objects.create(asset=new_asset,os_distribution=obj.os_distribution,os_type=obj.os_type,os_release=obj.os_release)
                     new_os.save()
                 NewAssetApprovalZone.objects.filter(sn=obj.sn).delete()
-#                print new_asset.objects.filter(sn=obj.sn).values()
-            #print obj.data
-            #if ass_handler.data_is_valid_without_id():
-                #ass_handler.data_inject()
-                #obj.approved = True
-                #obj.save()
             response_dic[obj.id] = ass_handler.response
-        #print approved_asset_list
-        #print response_dic
         return render(request, 'new_assets_approval.html',
                       {'new_assets': approved_asset_list, 'response_dic': response_dic})
     else:
@@ -96,6 +73,7 @@ def NewAssetApprovalView(request):
         id_list = ids.split(',')
         new_assets = models.NewAssetApprovalZone.objects.filter(id__in=id_list)
         return render(request, 'new_assets_approval.html', {'new_assets': new_assets})
+
 
 class AssetListView(LoginRequiredMixin,View):
     def get(self,request):
@@ -151,7 +129,8 @@ class AssetEventLogsView(LoginRequiredMixin,View):
 class AssetDetailView(LoginRequiredMixin,View):
     def get(self,request, asset_id):
         try:
-            asset_obj = models.Asset.objects.get(id=asset_id)
+            asset_obj = Asset.objects.get(id=asset_id)
+            print asset_obj
         except ObjectDoesNotExist as e:
             return render(request, 'asset_detail.html', {'error': e})
         return render(request, 'asset_detail.html', {"asset_obj": asset_obj})

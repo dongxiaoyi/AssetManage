@@ -19,7 +19,7 @@
 {% block page-nav-tab %}
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li><a href="{% url 'asset_list' %}">资产列表</a></li>
+    <li><a href="{% url 'asset:asset_list' %}">资产列表</a></li>
     <li class="active">资产详情</li>
 </ol>
 {% endblock %}
@@ -369,7 +369,7 @@
 
     $(document).ready(function(){
 
-            var active_node = $("#mainnav-menu a[href='"+ "{% url 'asset_list' %}" +"']");
+            var active_node = $("#mainnav-menu a[href='"+ "{% url 'asset:asset_list' %}" +"']");
             active_node.parent().addClass("active-link");
             if (active_node.parent().parent().hasClass("collapse")){
                 active_node.parent().parent().addClass("in");
@@ -404,7 +404,7 @@
 
 
 
-                "ajax": "{% url 'asset_event_logs' asset_obj.id %}",
+                "ajax": "{% url 'asset:asset_event_logs' asset_obj.id %}",
                 "scrollX": true,
                 "pagingType": "full_numbers",
                  "stateSave": true,

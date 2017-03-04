@@ -4,26 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login page |MadKing</title>
+	<title>Login |AssetManage</title>
 
 
 	<!--STYLESHEET-->
 	<!--=================================================-->
-
-
-
 	<!--Bootstrap Stylesheet [ REQUIRED ]-->
 	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
-
 	<!--Nifty Stylesheet [ REQUIRED ]-->
 	<link href="{% static 'css/nifty.min.css' %}" rel="stylesheet">
-
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-
     <link href="{% static 'plugins/bootstrap-validator/bootstrapValidator.min.css' %}" rel="stylesheet">
-		
-
 </head>
 
 <!--TIPS-->
@@ -31,12 +22,12 @@
 
 <body>
 	<div id="container" class="cls-container">
-		
+
 		<!-- BACKGROUND IMAGE -->
 		<!--===================================================-->
 		<div id="bg-overlay" ></div>
-		
-		
+
+
 		<!-- HEADER -->
 		<!--===================================================-->
 		<div class="cls-header cls-header-lg">
@@ -47,19 +38,19 @@
 
 
 				</a-->
-                <h3>MadKing</h3>
+                <h3>AssetManage</h3>
                 <h4>让IT资产管理变简单</h4>
 			</div>
 		</div>
 		<!--===================================================-->
-		
-		
+
+
 		<!-- LOGIN FORM -->
 		<!--===================================================-->
 		<div class="cls-content">
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
-					<p class="pad-btm">欢迎使用MadKing</p>
+					<p class="pad-btm">欢迎使用AssetManage</p>
 
 					<form id="loginForm" action="{% url 'login' %}?next={{ next  }}" method="POST"> {% csrf_token %}
 						<div class="form-group">
@@ -97,20 +88,20 @@
 			</div>
 			<div class="pad-ver">
 				<a href="#" class="btn-link mar-rgt">Forgot password ?</a>
-				<a href="#" class="btn-link mar-lft">Create a new account</a>
+				<a href="{% url 'register' %}" class="btn-link mar-lft">Create a new account</a>
 			</div>
 		</div>
 		<!--===================================================-->
-		
 
-		
-		
+
+
+
 	</div>
 	<!--===================================================-->
 	<!-- END OF CONTAINER -->
 
 
-		
+
 	<!--JAVASCRIPT-->
 	<!--=================================================-->
 

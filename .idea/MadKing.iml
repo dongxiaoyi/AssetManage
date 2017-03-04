@@ -17,11 +17,12 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/asset" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/extra_apps" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/extra_apps/xadmin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MadKing" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MadKingClient" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MadKingClient/core" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MadKingClient/conf" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MadKingClient/bin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssetManage" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssetManageClient" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssetManageClient/core" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssetManageClient/conf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssetManageClient/bin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/users" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

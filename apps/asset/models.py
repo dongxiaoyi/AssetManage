@@ -6,43 +6,45 @@ from django.contrib.auth.admin import UserAdmin
 from DjangoUeditor.models import UEditorField
 
 
-class ProfileBase(type):
-    def __new__(cls, name, bases, attrs):
-        module = attrs.pop('__module__')
-        parents = [b for b in bases if isinstance(b, ProfileBase)]
-        if parents:
-            fields = []
-            for obj_name, obj in attrs.items():
-                if isinstance(obj, models.Field): fields.append(obj_name)
-                User.add_to_class(obj_name, obj)
-            UserAdmin.fieldsets = list(UserAdmin.fieldsets)
-            UserAdmin.fieldsets.append((name, {'fields': fields}))
-        return super(ProfileBase, cls).__new__(cls, name, bases, attrs)
+#class ProfileBase(type):
+#    def __new__(cls, name, bases, attrs):
+#        module = attrs.pop('__module__')
+#        parents = [b for b in bases if isinstance(b, ProfileBase)]
+#        if parents:
+#            fields = []
+#            for obj_name, obj in attrs.items():
+#                if isinstance(obj, models.Field): fields.append(obj_name)
+#                User.add_to_class(obj_name, obj)
+#            UserAdmin.fieldsets = list(UserAdmin.fieldsets)
+#            UserAdmin.fieldsets.append((name, {'fields': fields}))
+#        return super(ProfileBase, cls).__new__(cls, name, bases, attrs)
+#
+#class Profile(object):
+#    __metaclass__ = ProfileBase
+## Create your models here.
+#
+#class MyUser(Profile):
+#    image = models.ImageField(upload_to="image/%Y/%m",default=u'image/defaule.png',max_length=100,verbose_name=u'头像')
+#    token = models.CharField(u'token', max_length=128, default=None, blank=True, null=True)
+#    department = models.CharField(u'部门', max_length=32, default=None, blank=True, null=True)
+#    # business_unit = models.ManyToManyField(BusinessUnit)
+#    tel = models.CharField(u'座机', max_length=32, default=None, blank=True, null=True)
+#    mobile = models.CharField(u'手机', max_length=32, default=None, blank=True, null=True)
+#    gender = models.CharField(choices=(('male',u'男'),('female',u'女')),default='female',max_length=6,verbose_name=u'性别')
+#    is_active = True
+#    memo = models.TextField(u'备注', blank=True, null=True, default=None)
+#
+#    class Meta:
+#        verbose_name = u"用户信息"
+#        verbose_name_plural = verbose_name
+#
+#    def is_today_birthday(self):
+#        return self.birthday.date() == datetime.date.today()
+#
+#    def __unicode__(self):
+#        return self.username
+#
 
-class Profile(object):
-    __metaclass__ = ProfileBase
-# Create your models here.
-
-class MyUser(Profile):
-    image = models.ImageField(upload_to="image/%Y/%m",default=u'image/defaule.png',max_length=100,verbose_name=u'头像')
-    token = models.CharField(u'token', max_length=128, default=None, blank=True, null=True)
-    department = models.CharField(u'部门', max_length=32, default=None, blank=True, null=True)
-    # business_unit = models.ManyToManyField(BusinessUnit)
-    tel = models.CharField(u'座机', max_length=32, default=None, blank=True, null=True)
-    mobile = models.CharField(u'手机', max_length=32, default=None, blank=True, null=True)
-    gender = models.CharField(choices=(('male',u'男'),('female',u'女')),default='female',max_length=6,verbose_name=u'性别')
-    is_active = True
-    memo = models.TextField(u'备注', blank=True, null=True, default=None)
-
-    class Meta:
-        verbose_name = u"用户信息"
-        verbose_name_plural = verbose_name
-
-    def is_today_birthday(self):
-        return self.birthday.date() == datetime.date.today()
-
-    def __unicode__(self):
-        return self.username
 
 
 class Asset(models.Model):
@@ -387,48 +389,42 @@ class Tag(models.Model):
     def __unicode__(self):
         return self.name
 
-class EventLog(models.Model):
-    name = models.CharField(u'事件名称', max_length=100)
-    event_type_choices = (
-        (1,u'硬件变更'),
-        (2,u'新增配件'),
-        (3,u'设备下线'),
-        (4,u'设备上线'),
-        (5,u'定期维护'),
-        (6,u'业务上线\更新\变更'),
-        (7,u'其它'),
-    )
-    event_type = models.SmallIntegerField(u'事件类型', choices= event_type_choices)
-    asset = models.ForeignKey('Asset')
-    component = models.CharField(u'事件子项',max_length=255, blank=True,null=True)
-    detail = UEditorField(verbose_name=u'事件详情', width=800, height=250,
-                          imagePath="asset/ueditor/image/",
-                          filePath="asset/ueditor/file/",
-                          default='')
-    date = models.DateTimeField(u'事件时间',auto_now_add=True)
-    user = models.ForeignKey(User,verbose_name=u'事件源')
-    memo = UEditorField(verbose_name=u'备注', width=800, height=250,
-                          imagePath="asset/ueditor/image/",
-                          filePath="asset/ueditor/file/",
-                          default='')
-
-    def __unicode__(self):
-        return self.name
-    class Meta:
-        verbose_name = u'事件纪录'
-        verbose_name_plural = u"事件纪录"
-
-
-    def colored_event_type(self):
-        if self.event_type == 1:
-            cell_html = '<span style="background: orange;">%s</span>'
-        elif self.event_type == 2 :
-            cell_html = '<span style="background: yellowgreen;">%s</span>'
-        else:
-            cell_html = '<span >%s</span>'
-        return cell_html % self.get_event_type_display()
-    colored_event_type.allow_tags = True
-    colored_event_type.short_description = u'事件类型'
+#class EventLog(models.Model):
+#    name = models.CharField(u'事件名称', max_length=100)
+#    event_type_choices = (
+#        (1,u'硬件变更'),
+#        (2,u'新增配件'),
+#        (3,u'设备下线'),
+#        (4,u'设备上线'),
+#        (5,u'定期维护'),
+#        (6,u'业务上线\更新\变更'),
+#        (7,u'其它'),
+#    )
+#    event_type = models.SmallIntegerField(u'事件类型', choices= event_type_choices)
+#    asset = models.ForeignKey(Asset)
+#    component = models.CharField('事件子项',max_length=255, blank=True,null=True)
+#    detail = models.TextField(u'事件详情')
+#    date = models.DateTimeField(u'事件时间',auto_now_add=True)
+#    user = models.ForeignKey(User,verbose_name=u'事件源')
+#    memo = models.TextField(u'备注', blank=True,null=True)
+#
+#    def __str__(self):
+#        return self.name
+#    class Meta:
+#        verbose_name = '事件纪录'
+#        verbose_name_plural = "事件纪录"
+#
+#
+#    def colored_event_type(self):
+#        if self.event_type == 1:
+#            cell_html = '<span style="background: orange;">%s</span>'
+#        elif self.event_type == 2 :
+#            cell_html = '<span style="background: yellowgreen;">%s</span>'
+#        else:
+#            cell_html = '<span >%s</span>'
+#        return cell_html % self.get_event_type_display()
+#    colored_event_type.allow_tags = True
+#    colored_event_type.short_description = u'事件类型'
 
 
 class NewAssetApprovalZone(models.Model):

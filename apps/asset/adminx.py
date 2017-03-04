@@ -4,8 +4,8 @@ import xadmin
 from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
-from .models import Asset,Server,SecurityDevice,NetworkDevice,Software,CPU,RAM,Disk,NIC,RaidAdaptor,BusinessUnit,IDC,Contract,Tag,EventLog,NewAssetApprovalZone
-
+from .models import Asset,Server,SecurityDevice,NetworkDevice,Software,CPU,RAM,Disk,NIC,RaidAdaptor,BusinessUnit,IDC,Contract,Tag,NewAssetApprovalZone
+#from .models import EventLog
 
 class BaseSetting(object):
     enable_themes = True
@@ -13,13 +13,16 @@ class BaseSetting(object):
 
 
 class GlobalSetrtings(object):
-    site_title = "MadKing管理后台"
-    site_footer = 'MadKing'
+    site_title = "AssetManage管理后台"
+    site_footer = 'AssetManage'
     menu_style = "accordion"
 
 
 xadmin.site.register(views.BaseAdminView,BaseSetting)
 xadmin.site.register(views.CommAdminView,GlobalSetrtings)
+
+
+
 
 
 class ServerInline(object):
@@ -257,17 +260,10 @@ class TagAdminx(object):
     #style_fields = {'memo':'ueditor'}
 
 
-class EventLogAdminx(object):
-    list_display = ['id','name','event_type','asset','component','detail','date','user','memo']
-    #搜索框
-    search_fields = ['id','name','event_type','asset','component','detail','user','memo']
-    #过滤器
-    list_filter = ['name','event_type','asset','user']
-    ordering = ['-id']
-    list_editable = ['name']
-    #readonly_fields = ['trade_date',]
-    refresh_times = [3,5]
-    style_fields = {'memo':'ueditor','detail':'ueditor'}
+#class EventLogAdminx(object):
+#    list_display = ['name','colored_event_type','asset','component','detail','date','user']
+#    search_fields = ['asset',]
+#    list_filter = ['event_type','component','date','user']
 
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
@@ -298,5 +294,5 @@ xadmin.site.register(BusinessUnit,BusinessUnitAdminx)
 xadmin.site.register(IDC,IDCAdminx)
 xadmin.site.register(Contract,ContractAdminx)
 xadmin.site.register(Tag,TagAdminx)
-xadmin.site.register(EventLog,EventLogAdminx)
+#xadmin.site.register(EventLog,EventLogAdminx)
 xadmin.site.register(NewAssetApprovalZone,NewAssetApprovalZoneAdminx)

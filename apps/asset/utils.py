@@ -3,7 +3,7 @@
 import time,hashlib,json
 from . import models
 from django.shortcuts import render,HttpResponse
-from MadKing import settings
+from AssetManage import settings
 from django.contrib.auth.models import User
 
 from django.core.exceptions import ObjectDoesNotExist

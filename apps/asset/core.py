@@ -4,6 +4,7 @@ import json
 from django.core.exceptions import ObjectDoesNotExist
 from . import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Asset(object):
@@ -217,7 +218,7 @@ class Asset(object):
                                             identify_field = 'slot'
                                             )
         cpu = self.__update_cpu_component()
-        manufactory = self.__update_manufactory_component()
+        #manufactory = self.__update_manufactory_component()
 
         server = self.__update_server_component()
     def _create_server(self):
@@ -551,7 +552,7 @@ def log_handler(asset_obj,event_name,user,detail,component=None):
         2 : ['NewComponentAdded'],
     }
     if not user.id:
-        user = models.UserProfile.objects.filter(is_admin=True).last()
+        user = User.objects.filter(is_admin=True).last()
     event_type = None
     for k,v in log_catelog.items():
         if event_name in v:

@@ -38,6 +38,10 @@ class MyUser(Profile):
         verbose_name = u"用户信息"
         verbose_name_plural = verbose_name
 
+    def unread_nums(self):
+        # 获取用户未读消息的数量
+        return UserMessage.objects.filter(user=self.id, has_read=False ).count()
+
     def is_today_birthday(self):
         return self.birthday.date() == datetime.date.today()
 

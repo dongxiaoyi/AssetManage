@@ -28,5 +28,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     #验证码
     url(r'^captcha/',include('captcha.urls')),
+    # 个人中心相关url
+    url(r'^users/', include('users.urls', namespace='users'), ),
 
 ]

@@ -1,4 +1,5 @@
 #_*_encoding:utf-8_*_
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.backends import  ModelBackend
@@ -6,16 +7,13 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.generic.base import View
-from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
-from forms import ForgetForm,ModifyPwdForm,UploadImageForm,UserInfoForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.hashers import make_password
-from utils.email_send import send_register_email
-from models import EmaliVerifyRecord
 from .utils.mixin_utils import LoginRequiredMixin
-from .models import UserMessage
-from .forms import UploadImageForm,UserInfoForm,ModifyPwdForm,ForgetForm
-import json
+from .forms import ForgetForm,ModifyPwdForm,UploadImageForm,UserInfoForm
 
+
+# Create your views here.
 class CustomBackend(ModelBackend):
     def authenticate(self, username=None, password=None, **kwargs):
         try:
@@ -24,7 +22,6 @@ class CustomBackend(ModelBackend):
                 return user
         except Exception as e:
             return None
-
 
 class UserInfoView(LoginRequiredMixin,View):
     '''个人用户信息'''
@@ -39,52 +36,6 @@ class UserInfoView(LoginRequiredMixin,View):
         else:
             return HttpResponse(json.dumps(user_info_form.errors), content_type='application/json')
 
-class ForgetPwdView(View):
-    def get(self,request):
-        forget_form = ForgetForm()
-        return render(request, 'forgetpwd.html',{'forget_form':forget_form})
-    def post(self,request):
-        forget_form = ForgetForm(request.POST)
-        if forget_form.is_valid():
-            email = request.POST.get('email','')
-            send_register_email(email, "forget")
-            return render(request,'send_success.html')
-        else:
-            return render(request, 'forgetpwd.html',{'forget_form':forget_form})
-
-
-
-class ResetView(View):
-    def get(self,request,reset_code):
-        all_records = EmaliVerifyRecord.objects.filter(code=reset_code)
-        if all_records:
-            for record in all_records:
-                email = record.email
-                return render(request,'password_reset.html',{'email':email})
-        else:
-            return render(request, 'active_fail.html')
-        return render(request, 'login.html')
-
-class ModifyPwdView(View):
-    '''
-    修改用户密码
-    '''
-    def post(self,request):
-        modify_form = ModifyPwdForm(request.POST)
-        if modify_form.is_valid():
-            pwd1 = request.POST.get("password1", "")
-            pwd2 = request.POST.get("password2", "")
-            email = request.POST.get('email','')
-            if pwd1 != pwd2:
-                return render(request, 'password_reset.html', {'email': email,'msg':'密码不一致'})
-            else:
-                user = User.objects.get(email=email)
-                user.password = make_password(pwd2)
-                user.save()
-                return render(request, 'modify_success.html')
-        else:
-            email = request.POST.get('email', '')
-            return render(request, 'password_reset.html',{'email':email,'modify_form':modify_form})
 
 
 class ImageUploadView(LoginRequiredMixin,View):
@@ -150,6 +101,7 @@ class UpdateEmailView(LoginRequiredMixin,View):
             return HttpResponse('{"status":"success"}', content_type='application/json')
         else:
             return HttpResponse('{"email":"验证码出错"}', content_type='application/json')
+
 
 class MyMessagesView(LoginRequiredMixin,View):
     '''

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'asset',
     'users',
+    'addfields'
 ]
 TOKEN_TIMEOUT = 120
 MIDDLEWARE_CLASSES = [

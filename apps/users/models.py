@@ -29,7 +29,7 @@ class MyUser(Profile):
     department = models.CharField(u'部门', max_length=32, default=None, blank=True, null=True)
     # business_unit = models.ManyToManyField(BusinessUnit)
     tel = models.CharField(u'座机', max_length=32, default=None, blank=True, null=True)
-    mobile = models.CharField(u'手机', max_length=32, default=None, blank=True, null=True)
+    mobile = models.CharField(u'手机', max_length=11, default=None, blank=True, null=True)
     gender = models.CharField(choices=(('male',u'男'),('female',u'女')),default='female',max_length=6,verbose_name=u'性别')
     is_active = True
     memo = models.TextField(u'备注', blank=True, null=True, default=None)

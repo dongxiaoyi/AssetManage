@@ -24,6 +24,7 @@
       <sourceFolder url="file://$MODULE_DIR$/AssetManageClient/bin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/users" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/image" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/addfields" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

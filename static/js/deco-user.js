@@ -133,15 +133,11 @@ $(function(){
         $(this).parent('li').removeClass('focus');
     });
 
-    laydate({
-        elem: '#birth_day',
-        format: 'YYYY-MM-DD',
-        max: laydate.now()
-    });
+
 
     verify(
         [
-            {id: '#nick_name', tips: Dml.Msg.epNickName, require: true}
+            {id: '#nick_name', tips: Dml.Msg.erPhone, require: true}
         ]
     );
     //保存个人资料
@@ -150,7 +146,7 @@ $(function(){
             $jsEditUserForm = $('#jsEditUserForm')
             verify = verifySubmit(
             [
-                {id: '#nick_name', tips: Dml.Msg.epNickName, require: true}
+                {id: '#mobile', tips: Dml.Msg.epNickName, require: true}
             ]
         );
         if(!verify){
@@ -168,12 +164,9 @@ $(function(){
                 _self.attr('disabled',true);
             },
             success: function(data) {
-                if(data.nick_name){
-                    _showValidateError($('#nick_name'), data.nick_name);
-                }else if(data.birday){
-                   _showValidateError($('#birth_day'), data.birday);
-                }else if(data.address){
-                   _showValidateError($('#address'), data.address);
+                if(data.mobile){
+                    _showValidateError($('#mobile'), data.mobile);
+
                 }else if(data.status == "failure"){
                      Dml.fun.showTipsDialog({
                         title: '保存失败',

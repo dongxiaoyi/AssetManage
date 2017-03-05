@@ -31,4 +31,5 @@ urlpatterns = [
     # 个人中心相关url
     url(r'^users/', include('users.urls', namespace='users'), ),
 
+
 ]

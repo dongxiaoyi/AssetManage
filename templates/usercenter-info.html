@@ -1,5 +1,5 @@
 {% extends 'usercenter-base.html' %}
-{% block title %}个人信息 - AssatManage{% endblock %}
+{% block title %}个人信息 - 慕学在线网{% endblock %}
 {% block custom_bread %}
         <section>
         <div class="wp">
@@ -38,10 +38,14 @@
 				</div>
 				<form class="perinform" id="jsEditUserForm" autocomplete="off">
 					<ul class="right">
+
+
 						<li>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
 							<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="gender" value="male" {% if request.user.gender == 'male' %}checked="checked"{% endif %} >男</label>
 							<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="female" {% if request.user.gender == 'female' %}checked="checked"{% endif %}>女</label>
 						</li>
+
+                        </li>
 						<li>手&nbsp;&nbsp;机&nbsp;&nbsp;号：
                             <input type="text" name="mobile" id="mobile" placeholder="请输入你的手机号码" value="{{ user.mobile|default_if_none:'' }}" maxlength="11">
                         </li>

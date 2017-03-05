@@ -2,297 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c23e1e6d-914c-45aa-b241-57d409f279b3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/views.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/users/views.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/css/autoFill.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/css/autoFill.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/autoFill.bootstrap.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/autoFill.bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/autoFill.bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/autoFill.bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/autoFill.foundation.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/autoFill.foundation.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/autoFill.foundation.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/autoFill.foundation.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/autoFill.jqueryui.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/autoFill.jqueryui.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/autoFill.jqueryui.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/autoFill.jqueryui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/dataTables.autoFill.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/dataTables.autoFill.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/AutoFill-2.0.0/js/dataTables.autoFill.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/AutoFill-2.0.0/js/dataTables.autoFill.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/buttons.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/buttons.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/common.scss" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/common.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/css/mixins.scss" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/css/mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.bootstrap.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.colVis.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.colVis.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.colVis.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.colVis.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.flash.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.flash.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.flash.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.flash.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.foundation.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.foundation.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.foundation.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.foundation.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.html5.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.html5.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.html5.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.html5.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.jqueryui.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.jqueryui.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.jqueryui.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.jqueryui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.print.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.print.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/buttons.print.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/buttons.print.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/dataTables.buttons.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/dataTables.buttons.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/js/dataTables.buttons.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/js/dataTables.buttons.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Buttons-1.0.3/swf/flashExport.swf" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Buttons-1.0.3/swf/flashExport.swf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/css/colReorder.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/css/colReorder.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/js/dataTables.colReorder.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/js/dataTables.colReorder.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/ColReorder-1.2.0/js/dataTables.colReorder.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/ColReorder-1.2.0/js/dataTables.colReorder.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/dataTables.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/dataTables.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/dataTables.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/dataTables.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/dataTables.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/dataTables.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/dataTables.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/dataTables.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/dataTables.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/dataTables.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/dataTables.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/jquery.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/jquery.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/jquery.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/css/jquery.dataTables_themeroller.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/css/jquery.dataTables_themeroller.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/images/sort_asc.png" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/images/sort_asc.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/images/sort_asc_disabled.png" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/images/sort_asc_disabled.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/images/sort_both.png" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/images/sort_both.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/images/sort_desc.png" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/images/sort_desc.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/images/sort_desc_disabled.png" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/images/sort_desc_disabled.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/dataTables.bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/dataTables.bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/dataTables.foundation.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/dataTables.foundation.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/dataTables.foundation.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/dataTables.foundation.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/dataTables.jqueryui.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/dataTables.jqueryui.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/dataTables.jqueryui.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/dataTables.jqueryui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/jquery.dataTables.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/DataTables-1.10.9/js/jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/DataTables-1.10.9/js/jquery.dataTables.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/css/fixedColumns.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/js/dataTables.fixedColumns.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/js/dataTables.fixedColumns.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedColumns-3.1.0/js/dataTables.fixedColumns.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedColumns-3.1.0/js/dataTables.fixedColumns.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/css/fixedHeader.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/js/dataTables.fixedHeader.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/js/dataTables.fixedHeader.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/FixedHeader-3.0.0/js/dataTables.fixedHeader.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/FixedHeader-3.0.0/js/dataTables.fixedHeader.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/css/keyTable.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/css/keyTable.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/js/dataTables.keyTable.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/js/dataTables.keyTable.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/KeyTable-2.0.0/js/dataTables.keyTable.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/KeyTable-2.0.0/js/dataTables.keyTable.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/css/responsive.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/css/responsive.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/js/dataTables.responsive.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/js/dataTables.responsive.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Responsive-1.0.7/js/dataTables.responsive.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Responsive-1.0.7/js/dataTables.responsive.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/css/rowReorder.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/js/dataTables.rowReorder.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/js/dataTables.rowReorder.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/RowReorder-1.0.0/js/dataTables.rowReorder.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/RowReorder-1.0.0/js/dataTables.rowReorder.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/css/scroller.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/css/scroller.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/js/dataTables.scroller.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/js/dataTables.scroller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Scroller-1.3.0/js/dataTables.scroller.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Scroller-1.3.0/js/dataTables.scroller.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.bootstrap.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.bootstrap.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.dataTables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.dataTables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.dataTables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.dataTables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.foundation.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.foundation.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.foundation.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.foundation.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.jqueryui.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.jqueryui.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/css/select.jqueryui.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/css/select.jqueryui.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/js/dataTables.select.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/js/dataTables.select.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/Select-1.0.1/js/dataTables.select.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/Select-1.0.1/js/dataTables.select.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/datatables.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/datatables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/datatables.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/datatables.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/datatables.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/datatables.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/datatables.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/datatables.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/jQuery-2.1.4/jquery-2.1.4.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/jQuery-2.1.4/jquery-2.1.4.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/jQuery-2.1.4/jquery-2.1.4.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/jQuery-2.1.4/jquery-2.1.4.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/pdfmake-0.1.18/build/pdfmake.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/pdfmake-0.1.18/build/pdfmake.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/pdfmake-0.1.18/build/pdfmake.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/pdfmake-0.1.18/build/pdfmake.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/DataTables/pdfmake-0.1.18/build/vfs_fonts.js" afterPath="$PROJECT_DIR$/static/js/plugins/DataTables/pdfmake-0.1.18/build/vfs_fonts.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/.gitignore" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/CONTRIBUTING.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/Gruntfile.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/Gruntfile.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/LICENSE" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/README.md" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/bower.json" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/bower.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/composer.json" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/composer.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/css/bootstrap-select.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/css/bootstrap-select.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/css/bootstrap-select.css.map" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/css/bootstrap-select.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/css/bootstrap-select.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/css/bootstrap-select.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/bootstrap-select.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/bootstrap-select.js.map" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/bootstrap-select.js.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/bootstrap-select.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/bootstrap-select.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-bg_BG.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-bg_BG.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-bg_BG.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-bg_BG.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-cs_CZ.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-cs_CZ.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-cs_CZ.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-cs_CZ.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-da_DK.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-da_DK.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-da_DK.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-da_DK.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-de_DE.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-de_DE.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-de_DE.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-de_DE.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-en_US.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-en_US.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-en_US.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-en_US.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-es_CL.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-es_CL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-es_CL.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-es_CL.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-eu.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-eu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-eu.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-eu.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-fa_IR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-fa_IR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-fa_IR.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-fa_IR.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-fr_FR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-fr_FR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-fr_FR.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-fr_FR.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-hu_HU.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-hu_HU.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-hu_HU.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-hu_HU.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-it_IT.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-it_IT.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-it_IT.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-it_IT.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ko_KR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ko_KR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ko_KR.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ko_KR.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-nl_NL.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-nl_NL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-nl_NL.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-nl_NL.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-pl_PL.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-pl_PL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-pl_PL.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-pl_PL.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-pt_BR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-pt_BR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-pt_BR.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-pt_BR.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-pt_PT.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-pt_PT.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-pt_PT.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-pt_PT.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ro_RO.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ro_RO.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ro_RO.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ro_RO.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ru_RU.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ru_RU.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ru_RU.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ru_RU.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-sk_SK.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-sk_SK.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-sk_SK.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-sk_SK.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-sl_SI.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-sl_SI.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-sl_SI.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-sl_SI.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-sv_SE.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-sv_SE.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-sv_SE.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-sv_SE.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-tr_TR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-tr_TR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-tr_TR.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-tr_TR.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ua_UA.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ua_UA.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-ua_UA.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-ua_UA.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-zh_CN.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-zh_CN.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-zh_CN.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-zh_CN.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-zh_TW.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-zh_TW.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/dist/js/i18n/defaults-zh_TW.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/dist/js/i18n/defaults-zh_TW.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/.jshintrc" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/.jshintrc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/bootstrap-select.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/bootstrap-select.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-bg_BG.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-bg_BG.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-cs_CZ.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-cs_CZ.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-da_DK.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-da_DK.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-de_DE.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-de_DE.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-en_US.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-en_US.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-es_CL.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-es_CL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-eu.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-eu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-fa_IR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-fa_IR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-fr_FR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-fr_FR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-hu_HU.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-hu_HU.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-it_IT.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-it_IT.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-ko_KR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-ko_KR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-nl_NL.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-nl_NL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-pl_PL.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-pl_PL.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-pt_BR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-pt_BR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-pt_PT.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-pt_PT.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-ro_RO.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-ro_RO.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-ru_RU.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-ru_RU.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-sk_SK.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-sk_SK.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-sl_SI.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-sl_SI.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-sv_SE.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-sv_SE.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-tr_TR.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-tr_TR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-ua_UA.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-ua_UA.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-zh_CN.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-zh_CN.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/js/i18n/defaults-zh_TW.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/js/i18n/defaults-zh_TW.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/less/bootstrap-select.less" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/less/bootstrap-select.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/less/variables.less" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/less/variables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/package.json" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-select/test.html" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-select/test.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/.bowerrc" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/.bowerrc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/.gitattributes" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/.gitattributes" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/.gitignore" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/.jshintrc" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/.jshintrc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/.travis.yml" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/.travis.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/CHANGELOG.md" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/CHANGELOG.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/Gruntfile.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/Gruntfile.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/LICENSE" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/README.md" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/app.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/app.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/bower.json" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/bower.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/dist/bootstrap-treeview.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/dist/bootstrap-treeview.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/dist/bootstrap-treeview.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/dist/bootstrap-treeview.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/package.json" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/package.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/public/css/bootstrap-treeview.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/public/css/bootstrap-treeview.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/public/example-dom.html" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/public/example-dom.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/public/index.html" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/public/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/public/js/bootstrap-treeview.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/public/js/bootstrap-treeview.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/screenshot/default.PNG" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/screenshot/default.PNG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/src/css/bootstrap-treeview.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/src/css/bootstrap-treeview.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/src/js/bootstrap-treeview.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/src/js/bootstrap-treeview.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/README.md" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/lib/blanket.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/lib/blanket.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/lib/bootstrap-treeview.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/lib/bootstrap-treeview.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/lib/bootstrap-treeview.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/lib/bootstrap-treeview.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/lib/jquery.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/lib/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/lib/qunit-1.12.0.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/lib/qunit-1.12.0.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/lib/qunit-1.12.0.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/lib/qunit-1.12.0.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/tests.html" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/tests.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-treeview/tests/tests.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-treeview/tests/tests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-validator/bootstrapValidator.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-validator/bootstrapValidator.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-validator/bootstrapValidator.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-validator/bootstrapValidator.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-validator/bootstrapValidator.min.css" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-validator/bootstrapValidator.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/bootstrap-validator/bootstrapValidator.min.js" afterPath="$PROJECT_DIR$/static/js/plugins/bootstrap-validator/bootstrapValidator.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/echart/echarts.js" afterPath="$PROJECT_DIR$/static/js/plugins/echart/echarts.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/plugins/echart/infographic.js" afterPath="$PROJECT_DIR$/static/js/plugins/echart/infographic.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MadKing.iml" afterPath="$PROJECT_DIR$/.idea/MadKing.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssetManage/settings.py" afterPath="$PROJECT_DIR$/AssetManage/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssetManage/urls.py" afterPath="$PROJECT_DIR$/AssetManage/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssetManage/views.py" afterPath="$PROJECT_DIR$/AssetManage/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/users/models.py" afterPath="$PROJECT_DIR$/apps/users/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/users/urls.py" afterPath="$PROJECT_DIR$/apps/users/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/users/utils/email_send.py" afterPath="$PROJECT_DIR$/apps/users/utils/email_send.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/users/views.py" afterPath="$PROJECT_DIR$/apps/users/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/login.css" afterPath="$PROJECT_DIR$/static/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/deco-user.js" afterPath="$PROJECT_DIR$/static/js/deco-user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery.min.js" afterPath="$PROJECT_DIR$/static/js/jquery.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/usercenter-base.html" afterPath="$PROJECT_DIR$/templates/usercenter-base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/usercenter-info.html" afterPath="$PROJECT_DIR$/templates/usercenter-info.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -306,7 +33,7 @@
     <SUITE FILE_PATH="coverage/MadKing$osinfo.coverage" NAME="osinfo Coverage Results" MODIFIED="1488348108661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tt" />
     <SUITE FILE_PATH="coverage/MadKing$NedStark.coverage" NAME="NedStark Coverage Results" MODIFIED="1488268483605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MadKingClient/bin" />
     <SUITE FILE_PATH="coverage/MadKing$NIC.coverage" NAME="NIC Coverage Results" MODIFIED="1488351602067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tt" />
-    <SUITE FILE_PATH="coverage/MadKing$manage.coverage" NAME="manage Coverage Results" MODIFIED="1488632408558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MadKing$manage.coverage" NAME="manage Coverage Results" MODIFIED="1488695954124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MadKing$disk.coverage" NAME="disk Coverage Results" MODIFIED="1488348634061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tt" />
     <SUITE FILE_PATH="coverage/MadKing$ss.coverage" NAME="ss Coverage Results" MODIFIED="1488349553634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tt" />
   </component>
@@ -319,105 +46,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/models.py">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="67" column="4" lean-forward="true" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssetManage/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssetManage/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1803">
-              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-              <folding>
-                <element signature="e#20#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssetManage/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssetManage/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/users/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding>
-                <element signature="e#22#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminx.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/adminx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/asset/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            <state relative-caret-position="348">
+              <caret line="25" column="77" lean-forward="false" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -434,12 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>waiting_approval</find>
-      <find>资产</find>
-      <find>__len__</find>
-      <find>page</find>
-      <find>Paginator</find>
-      <find>new_assets_approval</find>
       <find>Yes</find>
       <find>response_dic</find>
       <find>trade_date</find>
@@ -463,6 +90,12 @@
       <find>DoesNotExist</find>
       <find>MadKing</find>
       <find>Madking</find>
+      <find>个人信息</find>
+      <find>length</find>
+      <find>text</find>
+      <find>page-</find>
+      <find>/send.png</find>
+      <find>分类</find>
       <find>url</find>
     </findStrings>
   </component>
@@ -472,15 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MadKingClient/plugin/linux/sysinfo.py" />
-        <option value="$PROJECT_DIR$/apps/asset/asset_handle.py" />
-        <option value="$PROJECT_DIR$/apps/asset/serializers.py" />
-        <option value="$PROJECT_DIR$/apps/asset/dashboard.py" />
-        <option value="$PROJECT_DIR$/MadKingClient/bin/NedStark.py" />
-        <option value="$PROJECT_DIR$/MadKingClient/core/api_token.py" />
-        <option value="$PROJECT_DIR$/MadKingClient/conf/settings.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/asset_category.html" />
         <option value="$USER_HOME$/.local/lib/python2.7/site-packages/django/template/defaulttags.py" />
         <option value="$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/site-packages/pure_pagination/paginator.py" />
         <option value="$PROJECT_DIR$/templates/new_assets_approval.html" />
@@ -493,10 +117,7 @@
         <option value="$PROJECT_DIR$/templates/asset_detail.html" />
         <option value="$PROJECT_DIR$/MadKing/forms.py" />
         <option value="$PROJECT_DIR$/MadKing/urls.py" />
-        <option value="$PROJECT_DIR$/static/css/nifty.min.css" />
         <option value="$PROJECT_DIR$/static/css/reset.css" />
-        <option value="$PROJECT_DIR$/static/css/login.css" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/apps/asset/models.py" />
         <option value="$PROJECT_DIR$/apps/asset/views.py" />
@@ -507,22 +128,34 @@
         <option value="$PROJECT_DIR$/apps/users/adminx.py" />
         <option value="$PROJECT_DIR$/MadKing/views.py" />
         <option value="$PROJECT_DIR$/apps/asset/utils.py" />
-        <option value="$PROJECT_DIR$/AssetManage/settings.py" />
         <option value="$PROJECT_DIR$/apps/asset/adminx.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/apps/asset/templatetags/custom_tag.py" />
-        <option value="$PROJECT_DIR$/AssetManage/views.py" />
-        <option value="$PROJECT_DIR$/apps/users/utils/email_send.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/templates/assets_old.html" />
+        <option value="$PROJECT_DIR$/static/js/jquery.min.js" />
+        <option value="$PROJECT_DIR$/AssetManage/settings.py" />
+        <option value="$PROJECT_DIR$/apps/addfields/models.py" />
         <option value="$PROJECT_DIR$/apps/users/models.py" />
-        <option value="$PROJECT_DIR$/AssetManage/urls.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/apps/users/forms.py" />
-        <option value="$PROJECT_DIR$/apps/users/urls.py" />
         <option value="$PROJECT_DIR$/templates/usercenter-info.html" />
+        <option value="$PROJECT_DIR$/static/js/deco-user.js" />
+        <option value="$PROJECT_DIR$/static/css/nifty.min.css" />
+        <option value="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.min.css" />
+        <option value="$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.css" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/site-packages/rest_framework/static/rest_framework/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/templates/usercenter-base.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/AssetManage/views.py" />
+        <option value="$PROJECT_DIR$/AssetManage/urls.py" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/static/css/login.css" />
+        <option value="$PROJECT_DIR$/apps/users/forms.py" />
+        <option value="$PROJECT_DIR$/templates/forgetpwd.html" />
         <option value="$PROJECT_DIR$/apps/users/views.py" />
+        <option value="$PROJECT_DIR$/apps/users/utils/email_send.py" />
+        <option value="$PROJECT_DIR$/templates/password_reset.html" />
+        <option value="$PROJECT_DIR$/apps/users/urls.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -555,8 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -645,6 +276,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -656,19 +289,19 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/js" />
-      <recent name="$PROJECT_DIR$/static/css" />
-      <recent name="$PROJECT_DIR$/apps/users" />
-      <recent name="$PROJECT_DIR$/apps" />
-      <recent name="$PROJECT_DIR$/apps/asset/util" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/apps/addfields" />
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps" />
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/static/js/plugins" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/apps/users" />
     </key>
   </component>
   <component name="RunManager" selected="Python.manage">
@@ -1058,13 +691,13 @@
     <frame x="0" y="24" width="1366" height="681" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17715959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17203514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1320132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2689769" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1093,227 +726,15 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="107" column="61" lean-forward="false" selection-start-line="107" selection-start-column="61" selection-end-line="107" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/sites.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/tests.py" />
-    <entry file="file://$PROJECT_DIR$/apps/asset/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/dashboard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/tables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="3" column="36" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/asset_handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="995">
-          <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/utils/mixin_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssetManage/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="e#20#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/migrations/0012_delete_emaliverifyrecord.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/django/db/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/django/core/management/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5233">
-          <caret line="301" column="27" lean-forward="false" selection-start-line="301" selection-start-column="27" selection-end-line="301" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="89" column="35" lean-forward="true" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/UserDict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="94" column="8" lean-forward="false" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/asset/templatetags/custom_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/utils/email_send.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="26" column="90" lean-forward="false" selection-start-line="26" selection-start-column="90" selection-end-line="26" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets_old.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/site-packages/rest_framework/static/rest_framework/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="4" column="18660" lean-forward="true" selection-start-line="4" selection-start-column="18660" selection-end-line="4" selection-end-column="18660" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,75 +751,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="1297" column="9" lean-forward="false" selection-start-line="1297" selection-start-column="9" selection-end-line="1297" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="625" column="16" lean-forward="false" selection-start-line="625" selection-start-column="16" selection-end-line="625" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="224" column="72" lean-forward="false" selection-start-line="224" selection-start-column="72" selection-end-line="224" selection-end-column="72" />
-          <folding>
-            <marker date="1488630129622" expanded="false" signature="3394:3906" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="45" column="155" lean-forward="false" selection-start-line="45" selection-start-column="155" selection-end-line="45" selection-end-column="155" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="e#5002#5008#0#HTML" expanded="true" />
-            <element signature="e#5008#5014#0#HTML" expanded="true" />
-            <element signature="e#5014#5020#0#HTML" expanded="true" />
-            <element signature="e#5020#5026#0#HTML" expanded="true" />
-            <element signature="e#5026#5032#0#HTML" expanded="true" />
-            <element signature="e#5032#5038#0#HTML" expanded="true" />
-            <element signature="e#5038#5044#0#HTML" expanded="true" />
-            <element signature="e#5252#5258#0#HTML" expanded="true" />
-            <element signature="e#5258#5264#0#HTML" expanded="true" />
-            <element signature="e#5264#5270#0#HTML" expanded="true" />
-            <element signature="e#5270#5276#0#HTML" expanded="true" />
-            <element signature="e#5276#5282#0#HTML" expanded="true" />
-            <element signature="e#5282#5288#0#HTML" expanded="true" />
-            <element signature="e#5288#5294#0#HTML" expanded="true" />
-            <element signature="e#5809#5815#0#HTML" expanded="true" />
-            <element signature="e#5815#5821#0#HTML" expanded="true" />
-            <element signature="e#5821#5827#0#HTML" expanded="true" />
-            <element signature="e#5827#5833#0#HTML" expanded="true" />
-            <element signature="e#5833#5839#0#HTML" expanded="true" />
-            <element signature="e#5839#5845#0#HTML" expanded="true" />
-            <element signature="e#5845#5851#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1580">
           <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1406,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1414,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,15 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="67" column="4" lean-forward="true" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,15 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssetManage/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,51 +790,348 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="754" column="22" lean-forward="false" selection-start-line="754" selection-start-column="22" selection-end-line="754" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AssetManage/views.py">
+    <entry file="file://$PROJECT_DIR$/static/js/deco-common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/forms.py">
+    <entry file="file://$PROJECT_DIR$/static/js/deco-comment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/fastclick.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/site-packages/pymysql/err.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/addfields/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#20#44#0" expanded="true" />
+            <element signature="e#22#51#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AssetManage/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1803">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+        <state relative-caret-position="264">
+          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="55" column="39" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="126" column="8" lean-forward="true" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/deco-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="88" column="24" lean-forward="false" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/themes/type-a/theme-lime.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1232" lean-forward="false" selection-start-line="0" selection-start-column="1232" selection-end-line="0" selection-end-column="1232" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/laba.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/nifty.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="0" column="5541" lean-forward="false" selection-start-line="0" selection-start-column="5541" selection-end-line="0" selection-end-column="5541" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/themes/type-a/theme-light.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="625" lean-forward="false" selection-start-line="0" selection-start-column="568" selection-end-line="0" selection-end-column="625" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="3" column="737" lean-forward="false" selection-start-line="3" selection-start-column="735" selection-end-line="3" selection-end-column="737" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/font-awesome/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="3" column="8782" lean-forward="false" selection-start-line="3" selection-start-column="8782" selection-end-line="3" selection-end-column="8782" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/static/xadmin/vendor/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="28149" lean-forward="false" selection-start-line="8" selection-start-column="28149" selection-end-line="8" selection-end-column="28149" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/site-packages/DjangoUeditor/static/ueditor/dialogs/template/template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.12/lib/python2.7/site-packages/rest_framework/static/rest_framework/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="4" column="45735" lean-forward="true" selection-start-line="4" selection-start-column="45735" selection-end-line="4" selection-end-column="45735" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="72" column="1" lean-forward="false" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="50" column="99" lean-forward="true" selection-start-line="50" selection-start-column="99" selection-end-line="50" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/usercenter-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="49" column="156" lean-forward="false" selection-start-line="49" selection-start-column="156" selection-end-line="49" selection-end-column="156" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="545" column="47" lean-forward="false" selection-start-line="545" selection-start-column="47" selection-end-line="545" selection-end-column="47" />
+          <folding>
+            <marker date="1488700541016" expanded="false" signature="3421:3933" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetManage/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#57#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="934">
+          <caret line="89" column="43" lean-forward="false" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="602" column="1" lean-forward="false" selection-start-line="602" selection-start-column="1" selection-end-line="602" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/send_success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="101">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#22#57#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/utils/email_send.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <element signature="e#23#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forgetpwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="61" column="83" lean-forward="false" selection-start-line="61" selection-start-column="83" selection-end-line="61" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/password_reset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="17" column="67" lean-forward="false" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetManage/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="25" column="77" lean-forward="false" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>

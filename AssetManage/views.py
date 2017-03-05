@@ -111,3 +111,5 @@ class ActiveUserView(View):
         else:
             return render(request, 'active_fail.html')
         return render(request, 'login.html')
+
+

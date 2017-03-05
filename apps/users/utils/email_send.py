@@ -31,12 +31,12 @@ def send_register_email(email,send_type="register"):
             print "send false!"
     elif send_type == "forget":
         email_title = "AssetManage注册密码重置链接"
-        email_body = "请点击下面的链接重置你的账号：http://localhost:8000/reset/{0}".format(code)
-        send_status = send_mail(email_title,email_body,DEFAULT_FROM_EMAIL,[email])
+        email_body = "请点击下面的链接重置你的账号：http://localhost:8000/users/reset/{0}".format(code)
+        send_status = send_mail(email_title,email_body,DEFAULT_FROM_EMAIL,[EMAIL_HOST_USER])
     elif send_type == "up_email":
         email_title = "AssetManage邮箱验证码"
         email_title = "AssetManage邮箱修改验证码是：{0}".format(code)
-        send_status = send_mail(email_title, email_body, DEFAULT_FROM_EMAIL, [email])
+        send_status = send_mail(email_title, email_body, DEFAULT_FROM_EMAIL, [EMAIL_HOST_USER])
 
 def generic_random_str(randomlength=8):
     str = ''

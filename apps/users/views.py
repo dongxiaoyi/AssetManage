@@ -33,6 +33,7 @@ class UserInfoView(LoginRequiredMixin,View):
         })
     def post(self,request):
         user_info_form = UserInfoForm(request.POST,instance=request.user)
+        print user_info_form
         if user_info_form.is_valid():
             user_info_form.save()
             return HttpResponse('{"status":"success","msg":"修改成功"}', content_type='application/json')
@@ -180,3 +181,14 @@ class MyMessagesView(LoginRequiredMixin,View):
             'all_messages':messages,
             'unread_num':unread_num,
         })
+
+class ResetView(View):
+    def get(self,request,reset_code):
+        all_records = EmaliVerifyRecord.objects.filter(code=reset_code)
+        if all_records:
+            for record in all_records:
+                email = record.email
+                return render(request,'password_reset.html',{'email':email})
+        else:
+            return render(request, 'active_fail.html')
+        return render(request, 'login.html')

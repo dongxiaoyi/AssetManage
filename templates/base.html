@@ -93,7 +93,7 @@
 						<!--Notification dropdown-->
 						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 						<li class="dropdown">
-							<a href="#" >
+							<a href="{% url 'users:mymessages' %}" >
 								<i class="fa fa-bell fa-lg"></i>
 								<span class="badge badge-header badge-danger">{{ user.unread_nums }}</span>
 							</a>
@@ -209,14 +209,7 @@
 							<div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
 
 								<!-- Dropdown heading  -->
-								<div class="pad-all bord-btm">
-									<p class="text-lg text-muted text-thin mar-btm">750Gb of 1,000Gb Used</p>
-									<div class="progress progress-sm">
-										<div class="progress-bar" style="width: 70%;">
-											<span class="sr-only">70%</span>
-										</div>
-									</div>
-								</div>
+
 
 
 								<!-- User dropdown menu -->
@@ -227,17 +220,19 @@
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<span class="badge badge-danger pull-right">9</span>
+										<a href="{% url 'users:mymessages' %}">
+											<span class="badge badge-danger pull-right">{{ request.user.unread_nums }}</span>
 											<i class="fa fa-envelope fa-fw fa-lg"></i> Messages
 										</a>
 									</li>
+                                    <!--
 									<li>
 										<a href="#">
 											<span class="label label-success pull-right">New</span>
 											<i class="fa fa-gear fa-fw fa-lg"></i> Settings
 										</a>
 									</li>
+									-->
 								</ul>
 
 								<!-- Dropdown footer -->
@@ -546,7 +541,9 @@
 										</a>
                                         <ul class="collapse">
 											<li><a href="{% url 'asset:asset_list' %}">资产列表</a></li>
+                                            <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
+											-->
 											<li><a href="#">Another link</a></li>
 
 

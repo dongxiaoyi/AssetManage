@@ -7,6 +7,9 @@ import xadmin
 
 from django.views.static import serve
 from .settings import MEDIA_ROOT
+#配置404需要打开
+#from .settings import STATIC_ROOT
+
 from .views import IndexView,AccLoginView,AccLogoutView,RegisterView,ActiveUserView
 
 urlpatterns = [
@@ -20,7 +23,7 @@ urlpatterns = [
     url('^active/(?P<active_code>.*)/$', ActiveUserView.as_view(), name="user_active"),
     #配置上传文件的访问处理函数
     url('^media/(?P<path>.*)', serve,{'document_root':MEDIA_ROOT}),
-    # 配置静态资源的访问处理函数
+    # 配置静态资源的访问处理函数,配置404后需要打开
     #url('^static/(?P<path>.*)', serve, {'document_root': STATIC_ROOT}),
     #富文本相关
     url(r'^ueditor/',include('DjangoUeditor.urls' )),
@@ -30,6 +33,7 @@ urlpatterns = [
     url(r'^captcha/',include('captcha.urls')),
     # 个人中心相关url
     url(r'^users/', include('users.urls', namespace='users'), ),
-
-
 ]
+
+#handler404 = 'users.views.page_not_found'
+#handler500 = 'users.views.page_error'

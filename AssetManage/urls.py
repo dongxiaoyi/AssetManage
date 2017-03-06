@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     #asset相关url
     url(r'^asset/', include('asset.urls', namespace='asset'), ),
+    url(r'^salt/', include('saltstack.urls', namespace='salt'), ),
     url('^$', IndexView.as_view(),name="index"),
     url(r'^login/$', AccLoginView.as_view(), name='login'),
     url(r'^logout/$', AccLogoutView.as_view(), name='logout'),

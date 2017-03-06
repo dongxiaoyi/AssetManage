@@ -1,3 +1,4 @@
+#_*_coding:utf-8_*_
 """
 Django settings for AssetManage project.
 
@@ -45,9 +46,14 @@ INSTALLED_APPS = [
     #'pure_pagination',
     'DjangoUeditor',
     'rest_framework',
+    'djcelery',
     'asset',
     'users',
-    'addfields'
+    'addfields',
+    'saltstack',
+    'record',
+    'hostlist',
+
 ]
 TOKEN_TIMEOUT = 120
 MIDDLEWARE_CLASSES = [
@@ -181,3 +187,7 @@ LOGGING = {
         },
     },
 }
+
+###配置Broker
+BROKER_URL = 'redis://127.0.0.1:6379/0'
+BROKER_TRANSPORT = 'redis'

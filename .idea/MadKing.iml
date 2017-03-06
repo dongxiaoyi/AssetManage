@@ -25,6 +25,9 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/users" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/image" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/addfields" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/saltstack" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/record" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/hostlist" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

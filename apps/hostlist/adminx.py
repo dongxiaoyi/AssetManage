@@ -4,7 +4,7 @@ from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
 
-from .models import HostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory
+from .models import AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory
 
 class DzhuserAdminx(object):
     list_display = ['username','engineer']
@@ -61,8 +61,8 @@ class CatagoryAdminx(object):
     #readonly_fields = ['trade_date',]
     refresh_times = [3,5]
 
-class HostListAdminx(object):
-    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+class UnAccHostListAdminx(object):
+    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #搜索框
     search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
@@ -72,7 +72,20 @@ class HostListAdminx(object):
     #readonly_fields = ['trade_date',]
     refresh_times = [3,5]
 
-xadmin.site.register(HostList,HostListAdminx)
+class AccHostListAdminx(object):
+    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    #搜索框
+    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    #过滤器
+    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    ordering = ['-hostname']
+    #list_editable = ['name']
+    #readonly_fields = ['trade_date',]
+    refresh_times = [3,5]
+
+
+xadmin.site.register(AccHostList,AccHostListAdminx)
+xadmin.site.register(UnAccHostList,UnAccHostListAdminx)
 xadmin.site.register(Dzhuser,DzhuserAdminx)
 xadmin.site.register(DataCenter,DataCenterAdminx)
 xadmin.site.register(NetworkOperator,NetworkOperatorAdminx)

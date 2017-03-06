@@ -60,10 +60,11 @@ class Catagory(models.Model):
     def __unicode__(self):
         return u'%s %s' %(self.catagoryen, self.catagorycn)
 
-class HostList(models.Model):
+class UnAccHostList(models.Model):
     ip = models.CharField(max_length=15,  blank=True,verbose_name=u'IP地址')
     hostname = models.CharField(max_length=30, verbose_name=u'主机名')
     minionid = models.CharField(max_length=60, verbose_name=u'MinionID')
+    is_acc = models.BooleanField(default=False,verbose_name=u'是否结束minion_id')
     nocn = models.ForeignKey(NetworkOperator,blank=True, verbose_name=u'运营商全称')
     catagorycn = models.ForeignKey(Catagory, blank=True, verbose_name=u'类别')
     pacn = models.ForeignKey(ProvinceArea, blank=True,verbose_name=u'地区全称')
@@ -84,5 +85,11 @@ class HostList(models.Model):
         return u'%s %s %s %s %s' %(self.hostname, self.ip, self.catagorycn, self.dccn, self.engineer)
     class Meta:
         ordering = ['minionid']
-        verbose_name = u'Host列表'
-        verbose_name_plural = u"Host列表"
+        verbose_name = u'已验证minion_id列表'
+        verbose_name_plural = u"Host列表-验证salt_id"
+
+class AccHostList(UnAccHostList):
+    class Meta:
+        verbose_name = '未验证minion_id列表'
+        verbose_name_plural = verbose_name
+        proxy = True

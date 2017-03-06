@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     #'pure_pagination',
     'DjangoUeditor',
     'rest_framework',
-    'djcelery',
+    #'djcelery',
     'asset',
     'users',
     'addfields',

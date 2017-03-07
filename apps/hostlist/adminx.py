@@ -62,22 +62,22 @@ class CatagoryAdminx(object):
     refresh_times = [3,5]
 
 class UnAccHostListAdminx(object):
-    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #搜索框
-    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
-    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
     #list_editable = ['name']
     #readonly_fields = ['trade_date',]
     refresh_times = [3,5]
 
 class AccHostListAdminx(object):
-    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #搜索框
-    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
-    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','macaddr','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
     #list_editable = ['name']
     #readonly_fields = ['trade_date',]

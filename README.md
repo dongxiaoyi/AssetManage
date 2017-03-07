@@ -33,5 +33,20 @@ EventLog有点问题，再行实现吧！
             注释掉url('^static/(?P<path>.*)', serve, {'document_root': STATIC_ROOT}),
             注释掉handler404 = 'users.views.page_not_found'和handler500 = 'users.views.page_error'
 
+
+
+
 ### 注意：
 ！！！用户名必须和邮件一致，否则重置密码会有问题，需要添加昵称的话需要在migrate之前加到MyUser这个model，否则一旦生成表结构就无法添加字段
+docker容器初始化的时候安装net-tools，否则取不到ip信息
+
+在外部脚本调用orm：
+1.脚本放在manage.py同一个目录下；
+2.脚本添加：
+import os,sys,subprocess
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssetManage.settings')
+import django
+django.setup()
+
+注意调用：
+acc_minion = AccHostList，全都不加括号

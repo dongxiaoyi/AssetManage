@@ -1,8 +1,12 @@
 #_*_coding:utf-8_*_
-#from AssetManage.celery import app
-import subprocess
-
-
+import os,sys,subprocess
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssetManage.settings')
+import django
+django.setup()
+# from django.core.exceptions import ObjectDoesNotExist
+# from django.db.models import Q
+from hostlist.models import AccHostList
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'AssetManage.settings'
 #@app.task
 def GetAccMinionId():
     '''
@@ -10,16 +14,17 @@ def GetAccMinionId():
     :return:
     '''
     '''获取通过验证的minion_id'''
-    acc_minion_id = []
     get_acc_minion_id_cmd = "salt-key -l acc|grep -v Acc"
     get_acc_minion_id = subprocess.Popen(get_acc_minion_id_cmd,stdout=subprocess.PIPE,shell=True)
     stdout = get_acc_minion_id.communicate()[0].strip().split('\n')
-    from .models import UnAccHostList
     for acc_id in stdout:
-        acc_minion = UnAccHostList()
-        acc_minion.objects.get_or_create(minionid=acc_id)
-        acc_minion.save()
-GetAccMinionId()
+        from hostlist.models import AccHostList
+        acc_minion = AccHostList
+        acc_minion.objects.get_or_create(hostname=acc_id,minionid=acc_id)
+        acc_minion.save
+if __name__ == "__main__":
+    GetAccMinionId()
+#GetAccMinionOsfinger()
 def GetAccMinionOsfinger():
     '''获取通过验证的minion的系统版本'''
     acc_minion_osfinger = {}
@@ -52,5 +57,10 @@ def GetAccMinionmachine_id():
     print acc_minion_machine_id
     return acc_minion_machine_id
 
-
-
+def AccHostInfo():
+    host = AccHostList()
+    ip = GetAccMinionfqdn_ip4()
+    mac_id = GetAccMinionmachine_id()
+    minion_id = GetAccMinionId()
+    os = GetAccMinionOsfinger()
+    host.objects.get_or_create()

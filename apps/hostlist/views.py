@@ -16,5 +16,5 @@ from django.contrib.auth.decorators import login_required
 from users.utils.mixin_utils import LoginRequiredMixin
 import json,logging
 import xadmin
-from .models import Dzhuser, DataCenter, HostList
+from .models import Dzhuser, DataCenter, AccHostList
 

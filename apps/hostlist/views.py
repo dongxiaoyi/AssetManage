@@ -10,11 +10,98 @@ from django.views.generic.base import View
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.hashers import make_password
 from django.views.decorators.csrf import csrf_exempt
-from . import core, models, asset_handle, utils,tables,adminx
-from .dashboard import  AssetDashboard
+from . import models,adminx
 from django.contrib.auth.decorators import login_required
 from users.utils.mixin_utils import LoginRequiredMixin
 import json,logging
 import xadmin
-from .models import Dzhuser, DataCenter, AccHostList
+from .models import Dzhuser, DataCenter, AccHostList,UnAccHostList
+from asset import tables
+from .adminx import AccHostListAdminx,UnAccHostListAdminx
 
+
+class AccMinionListView(LoginRequiredMixin,View):
+    def get(self,request):
+        #acc_obj_list = tables.table_filter(request, adminx.AccHostListAdminx, models.AccHostList)
+        acc_obj_list = AccHostList.objects.filter(key_tag='acc')
+
+        # asset_obj_list = models.Asset.objects.all()
+        order_res = tables.get_orderby(request, acc_obj_list, adminx.AccHostListAdminx)
+        # print('----->',order_res)
+        paginator = Paginator(order_res[0], adminx.AccHostListAdminx.list_per_page)
+
+        page = request.GET.get('page')
+        try:
+            acc_objs = paginator.page(page)
+        except PageNotAnInteger:
+            acc_objs = paginator.page(1)
+        except EmptyPage:
+            acc_objs = paginator.page(paginator.num_pages)
+
+        table_obj = tables.TableHandler(request,
+                                        models.AccHostList,
+                                        adminx.AccHostListAdminx,
+                                        acc_objs,
+                                        order_res
+                                        )
+        return render(request, 'salt_minion.html', {'table_obj': table_obj,
+                                               'paginator': paginator})
+
+
+class UnAccMinionListView(LoginRequiredMixin,View):
+    def get(self,request):
+        unacc_obj_list = UnAccHostList.objects.filter(key_tag='unacc')
+        # asset_obj_list = models.Asset.objects.all()
+        order_res_list = tables.get_orderby(request, unacc_obj_list, adminx.UnAccHostListAdminx)
+        order_res = tables.get_orderby(request, unacc_obj_list, adminx.UnAccHostListAdminx)
+
+        # print('----->',order_res)
+        paginator = Paginator(order_res[0], adminx.UnAccHostListAdminx.list_per_page)
+
+        page = request.GET.get('page')
+        try:
+            unacc_objs = paginator.page(page)
+        except PageNotAnInteger:
+            unacc_objs = paginator.page(1)
+        except EmptyPage:
+            unacc_objs = paginator.page(paginator.num_pages)
+
+        table_obj = tables.TableHandler(request,
+                                        models.UnAccHostList,
+                                        adminx.UnAccHostListAdminx,
+                                        unacc_objs,
+                                        order_res
+                                        )
+        return render(request, 'salt_minion.html', {'table_obj': table_obj,
+                                               'paginator': paginator})
+
+class RejMinionListView(LoginRequiredMixin,View):
+    def get(self,request):
+        rej_obj_list = RejHostList.objects.filter(key_tag='rej')
+        # asset_obj_list = models.Asset.objects.all()
+        order_res_list = tables.get_orderby(request, rej_obj_list, adminx.RejHostListAdminx)
+        order_res = tables.get_orderby(request, rej_obj_list, adminx.RejHostListAdminx)
+
+        # print('----->',order_res)
+        paginator = Paginator(order_res[0], adminx.RejHostListAdminx.list_per_page)
+
+        page = request.GET.get('page')
+        try:
+            unacc_objs = paginator.page(page)
+        except PageNotAnInteger:
+            unacc_objs = paginator.page(1)
+        except EmptyPage:
+            unacc_objs = paginator.page(paginator.num_pages)
+
+        table_obj = tables.TableHandler(request,
+                                        models.RejHostList,
+                                        adminx.RejHostListAdminx,
+                                        unacc_objs,
+                                        order_res
+                                        )
+        return render(request, 'salt_minion.html', {'table_obj': table_obj,
+                                               'paginator': paginator})
+
+class AcceptUnaccView(LoginRequiredMixin,View):
+   def get(self,request):
+       return render(request,'index.html')

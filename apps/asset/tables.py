@@ -106,6 +106,5 @@ def table_filter(request, model_admin, models_class):
                 filter_conditions['%s__gt' % condition] = request.GET.get(condition)
             else:
                 filter_conditions[condition] = request.GET.get(condition)
-
-    print("filter conditons", filter_conditions)
+    #print("filter conditons", filter_conditions)
     return models_class.objects.filter(**filter_conditions)

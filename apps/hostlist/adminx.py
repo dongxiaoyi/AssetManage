@@ -4,7 +4,7 @@ from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
 
-from .models import AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory
+from .models import AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory,ErrorHostList
 
 class DzhuserAdminx(object):
     list_display = ['username','engineer']
@@ -62,30 +62,67 @@ class CatagoryAdminx(object):
     refresh_times = [3,5]
 
 class UnAccHostListAdminx(object):
-    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
     #搜索框
     search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
     list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
+    list_per_page = 10
+    choice_fields = []
+    fk_fields = ['ip','hostname','minionid']
     #list_editable = ['name']
-    #readonly_fields = ['trade_date',]
+    #readonly_fields = ['action',]
     refresh_times = [3,5]
+
+    def queryset(self):
+        qs = super(UnAccHostListAdminx,self).queryset()
+        qs = qs.filter(key_tag='unacc')
+        return qs
+
 
 class AccHostListAdminx(object):
-    list_display = ['ip','hostname','is_acc','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
     #搜索框
     search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
     list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
+    list_per_page = 10
+    choice_fields = []
+    fk_fields = ['ip','hostname','minionid']
     #list_editable = ['name']
-    #readonly_fields = ['trade_date',]
+    #readonly_fields = ['action',]
     refresh_times = [3,5]
 
+    def queryset(self):
+        qs = super(AccHostListAdminx,self).queryset()
+        qs = qs.filter(key_tag='acc')
+        return qs
+
+class ErrorHostListAdminx(object):
+    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    #搜索框
+    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    #过滤器
+    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    ordering = ['-hostname']
+    list_per_page = 10
+    choice_fields = []
+    fk_fields = ['ip','hostname','minionid']
+    #list_editable = ['name']
+    #readonly_fields = ['action',]
+    refresh_times = [3,5]
+
+    def queryset(self):
+        qs = super(ErrorHostListAdminx,self).queryset()
+        qs = qs.filter(key_tag='error')
+        return qs
 
 xadmin.site.register(AccHostList,AccHostListAdminx)
 xadmin.site.register(UnAccHostList,UnAccHostListAdminx)
+xadmin.site.register(ErrorHostList,ErrorHostListAdminx)
+
 xadmin.site.register(Dzhuser,DzhuserAdminx)
 xadmin.site.register(DataCenter,DataCenterAdminx)
 xadmin.site.register(NetworkOperator,NetworkOperatorAdminx)

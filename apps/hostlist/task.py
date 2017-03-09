@@ -1,56 +1,22 @@
-#_*_coding:utf-8_*_
-#from AssetManage.celery import app
-import subprocess
+from __future__ import absolute_import
+from celery import shared_task,task
 
 
-#@app.task
-def GetAccMinionId():
-    '''
-    定时任务，推送通过验证的minion_id的资源信息到数据库
-    :return:
-    '''
-    '''获取通过验证的minion_id'''
-    acc_minion_id = []
-    get_acc_minion_id_cmd = "salt-key -l acc|grep -v Acc"
-    get_acc_minion_id = subprocess.Popen(get_acc_minion_id_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_id.communicate()[0].strip().split('\n')
-    from .models import UnAccHostList
-    for acc_id in stdout:
-        acc_minion = UnAccHostList()
-        acc_minion.objects.get_or_create(minionid=acc_id)
-        acc_minion.save()
-GetAccMinionId()
-def GetAccMinionOsfinger():
-    '''获取通过验证的minion的系统版本'''
-    acc_minion_osfinger = {}
-    get_acc_minion_finger_cmd = "salt '*' grains.get osfinger|sed 'N;s/\\n//g'|sed 's/ //g'"
-    get_acc_minion_finger = subprocess.Popen(get_acc_minion_finger_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_finger.communicate()[0].strip().split('\n')
-    for acc_osfinger in stdout:
-        acc_minion_osfinger[acc_osfinger.split(':')[0]] = acc_osfinger.split(':')[1]
-    return acc_minion_osfinger
+@shared_task()
+def add(x,y):
+    # return x + y
+    print x + y
 
-def GetAccMinionfqdn_ip4():
-    '''获取通过验证的minion的ip'''
-    acc_minion_fqdn_ip4 = {}
-    get_acc_minion_fqdn_ip4_cmd = "salt '*' cmd.run 'salt-call grains.get fqdn_ip4'|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/-//g'"
-    get_acc_minion_fqdn_ip4 = subprocess.Popen(get_acc_minion_fqdn_ip4_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_fqdn_ip4.communicate()[0].strip().split('\n')
-    for acc_fqdn_ip4 in stdout:
-        acc_minion_fqdn_ip4[acc_fqdn_ip4.split(':')[0]] = acc_fqdn_ip4.split(':')[1]
-    print acc_minion_fqdn_ip4
-    return acc_minion_fqdn_ip4
+@shared_task()
+def mul(x,y):
+    print "%d * %d = %d" %(x,y,x*y)
+    return x*y
 
-def GetAccMinionmachine_id():
-    '''获取通过验证的minion的ip'''
-    acc_minion_machine_id = {}
-    get_acc_minion_machine_id_cmd = "salt '*' cmd.run 'salt-call grains.get machine_id'|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/-//g'"
-    get_acc_minion_machine_id = subprocess.Popen(get_acc_minion_machine_id_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_machine_id.communicate()[0].strip().split('\n')
-    for acc_machine_id in stdout:
-        acc_minion_machine_id[acc_machine_id.split(':')[0]] = acc_machine_id.split(':')[1]
-    print acc_minion_machine_id
-    return acc_minion_machine_id
+@shared_task()
+def sub(x,y):
+    print "%d - %d = %d"%(x,y,x-y)
+    return x - y
 
-
-
+@task(ignore_result=True,max_retries=1,default_retry_delay=10)
+def just_print():
+    print "Print from celery task"

@@ -41,14 +41,17 @@ EventLog有点问题，再行实现吧！
 docker容器初始化的时候安装net-tools，否则取不到ip信息
 
 在外部脚本调用orm：
-1.脚本放在manage.py同一个目录下；
-2.脚本添加：
+1.脚本添加：
+#_*_coding:utf-8_*_
+from __future__ import unicode_literals
+
 import os,sys,subprocess
+os.path.join(os.path.dirname(__file__),'../../..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssetManage.settings')
 import django
 django.setup()
 
 注意调用：
-acc_minion = AccHostList，全都不加括号
+acc_minion = AccHostList，加括号与不加的使用形式
 
 继续调试hostinfo

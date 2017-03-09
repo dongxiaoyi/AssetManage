@@ -74,7 +74,7 @@ def GetMinionId():
         for acc_id in acc_stdout:
             all_acc = AccHostList.objects.all()
             for acc_minion_in_db in all_acc:
-                all_acc_id.append(acc_minion_in_db.minionid)
+                all_acc_id.append(str(acc_minion_in_db.minionid))
             if acc_id in all_acc_id:
                 '''更新数据'''
                 acc_minion = AccHostList
@@ -113,11 +113,11 @@ def GetMinionId():
         for unacc_id in unacc_stdout:
             all_unacc = UnAccHostList.objects.all()
             for unacc_minion_in_db in all_unacc:
-                all_unacc_id.append(unacc_minion_in_db.minionid)
+                all_unacc_id.append(str(unacc_minion_in_db.minionid))
             if unacc_id in all_unacc_id:
                 for unacc_id in unacc_stdout:
                     unacc_minion = UnAccHostList
-                    unacc_minion.objects.get(minionid=str(unacc_id))
+                    unacc_minion.objects.filter(minionid=str(unacc_id)).update(hostname=str(unacc_id))
                     unacc_minion.save
                     unacc_minion_list.append(unacc_minion.objects.all())
                     unacc_id_list.append(str(unacc_id))
@@ -128,11 +128,23 @@ def GetMinionId():
                     unacc_minion.save
                     unacc_minion_list.append(unacc_minion.objects.all())
                     unacc_id_list.append(str(unacc_id))
-
     '''2.反查数据库数据是否都在新增acc列表'''
     for minion in all_acc_minion:
-        '''数据库中的acc的minion和新增的一致说明数据没变化'''
-        if minion in acc_minion_list[0]:
+        if len(str(minion.ip)) > 15:
+            '''ip长度大于15，说明minion连接可能异常'''
+            '''删除minion在acc的数据'''
+            del_acc_minion = AccHostList
+            del_acc_minion.objects.filter(minionid=minion.minionid).delete
+            del_acc_minion.save
+            error = ErrorHostList
+            '''创建异常数据'''
+            error.objects.get_or_create(minionid=minion.minionid)
+            error.save
+            error.objects.filter(minionid=minion.minionid).update(key_tag='error', action='无',
+                                                                  remark='acc组minion连接可能有问题,请核实！')
+            error.save
+            '''数据库中的acc的minion和新增的一致说明数据没变化'''
+        elif minion in acc_minion_list[0]:
             pass
         elif  unacc_minion_list != []:
             '''如果数据库中的acc的minion出现在新增的unacc中，说明acc异常迁移到unacc！'''
@@ -151,6 +163,7 @@ def GetMinionId():
 
                 '''如果acc的minion的minionid在unacc的minionid中，说明数据改变了，且acc异常迁移到unacc'''
             elif minion.minionid in unacc_id_list:
+                '''删除minion在acc的数据'''
                 del_acc_minion = AccHostList
                 del_acc_minion.objects.filter(minionid=minion.minionid).delete
                 del_acc_minion.save
@@ -160,10 +173,6 @@ def GetMinionId():
                 error.save
                 error.objects.filter(minionid=minion.minionid).update(key_tag = 'error', action = '无', remark = 'acc组minion异常迁移到unacc，且数据变更,请核实！')
                 error.save
-                '''删除minion在acc的数据'''
-                del_acc_minion = AccHostList
-                del_acc_minion.objects.get(minionid=minion.minionid).delete
-                del_acc_minion.save
         else:
             error = ErrorHostList
             error.objects.get_or_create(minionid=minion.minionid, key_tag='error', action='无',
@@ -177,10 +186,7 @@ def GetMinionId():
             if minion_un.minionid in acc_id_list:
                 error = ErrorHostList
                 '''创建异常数据'''
-                error.objects.get_or_create(minionid=minion_un.minionid)
-                error.save
-                error == AccHostList.objects.get(minionid=minion_un.minionid)
-                error.objects.update(minionid=minion_un.minionid,key_tag = 'error', action = '无', remark = 'unacc组minion异常迁移到acc')
+                error.objects.get_or_create(minionid=minion_un.minionid,key_tag = 'error', action = '无', remark = 'unacc组minion异常迁移到acc')
                 error.save
                 '''删除minion在unacc的数据'''
                 del_unacc_minion = UnAccHostList

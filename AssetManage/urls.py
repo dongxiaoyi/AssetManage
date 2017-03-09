@@ -13,6 +13,8 @@ from .settings import MEDIA_ROOT
 from .views import IndexView,AccLoginView,AccLogoutView,RegisterView,ActiveUserView
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+
     url(r'^xadmin/', xadmin.site.urls),
     #asset相关url
     url(r'^asset/', include('asset.urls', namespace='asset'), ),

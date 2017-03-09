@@ -5,6 +5,8 @@ from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
 
 from .models import AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory,ErrorHostList
+from djcelery.models import TaskMeta,TaskSetMeta,IntervalSchedule,CrontabSchedule,PeriodicTasks,PeriodicTask,WorkerState,TaskState
+
 
 class DzhuserAdminx(object):
     list_display = ['username','engineer']
@@ -128,3 +130,15 @@ xadmin.site.register(DataCenter,DataCenterAdminx)
 xadmin.site.register(NetworkOperator,NetworkOperatorAdminx)
 xadmin.site.register(ProvinceArea,ProvinceAreaAdminx)
 xadmin.site.register(Catagory,CatagoryAdminx)
+
+'''定制djcelery'''
+class TaskMetaAdminx(object):
+    list_display = ['task_id','status','result','date_done','traceback','hidden','meta']
+    #搜索框
+    search_fields = ['task_id','status','result','date_done','traceback','hidden','meta']
+    #过滤器
+    list_filter = ['task_id','status','result','date_done','traceback','hidden','meta']
+    #list_editable = ['name']
+    #readonly_fields = ['action',]
+    refresh_times = [3,5]
+xadmin.site.register(TaskMeta,TaskMetaAdminx)

@@ -61,7 +61,7 @@ class Catagory(models.Model):
         return u'%s %s' %(self.catagoryen, self.catagorycn)
 
 class UnAccHostList(models.Model):
-    ip = models.CharField(max_length=15,  blank=True,null=True,verbose_name=u'IP地址')
+    ip = models.CharField(max_length=100,  blank=True,null=True,verbose_name=u'IP地址')
     hostname = models.CharField(max_length=30, verbose_name=u'主机名')
     minionid = models.CharField(max_length=60, verbose_name=u'MinionID')
     osfinger = models.CharField(max_length=60,verbose_name='OS',blank=True,null=True,default='linux')

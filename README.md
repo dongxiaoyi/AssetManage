@@ -50,3 +50,5 @@ django.setup()
 
 注意调用：
 acc_minion = AccHostList，全都不加括号
+
+继续调试hostinfo

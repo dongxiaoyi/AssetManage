@@ -49,53 +49,90 @@ def GetMinionId():
     '''
     定时任务，推送通过验证的minion_id的资源信息到数据库
     :return:
+
     '''
+    '''所有的资源信息'''
+    all_osfinger = GetAccMinionOsfinger()
+    all_fqdn_ip4 = GetAccMinionfqdn_ip4()
+    all_mac_id = GetAccMinionmachine_id()
     '''获取acc的minion_id'''
     get_acc_minion_id_cmd = "salt-key -l acc|grep -v Acc"
     get_acc_minion_id = subprocess.Popen(get_acc_minion_id_cmd,stdout=subprocess.PIPE,shell=True)
     acc_stdout = get_acc_minion_id.communicate()[0].strip().split('\n')
     acc_minion_list = []
     acc_id_list = []
+    '''获取数据库中所有acc的minion'''
+    if acc_stdout == ['']:
+        all_acc_minion = []
+    else:
+        all_acc_minion = AccHostList.objects.filter(key_tag='acc')
+        '''如果这个minionid本来就有，就更新数据，没有就创建数据'''
     if acc_stdout == ['']:
         pass
     else:
+        all_acc_id = []
         for acc_id in acc_stdout:
-            from hostlist.models import AccHostList
-            acc_minion = AccHostList
-            acc = acc_minion.objects.get_or_create(hostname=acc_id,minionid=acc_id,key_tag='acc',action='无')
-            acc_minion.save
-            acc_minion_list.append(acc[0])
-            acc_id_list.append(acc_id)
+            all_acc = AccHostList.objects.all()
+            for acc_minion_in_db in all_acc:
+                all_acc_id.append(acc_minion_in_db.minionid)
+            if acc_id in all_acc_id:
+                '''更新数据'''
+                acc_minion = AccHostList
+                acc_minion.objects.filter(minionid=str(acc_id)).update(hostname=str(acc_id),ip=all_fqdn_ip4[str(acc_id)],mac_id=all_mac_id[str(acc_id)],osfinger=all_osfinger[str(acc_id)],
+                              key_tag='acc',action='无')
+                acc_minion.save
+                acc_minion_list.append(acc_minion.objects.all())
+                acc_id_list.append(str(acc_id))
+            else:
+                '''创建数据'''
+                acc_minion = AccHostList
+                acc_minion.objects.create(hostname=str(acc_id), minionid=str(acc_id),
+                                                                        ip=all_fqdn_ip4[str(acc_id)],
+                                                                        mac_id=all_mac_id[str(acc_id)],
+                                                                        osfinger=all_osfinger[str(acc_id)],
+                                                                        key_tag='acc', action='无')
+                acc_minion.save
+                acc_minion_list.append(acc_minion.objects.all())
+                acc_id_list.append(str(acc_id))
     '''获取unacc的minion_id'''
     get_unacc_minion_id_cmd = "salt-key -l una|grep -v Una"
     get_unacc_minion_id = subprocess.Popen(get_unacc_minion_id_cmd,stdout=subprocess.PIPE,shell=True)
     unacc_stdout = get_unacc_minion_id.communicate()[0].strip().split('\n')
     unacc_minion_list = []
     unacc_id_list = []
-    if unacc_stdout == ['']:
-        pass
-    else:
-        for unacc_id in unacc_stdout:
-            from hostlist.models import UnAccHostList
-            unacc_minion = UnAccHostList
-            unacc = unacc_minion.objects.get_or_create(hostname=unacc_id,minionid=unacc_id,key_tag='unacc',action='<a class="btn btn-primary" onclick="accept()" href="/hostlist/accept_unacc/" >Accept</a>')
-            unacc_minion.save
-            unacc_minion_list.append(unacc[0])
-            unacc_id_list.append(unacc_id)
-    '''获取数据库中所有acc的minion'''
-    if acc_stdout == ['']:
-        all_acc_minion = []
-    else:
-        all_acc_minion = AccHostList.objects.filter(key_tag='acc')
     '''获取数据库中所有unacc的minion'''
     if unacc_stdout == ['']:
         all_unacc_minion = []
     else:
         all_unacc_minion = UnAccHostList.objects.filter(key_tag='unacc')
-    '''判断异常并存储数据'''
+        '''判断新增unacc是否已在数据库，有就获取数据，没有就create'''
+    if unacc_stdout == ['']:
+        pass
+    else:
+        all_unacc_id = []
+        for unacc_id in unacc_stdout:
+            all_unacc = UnAccHostList.objects.all()
+            for unacc_minion_in_db in all_unacc:
+                all_unacc_id.append(unacc_minion_in_db.minionid)
+            if unacc_id in all_unacc_id:
+                for unacc_id in unacc_stdout:
+                    unacc_minion = UnAccHostList
+                    unacc_minion.objects.get(minionid=str(unacc_id))
+                    unacc_minion.save
+                    unacc_minion_list.append(unacc_minion.objects.all())
+                    unacc_id_list.append(str(unacc_id))
+            else:
+                for unacc_id in unacc_stdout:
+                    unacc_minion = UnAccHostList
+                    unacc_minion.objects.create(hostname=str(unacc_id),minionid=str(unacc_id),key_tag='unacc',action='<a class="btn btn-primary" onclick="accept()" href="/hostlist/accept_unacc/" >Accept</a>')
+                    unacc_minion.save
+                    unacc_minion_list.append(unacc_minion.objects.all())
+                    unacc_id_list.append(str(unacc_id))
+
+    '''2.反查数据库数据是否都在新增acc列表'''
     for minion in all_acc_minion:
         '''数据库中的acc的minion和新增的一致说明数据没变化'''
-        if minion in acc_minion_list:
+        if minion in acc_minion_list[0]:
             pass
         elif  unacc_minion_list != []:
             '''如果数据库中的acc的minion出现在新增的unacc中，说明acc异常迁移到unacc！'''
@@ -104,21 +141,24 @@ def GetMinionId():
                 '''创建异常数据'''
                 error.objects.get_or_create(minionid=minion.minionid)
                 error.save()
-                error == minion
-                error.objects.update(minionid=minion.minionid,key_tag = 'error', action = '无', remark = 'acc组minion异常迁移到unacc')
+                error.objects.filter(minionid=minion.minionid).update(ip=minion.minionid,mac_id=minion.minionid,osfinger=minion.minionid,
+                              key_tag='acc',action='无', remark = 'acc组minion异常迁移到unacc')
                 error.save
                 '''删除minion在acc的数据'''
                 del_acc_minion = AccHostList
                 del_acc_minion.objects.get(minionid=minion.minionid).delete
                 del_acc_minion.save
+
                 '''如果acc的minion的minionid在unacc的minionid中，说明数据改变了，且acc异常迁移到unacc'''
             elif minion.minionid in unacc_id_list:
+                del_acc_minion = AccHostList
+                del_acc_minion.objects.filter(minionid=minion.minionid).delete
+                del_acc_minion.save
                 error = ErrorHostList
                 '''创建异常数据'''
                 error.objects.get_or_create(minionid=minion.minionid)
                 error.save
-                error == minion
-                error.objects.update(minionid=minion.minionid,key_tag = 'error', action = '无', remark = 'acc组minion异常迁移到unacc，且数据变更')
+                error.objects.filter(minionid=minion.minionid).update(key_tag = 'error', action = '无', remark = 'acc组minion异常迁移到unacc，且数据变更,请核实！')
                 error.save
                 '''删除minion在acc的数据'''
                 del_acc_minion = AccHostList
@@ -129,24 +169,10 @@ def GetMinionId():
             error.objects.get_or_create(minionid=minion.minionid, key_tag='error', action='无',
                                         remark='acc组minion异常丢失')
             error.save
-    '''所有的资源信息'''
-    all_osfinger = GetAccMinionOsfinger()
-    all_fqdn_ip4 = GetAccMinionfqdn_ip4()
-    all_mac_id = GetAccMinionmachine_id()
-    #print all_fqdn_ip4
-    '''判断完acc的数据一致，开始更新acc的数据'''
-    for update_acc in AccHostList.objects.all():
-        del_old_data = AccHostList
-        del_old_data.objects.get(minionid=str(update_acc.minionid)).delete
-        del_old_data.save
-        print del_old_data
-        updata = AccHostList
-        updata.objects.create(minionid=str(update_acc.minionid),hostname=str(update_acc.minionid),ip=all_fqdn_ip4[str(update_acc.minionid)],mac_id=all_mac_id[str(update_acc.minionid)],osfinger=all_osfinger[str(update_acc.minionid)],
-                              key_tag='acc',action='无')
-        updata.save
+
     '''判断unacc异常'''
     for minion_un in all_unacc_minion:
-        if minion_un in unacc_minion_list:
+        if minion_un in unacc_minion_list[0]:
             pass
             if minion_un.minionid in acc_id_list:
                 error = ErrorHostList
@@ -165,6 +191,7 @@ def GetMinionId():
             error.objects.get_or_create(minionid=minion.minionid, key_tag='error', action='无',
                                         remark='unacc组minion异常丢失')
             error.save
+
 
 if __name__ == "__main__":
     GetMinionId()

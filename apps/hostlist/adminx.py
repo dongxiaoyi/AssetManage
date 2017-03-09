@@ -62,11 +62,11 @@ class CatagoryAdminx(object):
     refresh_times = [3,5]
 
 class UnAccHostListAdminx(object):
-    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
     #搜索框
-    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['ip','hostname','minionid','nocn','osfinger','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
-    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_filter = ['ip','hostname','minionid','nocn','dccn','osfinger','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
     list_per_page = 10
     choice_fields = []
@@ -82,11 +82,11 @@ class UnAccHostListAdminx(object):
 
 
 class AccHostListAdminx(object):
-    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
     #搜索框
-    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
-    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_filter = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
     list_per_page = 10
     choice_fields = []
@@ -101,11 +101,11 @@ class AccHostListAdminx(object):
         return qs
 
 class ErrorHostListAdminx(object):
-    list_display = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
     #搜索框
-    search_fields = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     #过滤器
-    list_filter = ['ip','hostname','minionid','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    list_filter = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
     ordering = ['-hostname']
     list_per_page = 10
     choice_fields = []

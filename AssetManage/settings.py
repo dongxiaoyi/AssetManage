@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'captcha',
     #'pure_pagination',
     'DjangoUeditor',
-    'rest_framework',
+    #'rest_framework',
     'djcelery',
     'kombu.transport.django',
     'asset',

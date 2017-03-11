@@ -1,6 +1,6 @@
-#from __future__ import absolute_import
-#from celery import shared_task,task
-#
+from __future__ import absolute_import
+from celery import shared_task,task
+
 #@shared_task()
 #def add(x,y):
 #    # return x + y
@@ -20,8 +20,8 @@
 #def just_print():
 #    print "Print from celery task"
 #
-#from .scripts import hostinfo
-#
-##@task
-##def hostsinfo():
-##    hostinfo.GetMinionId()
+from scripts.script.hostsinfo import GetMinionInfo
+
+@task
+def hostsinfo():
+    GetMinionInfo()

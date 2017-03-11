@@ -29,6 +29,8 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/record" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/hostlist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/hostlist/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/celerys" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

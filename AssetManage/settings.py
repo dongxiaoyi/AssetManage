@@ -23,6 +23,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
+
+#celery相关
+import djcelery
+djcelery.setup_loader()
+BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler' # 定时任务
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Shanghai'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -51,14 +64,15 @@ INSTALLED_APPS = [
     #'pure_pagination',
     'DjangoUeditor',
     #'rest_framework',
-    #'djcelery',
-    #'kombu.transport.django',
+    'djcelery',
     'asset',
     'users',
     'addfields',
     'saltstack',
     'record',
     'hostlist',
+    'celerys',
+    'scripts'
 ]
 
 

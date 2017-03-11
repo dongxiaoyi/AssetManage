@@ -17,7 +17,7 @@ from users.utils.mixin_utils import LoginRequiredMixin
 
 #RemoteExecuteView,DeployProgramView,UpdateConfigView,RoutineMaintenanceView,RemoteExecuteApiView,DeployProgramApiView
 # Create your views here.
-class BaseView(View):
+class SaltDeployView(View):
     def get(self,request):
-        return render(request,'salt/base.html')
+        return render(request,'salt_deploy.html')
 

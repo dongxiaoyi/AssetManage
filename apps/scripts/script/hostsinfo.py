@@ -142,9 +142,8 @@ def GetMinionInfo():
             del_unacc_minion_add.objects.get(minionid=str(acc_id_in_db)).delete()
             del_unacc_minion_add.save
     '''2.反查数据库数据是否都在新增acc列表'''
-    '''有些问题，需要修改'''
-    '''celery和单独提取的orm可能有冲突，做脚本与计划任务的分离工作！！！'''
-    for minion in all_acc_minion:
+
+    for minion in all_acc_in_db_now:
         if len(str(minion.ip)) > 15:
             '''ip长度大于15，说明minion连接可能异常'''
             '''删除minion在acc的数据'''
@@ -164,19 +163,18 @@ def GetMinionInfo():
             #print acc_minion_list[0]
             pass
         elif minion.minionid not in acc_id_list:
-            if unacc_minion_list != []:
-                if minion.minionid in unacc_id_list:
-                    '''删除minion在acc的数据'''
-                    del_acc_minion = AccHostList
-                    del_acc_minion.objects.filter(minionid=minion.minionid, key_tag='acc').delete()
-                    del_acc_minion.save
-                    error = ErrorHostList
-                    '''创建异常数据'''
-                    error.objects.get_or_create(minionid=minion.minionid)
-                    error.save
-                    error.objects.filter(minionid=minion.minionid).update(key_tag='error', action='无',
-                                                                          remark='acc组minion异常迁移到unacc，且数据变更,请核实！')
-                    error.save
+            if minion.minionid in unacc_id_list:
+                '''删除minion在acc的数据'''
+                del_acc_minion = AccHostList
+                del_acc_minion.objects.filter(minionid=minion.minionid, key_tag='acc').delete()
+                del_acc_minion.save
+                error = ErrorHostList
+                '''创建异常数据'''
+                error.objects.get_or_create(minionid=minion.minionid)
+                error.save
+                error.objects.filter(minionid=minion.minionid).update(key_tag='error', action='无',
+                                                                      remark='acc组minion异常迁移到unacc，且数据变更,请核实！')
+                error.save
             else:
                 #print minion
                 #print acc_minion_list
@@ -194,26 +192,24 @@ def GetMinionInfo():
 
 
     '''判断unacc异常'''
-    #print unacc_minion_list
-    for minion_un in all_unacc_minion:
+    for minion_un in all_unacc_in_db_now:
         if minion_un.minionid in all_unacc_id:
             pass
         elif minion_un.minionid not in all_unacc_id:
-            if all_acc_id != []:
-                if minion_un.minionid in all_unacc_id:
-                    error = ErrorHostList
-                    '''创建异常数据'''
-                    error.objects.get_or_create(minionid=minion_un.minionid,key_tag = 'error', action = '无', remark = 'unacc组minion异常迁移到acc')
-                    error.save
-                    '''删除minion在unacc的数据'''
-                    del_unacc_minion = UnAccHostList
-                    del_unacc_minion.objects.filter(minionid=minion_un.minionid,key_tag='unacc').delete()
-                    del_unacc_minion.save
-        else :
-            error = ErrorHostList
-            error.objects.get_or_create(minionid=minion.minionid, key_tag='error', action='无',
-                                        remark='unacc组minion异常丢失')
-            error.save
+            if minion_un.minionid in acc_id_list:
+                error = ErrorHostList
+                '''创建异常数据'''
+                error.objects.get_or_create(minionid=minion_un.minionid,key_tag = 'error', action = '无', remark = 'unacc组minion异常迁移到acc')
+                error.save
+                '''删除minion在unacc的数据'''
+                del_unacc_minion = UnAccHostList
+                del_unacc_minion.objects.filter(minionid=minion_un.minionid,key_tag='unacc').delete()
+                del_unacc_minion.save
+            else :
+                error = ErrorHostList
+                error.objects.get_or_create(minionid=minion.minionid, key_tag='error', action='无',
+                                            remark='unacc组minion异常丢失')
+                error.save
 
 
 if __name__ == "__main__":

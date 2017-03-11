@@ -527,7 +527,7 @@
 									<li class="">
 										<a href="/">
 											<i class="fa fa-home"></i>
-											<span class="menu-title">首页</span>
+											<span class="menu-title">仪表盘</span>
 										</a>
 									</li>
 						
@@ -555,24 +555,38 @@
 										<a href="#">
 											<i class="fa fa-tag"></i>
 											<span class="menu-title">
-												salt资产
+												主机列表
 											</span>
 										</a>
                                         <ul class="collapse">
 											<li><a href="{% url 'hostlist:acc_minion_list' %}">Accept列表</a></li>
 											<li><a href="{% url 'hostlist:unacc_minion_list' %}">UnAccept列表</a></li>
-											<li><a href="{% url 'hostlist:rej_minion_list' %}">Rejected列表</a></li>
+											<li><a href="{% url 'hostlist:error_minion_list' %}">Error列表</a></li>
+                                            <!--
+											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
+											-->
+										</ul>
+
+									</li>
+									</li>
+													<li>
+										<a href="#">
+											<i class="fa fa-tag"></i>
+											<span class="menu-title">
+												SaltStack
+											</span>
+										</a>
+                                        <ul class="collapse">
+											<li><a href="{% url 'salt:salt_deploy' %}">配置更新</a></li>
+											<li><a href="{% url 'hostlist:unacc_minion_list' %}">日常维护</a></li>
+											<li><a href="{% url 'hostlist:error_minion_list' %}">远程操作</a></li>
 
                                             <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
 											-->
-											<li><a href="#">Another link</a></li>
-
-
 										</ul>
 
 									</li>
-
 
 
 

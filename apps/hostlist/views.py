@@ -15,9 +15,9 @@ from django.contrib.auth.decorators import login_required
 from users.utils.mixin_utils import LoginRequiredMixin
 import json,logging
 import xadmin
-from .models import Dzhuser, DataCenter, AccHostList,UnAccHostList
+from .models import Dzhuser, DataCenter, AccHostList,UnAccHostList,ErrorHostList
 from asset import tables
-from .adminx import AccHostListAdminx,UnAccHostListAdminx
+from .adminx import AccHostListAdminx,UnAccHostListAdminx,ErrorHostListAdminx
 
 
 
@@ -76,15 +76,15 @@ class UnAccMinionListView(LoginRequiredMixin,View):
         return render(request, 'salt_minion.html', {'table_obj': table_obj,
                                                'paginator': paginator})
 
-class RejMinionListView(LoginRequiredMixin,View):
+class ErrMinionListView(LoginRequiredMixin,View):
     def get(self,request):
-        rej_obj_list = RejHostList.objects.filter(key_tag='rej')
+        err_obj_list = ErrorHostList.objects.filter(key_tag='error')
         # asset_obj_list = models.Asset.objects.all()
-        order_res_list = tables.get_orderby(request, rej_obj_list, adminx.RejHostListAdminx)
-        order_res = tables.get_orderby(request, rej_obj_list, adminx.RejHostListAdminx)
+        order_res_list = tables.get_orderby(request, err_obj_list, ErrorHostListAdminx)
+        order_res = tables.get_orderby(request, err_obj_list, ErrorHostListAdminx)
 
         # print('----->',order_res)
-        paginator = Paginator(order_res[0], adminx.RejHostListAdminx.list_per_page)
+        paginator = Paginator(order_res[0], ErrorHostListAdminx.list_per_page)
 
         page = request.GET.get('page')
         try:
@@ -95,8 +95,8 @@ class RejMinionListView(LoginRequiredMixin,View):
             unacc_objs = paginator.page(paginator.num_pages)
 
         table_obj = tables.TableHandler(request,
-                                        models.RejHostList,
-                                        adminx.RejHostListAdminx,
+                                        ErrorHostList,
+                                        ErrorHostListAdminx,
                                         unacc_objs,
                                         order_res
                                         )

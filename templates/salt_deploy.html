@@ -23,52 +23,74 @@ Dashboard
     <div class="panel">
         <div class="panel-body" >
             <div id="asset_categories" style="width: 1000px;height:500px;">
-                <div class="col-sm-4 placeholder">
-                  <ul class="list-group">
-                    <li class="list-group-item  active">服务器信息(<!--{{ret.nowtime|date:"Y-m-d H:i:s"}}-->)</li>
-                    <li class="list-group-item">系统负载 : <strong><!--{{ret.sysone}}, {{ret.sysfive}}, {{ret.sysfifteen}}--></strong></li>
-                    <li class="list-group-item">CPU利用率 : <strong><!--{{ret.cpuperc}}-->%</strong></li>
-                    <li class="list-group-item">内存 : <strong><!--{{ret.memused}}G/{{ret.memtotal}}G {{ret.memperc}}-->%</strong></li>
-                    <li class="list-group-item">硬盘 : <strong><!--{{ret.diskused}}G/{{ret.disktotal}}G {{ret.diskperc}}-->%</strong></li>
-                  </ul>
-                </div>
-                <div class="col-sm-4 placeholder">
-                  <ul class="list-group">
-                    <li class="list-group-item active">组件状态(<!--{{ret.proctime|date:"Y-m-d H:i:s"}}-->)</li>
-                    <li class="list-group-item">SaltStack进程 : <strong><!--{{ret.saltst}}--></strong></li>
-                    <li class="list-group-item">Salt-API进程 : <strong><!--{{ret.apist}}--></strong></li>
-                    <li class="list-group-item">MySQL进程 : <strong><!--{{ret.myst}}--></strong></li>
-                    <li class="list-group-item">SNMP进程 : <strong><!--{{ret.snmpst}}--></strong></li>
-                  </ul>
-                </div>
-                <div class="col-sm-2 placeholder">
-                  <ul class="list-group">
-                    <li class="list-group-item active">Minions状态</li>
-                    <li class="list-group-item">总量 : <strong><!--{{ret.num_miniall}}--></strong> 台</li>
-                    <li class="list-group-item">在线 : <strong><!--{{ret.num_miniup}}--></strong> 台</li>
-                    <li class="list-group-item">离线 : <strong><!--{{ret.num_minidown}}--></strong> 台</li>
-                    <!--li class="list-group-item">备用</li-->
-                  </ul>
-                </div>
-                <div class="col-sm-2 placeholder">
-                  <ul class="list-group">
-                    <a class="list-group-item active">Key列表</a>
-                    <a class="list-group-item">已接受 : <strong><!--{{ret.num_mini}}--></strong> 台</a>
-                    <a class="list-group-item">待接受 : <strong><!--{{ret.num_minipre}}--></strong> 台</a>
-                    <a class="list-group-item">已拒绝 : <strong><!--{{ret.num_minirej}}--></strong> 台</a>
-                    <!--li class="list-group-item">备用</li-->
-                  </ul>
-                </div>
-                <div class="col-sm-8 placeholder">
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">操作记录</h3>
-                    </div>
+   <div class="row">
+        <form class="form-horizontal form-border" method="get" enctype="multipart/form-data" action="">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                      <pre><!--{{ stret }}--></pre>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">主机</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="tgt" value=>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                              <label class="col-sm-1 control-label">分组
+                              </label>
+                              <div class="col-sm-10">
+                                  <div class="col-sm-2">
+                                       <label class="checkbox-inline">
+                                           <input class="icheck" type="checkbox" value="*" name="datacenter">全部
+                                       </label>
+                                  </div><!--
+                                    {% for dcen_li in dcen_list %}
+                                        {% for dcen,dccn in data_centers.iteritems %}
+                                            {% if dcen == dcen_li %}
+                                                <div class="col-sm-2">
+                                                    <label class="checkbox-inline">
+                                                        <input class="icheck" type="checkbox" value="{{ dcen }}" name="datacenter">{{ dccn }}
+                                                    </label>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endfor %}
+                              </div>
+                        </div>
+                        <div class="form-group">
+                              <label class="col-sm-1 control-label">程序</label>
+                              <div class="col-sm-10">
+                                  {% for sls in sls_list %}
+                                    {% for sls_key,mod in sls_mod_dict.iteritems %}
+                                        {% if sls == sls_key %}
+                                            <div class="col-sm-2">
+                                                <label class="radio-inline">
+                                                  <input class="icheck" type="radio"  value="{{ sls }}" name="sls">{{ mod }}
+                                                </label>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                  {% endfor %}-->
+                              </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
+            </div>
+            <div class="form-group">
+                 <div class="col-sm-offset-9 col-sm-1">
+                     <button type="button" class="btn btn-primary" onclick="saltFunc()" id="salt_submit">提交</button>
+                 </div>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class='bg-success'>
+                    <h4 id="info"></h4>
+                </div>
+                <div>
+                    <p id="result"></p>
+                </div>
+            </div>
+        </form>
+   </div>
+
             </div>
         </div>
     </div>

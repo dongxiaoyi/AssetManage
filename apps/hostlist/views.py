@@ -20,6 +20,7 @@ from asset import tables
 from .adminx import AccHostListAdminx,UnAccHostListAdminx
 
 
+
 class AccMinionListView(LoginRequiredMixin,View):
     def get(self,request):
         #acc_obj_list = tables.table_filter(request, adminx.AccHostListAdminx, models.AccHostList)

@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import os,sys,subprocess
-os.path.join(os.path.dirname(__file__),'../../..')
+os.path.join(os.path.dirname(__file__),'../..')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssetManage.settings')
 import django
 django.setup()

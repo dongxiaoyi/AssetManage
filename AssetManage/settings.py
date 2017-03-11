@@ -51,15 +51,14 @@ INSTALLED_APPS = [
     #'pure_pagination',
     'DjangoUeditor',
     #'rest_framework',
-    'djcelery',
-    'kombu.transport.django',
+    #'djcelery',
+    #'kombu.transport.django',
     'asset',
     'users',
     'addfields',
     'saltstack',
     'record',
     'hostlist',
-
 ]
 
 

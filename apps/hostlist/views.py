@@ -45,7 +45,7 @@ class AccMinionListView(LoginRequiredMixin,View):
                                         acc_objs,
                                         order_res
                                         )
-        return render(request, 'salt_minion.html', {'table_obj': table_obj,
+        return render(request, 'salt_acc_minion.html', {'table_obj': table_obj,
                                                'paginator': paginator})
 
 
@@ -73,7 +73,7 @@ class UnAccMinionListView(LoginRequiredMixin,View):
                                         unacc_objs,
                                         order_res
                                         )
-        return render(request, 'salt_minion.html', {'table_obj': table_obj,
+        return render(request, 'salt_unacc_minion.html', {'table_obj': table_obj,
                                                'paginator': paginator})
 
 class ErrMinionListView(LoginRequiredMixin,View):
@@ -100,7 +100,7 @@ class ErrMinionListView(LoginRequiredMixin,View):
                                         unacc_objs,
                                         order_res
                                         )
-        return render(request, 'salt_minion.html', {'table_obj': table_obj,
+        return render(request, 'salt_error_minion.html', {'table_obj': table_obj,
                                                'paginator': paginator})
 
 class AcceptUnaccView(LoginRequiredMixin,View):

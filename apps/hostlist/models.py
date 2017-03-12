@@ -84,7 +84,7 @@ class UnAccHostList(models.Model):
     action = models.CharField(max_length=1000,verbose_name='操作',default='无')
 
     def __unicode__(self):
-        return u'%s %s %s %s %s' %(self.hostname, self.ip, self.catagorycn, self.dccn, self.engineer)
+        return u'%s %s' % (self.minionid, self.ip)
     class Meta:
         ordering = ['minionid']
         verbose_name = u'UnAccepted keys列表'
@@ -113,7 +113,7 @@ class AccHostList(models.Model):
     remark = models.TextField(max_length=200, blank=True, null=True, verbose_name=u'备注')
     action = models.CharField(max_length=1000, verbose_name='操作', default='无')
     def __unicode__(self):
-        return u'%s %s %s %s %s' % (self.hostname, self.ip, self.catagorycn, self.dccn, self.engineer)
+        return u'%s %s' % (self.minionid, self.ip)
     class Meta:
         ordering = ['minionid']
         verbose_name = u'Accepted keys列表'
@@ -142,7 +142,7 @@ class ErrorHostList(models.Model):
     remark = models.TextField(max_length=200, blank=True, null=True, verbose_name=u'备注')
     action = models.CharField(max_length=1000, verbose_name='操作', default='无')
     def __unicode__(self):
-        return u'%s %s %s %s %s' % (self.hostname, self.ip, self.catagorycn, self.dccn, self.engineer)
+        return u'%s %s' % (self.minionid, self.ip)
     class Meta:
         ordering = ['minionid']
         verbose_name = u'Error keys列表'

@@ -228,6 +228,13 @@ a:hover{
     line-height: 40px !important;
     margin:10px 0;
 }
+.error1{
+    background: #fb8344;
+    color:#fff !important;
+    text-align: center;
+    line-height: 40px !important;
+    margin:10px 0;
+}
 .form-group{
     position:relative;
     width:288px;

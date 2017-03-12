@@ -24,7 +24,7 @@
 
 	<link href="{% static 'css/themes/type-c/theme-light.min.css' %}" rel="stylesheet">
 	<link href="{% static 'css/custom.css' %}" rel="stylesheet">
-	<link href="{% static 'plugins/bootstrap-select/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
+	<link href="{% static 'bootstrap-select-1.12.2/dist/css/bootstrap-select.min.css' %}" rel="stylesheet">
 
 	<!--SCRIPT-->
 	<!--=================================================-->
@@ -579,7 +579,7 @@
                                         <ul class="collapse">
 											<li><a href="{% url 'salt:salt_deploy' %}">配置更新</a></li>
 											<li><a href="{% url 'hostlist:unacc_minion_list' %}">日常维护</a></li>
-											<li><a href="{% url 'hostlist:error_minion_list' %}">远程操作</a></li>
+											<li><a href="{% url 'salt:salt_excute' %}">远程操作</a></li>
 
                                             <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
@@ -702,7 +702,7 @@
 	<!--Fast Click [ OPTIONAL ]-->
 	<script src="{% static 'js/fastclick.min.js' %}"></script>
 
-	<script src="{% static 'plugins/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+	<script src="{% static 'bootstrap-select-1.12.2/dist/js/bootstrap-select.min.js' %}"></script>
 
 	<!--Nifty Admin [ RECOMMENDED ]-->
 	<script src="{% static 'js/nifty.min.js' %}"></script>

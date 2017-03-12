@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% block header-css %}
+
+
+{% endblock %}
+
+{% block page-content-title %}
+SaltStacksalt_deploy.html
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">远程操作</li></ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+<div class="row">
+    <div class="panel">
+        <div class="panel-body" >
+            <div id="asset_categories" style="width: 1000px;height:500px;">
+   <div class="row">
+        <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:salt_excute' %}">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">主机</label>
+                            <div class="col-sm-10" >
+                                 <select name="minions" id="minions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     {% for minion in all_acc_minion %}
+                                         <option >{{ minion.minionid }}</option>
+                                     {% endfor %}
+                                 </select>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="col-sm-1 control-label">命令</label>
+                            <div class="col-sm-10">
+                                <input  name="cmd" type="text" class="form-control" name="arg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                 <div class="col-sm-offset-9 col-sm-1">
+                     <input type="submit" class="btn btn-primary" id="salt_submit"/>
+                 </div>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+                <div style="background:#F00; color:#FFF">
+                    <h4 id="fail">
+                        <div class="error btns login-form-tips" id="jsLoginTips">{% for key,error in minioncmd_form.errors.items %}{{ key }}{{ error }}{% endfor %}</div>
+
+                    </h4>
+
+                </div>
+                <div>
+                    <p id="resultfail"></p>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class='bg-success'></div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">返回信息</button>
+                    <pre  id="result">
+                   {% for result_line in result %}{% autoescape off %}{{ result_line }}{% endautoescape %}{% endfor %}
+                    </pre>
+                </div>
+            </div>
+        {% csrf_token %}
+        </form>
+   </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--
+<div class="row">
+    <div class="panel col-md-7">
+        <div class="panel-body" >
+            <div id="business_load" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+</div>
+-->
+{% endblock %}
+
+{% block bottom-js %}
+{% endblock %}

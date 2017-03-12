@@ -1378,6 +1378,12 @@ a.text-danger:hover {
 a.bg-primary:hover {
   background-color: #286090;
 }
+.bg-fail {
+  background-color: #af5454;
+}
+a.bg-fail:hover {
+  background-color: #c1e2b3;
+}
 .bg-success {
   background-color: #dff0d8;
 }

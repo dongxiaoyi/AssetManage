@@ -54,4 +54,14 @@ django.setup()
 注意调用：
 acc_minion = AccHostList，加括号与不加的使用形式
 
-继续调试hostinfo
+salt app专门做salt功能，scripts专门存放脚本（因为单独提取的orm需要与celery做隔离）
+先启动django，后启动supervisord中的celery
+
+接下来：
+minion前端分组功能
+分组执行命令功能
+单独执行sls文件功能
+分组执行sls文件功能
+模块制作与添加功能
+
+操作记录功能！！！

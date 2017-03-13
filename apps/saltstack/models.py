@@ -2,18 +2,10 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from hostlist.models import AccHostList
 # Create your models here.
 
 #minion的分组
-class MinionGroups(models.Model):
-    Group = models.CharField(verbose_name=u'群组',max_length=50,blank=True,null=True,default='')
-    minion = models.ManyToManyField(AccHostList,verbose_name=u'Minion',blank=True,null=True,)
-    class Meta:
-        verbose_name = u'Minion群组'
-        verbose_name_plural = verbose_name
-    def __unicode__(self):
-        return self.Group
+
 
 
 

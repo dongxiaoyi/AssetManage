@@ -4,14 +4,9 @@ from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
 
-from .models import MinionGroups
 
-class MinionGroupsAdminx(object):
-    list_display = ['Group','minion']
-    refresh_times = [3, 5]
-    list_editable = ['Group']
 
-xadmin.site.register(MinionGroups,MinionGroupsAdminx)
+
 #from .models import DangerCommand, ModulesLock, DeployModules, ConfigUpdate, CommonOperate
 #
 #class DangerCommandAdminx(object):

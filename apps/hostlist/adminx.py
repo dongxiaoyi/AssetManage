@@ -4,7 +4,7 @@ from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
 
-from .models import AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory,ErrorHostList
+from .models import MinionGroups,AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory,ErrorHostList
 
 
 class DzhuserAdminx(object):
@@ -76,6 +76,11 @@ class UnAccHostListAdminx(object):
     #readonly_fields = ['action',]
     refresh_times = [3,5]
 
+class MinionGroupsAdminx(object):
+    list_display = ['Group']
+    refresh_times = [3, 5]
+    list_editable = ['Group']
+
 
 class AccHostListAdminx(object):
     list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
@@ -110,6 +115,7 @@ class ErrorHostListAdminx(object):
 xadmin.site.register(AccHostList,AccHostListAdminx)
 xadmin.site.register(UnAccHostList,UnAccHostListAdminx)
 xadmin.site.register(ErrorHostList,ErrorHostListAdminx)
+xadmin.site.register(MinionGroups,MinionGroupsAdminx)
 
 xadmin.site.register(Dzhuser,DzhuserAdminx)
 xadmin.site.register(DataCenter,DataCenterAdminx)

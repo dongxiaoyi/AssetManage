@@ -18,8 +18,8 @@ import xadmin
 from .models import Dzhuser, DataCenter, AccHostList,UnAccHostList,ErrorHostList
 from asset import tables
 from .adminx import AccHostListAdminx,UnAccHostListAdminx,ErrorHostListAdminx
-
-
+from hostlist.models import MinionGroups
+from .forms import CreateGroupsForm,MinionToGroupForm
 
 class AccMinionListView(LoginRequiredMixin,View):
     def get(self,request):
@@ -106,3 +106,56 @@ class ErrMinionListView(LoginRequiredMixin,View):
 class AcceptUnaccView(LoginRequiredMixin,View):
    def get(self,request):
        return render(request,'index.html')
+
+
+class MinionGroupsView(LoginRequiredMixin, View):
+    def get(self, request):
+        all_minions = AccHostList.objects.all()
+        groups = MinionGroups.objects.all()
+        return render(request, 'minionGroups.html',{
+            'groups':groups,
+            'all_minions': all_minions
+        })
+    def post(self,request):
+        groups = MinionGroups.objects.all()
+        all_minions = AccHostList.objects.all()
+        new_group = CreateGroupsForm(request.POST)
+        if new_group.is_valid():
+            new_group_name = request.POST.get("creategroups","")
+            all_groups = MinionGroups.objects.all()
+            all_groups_name = []
+            for groups in all_groups:
+                all_groups_name.append(groups.Group)
+            if new_group_name in all_groups_name:
+                msg = ": group已存在，请重新命名！"
+                return render(request,'minionGroups.html',{
+                    'new_group':new_group,
+                    'msg':msg,
+                    'all_minions':all_minions
+                })
+            else:
+                msg = ": 创建成功！"
+                create_group = MinionGroups
+                create_group.objects.create(Group=new_group_name)
+                return render(request,'minionGroups.html',{
+                    'new_group':new_group,
+                    'msg':msg,
+                    'all_minions':all_minions
+                })
+        else:
+            from django.core.urlresolvers import reverse
+            return HttpResponseRedirect(reverse('hostlist:minion_groups'))
+
+class MinionToGroupView(LoginRequiredMixin,View):
+    def post(self,request):
+        all_minions = AccHostList.objects.all()
+        all_groups = MinionGroups.objects.all()
+        miniontogroup = MinionToGroupForm(request.POST)
+        if miniontogroup.is_valid():
+            addminions = request.POST.getlist('addminions','')
+            togroup = request.POST.get('togroup','')
+        print all_minions
+        return render(request,'minionGroups.html',{
+            'all_minions':all_minions,
+            'all_groups':all_groups,
+                })

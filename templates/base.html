@@ -2,9 +2,12 @@
 <html lang="en">
 {% load staticfiles %}
 <head>
+{% block meta %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
 	<title>AssetManage | Make CMDB Easier</title>
+
     {% block base-header %}
 
 	<!--STYLESHEET-->
@@ -266,7 +269,7 @@
 				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 				<div id="page-title">
 					<h1 class="page-header text-overflow">{% block page-content-title %}Your page title{% endblock %}</h1>
-
+{% block righth %}{% endblock %}
 					<!--Searchbox-->
 					<div class="searchbox">
 						<div class="input-group custom-search-form">
@@ -562,6 +565,7 @@
 											<li><a href="{% url 'hostlist:acc_minion_list' %}">Accept列表</a></li>
 											<li><a href="{% url 'hostlist:unacc_minion_list' %}">UnAccept列表</a></li>
 											<li><a href="{% url 'hostlist:error_minion_list' %}">Error列表</a></li>
+                 							<li><a href="{% url 'hostlist:minion_groups' %}">群组</a></li>
                                             <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
 											-->

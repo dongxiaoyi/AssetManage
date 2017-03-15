@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c23e1e6d-914c-45aa-b241-57d409f279b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dump.rdb" afterPath="$PROJECT_DIR$/dump.rdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/hostlist/adminx.py" afterPath="$PROJECT_DIR$/apps/hostlist/adminx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/hostlist/forms.py" afterPath="$PROJECT_DIR$/apps/hostlist/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/hostlist/models.py" afterPath="$PROJECT_DIR$/apps/hostlist/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/hostlist/urls.py" afterPath="$PROJECT_DIR$/apps/hostlist/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/hostlist/views.py" afterPath="$PROJECT_DIR$/apps/hostlist/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/adminx.py" afterPath="$PROJECT_DIR$/apps/saltstack/adminx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/forms.py" afterPath="$PROJECT_DIR$/apps/saltstack/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/models.py" afterPath="$PROJECT_DIR$/apps/saltstack/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/urls.py" afterPath="$PROJECT_DIR$/apps/saltstack/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/views.py" afterPath="$PROJECT_DIR$/apps/saltstack/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/celeryev.pid" afterPath="$PROJECT_DIR$/celeryev.pid" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/minionGroups.html" afterPath="$PROJECT_DIR$/templates/minionGroups.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +19,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MadKing$getinfo.coverage" NAME="getinfo Coverage Results" MODIFIED="1488875676840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/hostlist/utils" />
-    <SUITE FILE_PATH="coverage/MadKing$manage.coverage" NAME="manage Coverage Results" MODIFIED="1489368964234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MadKing$manage.coverage" NAME="manage Coverage Results" MODIFIED="1489566790536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MadKing$disk.coverage" NAME="disk Coverage Results" MODIFIED="1488348634061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tt" />
     <SUITE FILE_PATH="coverage/MadKing$script.coverage" NAME="script Coverage Results" MODIFIED="1488877356659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MadKing$task.coverage" NAME="task Coverage Results" MODIFIED="1488876601593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/hostlist" />
@@ -53,8 +47,8 @@
       <file leaf-file-name="salt_excute.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/salt_excute.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="576">
+              <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="e#2235#2270#0#HTML" expanded="true" />
               </folding>
@@ -63,22 +57,24 @@
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
+        <entry file="file://$PROJECT_DIR$/apps/hostlist/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="205">
+              <caret line="175" column="44" lean-forward="false" selection-start-line="175" selection-start-column="44" selection-end-line="175" selection-end-column="44" />
+              <folding>
+                <element signature="e#22#75#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/hostlist/views.py">
+      <file leaf-file-name="groupsaddminions.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/groupsaddminions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
-              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="387">
+              <caret line="83" column="63" lean-forward="false" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
               <folding>
-                <element signature="e#22#75#0" expanded="true" />
+                <element signature="e#3768#3800#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,32 +83,31 @@
       <file leaf-file-name="minionGroups.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/minionGroups.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="138">
+              <caret line="24" column="123" lean-forward="false" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="123" />
               <folding>
-                <element signature="e#2944#2976#0#HTML" expanded="true" />
-                <element signature="e#3490#3522#0#HTML" expanded="true" />
+                <element signature="e#422#444#0#HTML" expanded="true" />
+                <element signature="e#609#642#0#HTML" expanded="true" />
+                <element signature="e#966#986#0#HTML" expanded="true" />
+                <element signature="e#1753#1786#0#HTML" expanded="true" />
+                <marker date="1489577940493" expanded="false" signature="3048:3061" ph="..." />
+                <marker date="1489577940493" expanded="false" signature="3311:3335" ph="..." />
+                <marker date="1489577940493" expanded="false" signature="3857:3881" ph="..." />
+                <marker date="1489577940493" expanded="false" signature="4367:4392" ph="..." />
+                <marker date="1489577940493" expanded="false" signature="4748:4761" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/hostlist/models.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/hostlist/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="123" column="69" lean-forward="false" selection-start-line="123" selection-start-column="69" selection-end-line="123" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/hostlist/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="252">
+              <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+              <folding>
+                <element signature="e#23#64#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,18 +115,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="480">
               <caret line="290" column="40" lean-forward="false" selection-start-line="290" selection-start-column="36" selection-end-line="290" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -186,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/usercenter-message.html" />
         <option value="$PROJECT_DIR$/templates/usercenter-info.html" />
         <option value="$PROJECT_DIR$/static/css/reset.css" />
         <option value="$PROJECT_DIR$/templates/salt_minion.html" />
@@ -220,10 +204,8 @@
         <option value="$PROJECT_DIR$/templates/salt_error_minion.html" />
         <option value="$PROJECT_DIR$/templates/salt_deploy.html" />
         <option value="$PROJECT_DIR$/templates/salt_excutes.html" />
-        <option value="$PROJECT_DIR$/apps/saltstack/urls.py" />
         <option value="$PROJECT_DIR$/static/css/login.css" />
         <option value="$PROJECT_DIR$/static/salt/bootstrap/3.3.4/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/apps/saltstack/views.py" />
         <option value="$PROJECT_DIR$/apps/scripts/script/saltcmd.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/templates/salt_excute.html" />
@@ -234,7 +216,10 @@
         <option value="$PROJECT_DIR$/apps/saltstack/forms.py" />
         <option value="$PROJECT_DIR$/apps/hostlist/models.py" />
         <option value="$PROJECT_DIR$/apps/hostlist/forms.py" />
+        <option value="$PROJECT_DIR$/apps/saltstack/views.py" />
+        <option value="$PROJECT_DIR$/apps/saltstack/urls.py" />
         <option value="$PROJECT_DIR$/apps/hostlist/urls.py" />
+        <option value="$PROJECT_DIR$/templates/groupsaddminions.html" />
         <option value="$PROJECT_DIR$/apps/hostlist/views.py" />
         <option value="$PROJECT_DIR$/templates/minionGroups.html" />
       </list>
@@ -269,6 +254,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -375,32 +361,31 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/moonlight" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/apps/scripts/script" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/celerys" />
       <recent name="$PROJECT_DIR$/apps" />
       <recent name="$PROJECT_DIR$/apps/hostlist" />
       <recent name="$PROJECT_DIR$/apps/hostlist/scripts" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/js" />
-      <recent name="$PROJECT_DIR$/static/css" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/apps/scripts/script" />
     </key>
   </component>
   <component name="RunManager" selected="Python.manage">
@@ -796,7 +781,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.072607264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0990099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -836,13 +821,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/salt/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/salt/profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -988,16 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/saltstack/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="61" lean-forward="false" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-          <folding>
-            <element signature="e#23#64#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4140">
@@ -1018,9 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding>
-            <element signature="e#20#59#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,9 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#20#59#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1046,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,7 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,7 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,9 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#62#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,36 +1087,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/salt/bootstrap/3.3.4/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="4" column="3495" lean-forward="false" selection-start-line="4" selection-start-column="3495" selection-end-line="4" selection-end-column="3495" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/salt/salt_execute.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="n#form#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="290" column="40" lean-forward="false" selection-start-line="290" selection-start-column="36" selection-end-line="290" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1172,17 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/hostlist/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="81" lean-forward="false" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-          <folding>
-            <element signature="e#23#64#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1196,18 +1112,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/salt_excute.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="576">
+          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="e#2235#2270#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/saltstack/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="117">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1215,15 +1139,59 @@
     <entry file="file://$PROJECT_DIR$/apps/hostlist/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="123" column="69" lean-forward="false" selection-start-line="123" selection-start-column="69" selection-end-line="123" selection-end-column="69" />
+          <caret line="121" column="6" lean-forward="false" selection-start-line="121" selection-start-column="6" selection-end-line="121" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="290" column="40" lean-forward="false" selection-start-line="290" selection-start-column="36" selection-end-line="290" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/hostlist/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="e#23#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/salt/bootstrap/3.3.4/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="4" column="3967" lean-forward="false" selection-start-line="4" selection-start-column="3967" selection-end-line="4" selection-end-column="3967" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/groupsaddminions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="83" column="63" lean-forward="false" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
+          <folding>
+            <element signature="e#3768#3800#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/hostlist/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state relative-caret-position="205">
+          <caret line="175" column="44" lean-forward="false" selection-start-line="175" selection-start-column="44" selection-end-line="175" selection-end-column="44" />
           <folding>
             <element signature="e#22#75#0" expanded="true" />
           </folding>
@@ -1232,11 +1200,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/minionGroups.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="138">
+          <caret line="24" column="123" lean-forward="false" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="123" />
           <folding>
-            <element signature="e#2944#2976#0#HTML" expanded="true" />
-            <element signature="e#3490#3522#0#HTML" expanded="true" />
+            <element signature="e#422#444#0#HTML" expanded="true" />
+            <element signature="e#609#642#0#HTML" expanded="true" />
+            <element signature="e#966#986#0#HTML" expanded="true" />
+            <element signature="e#1753#1786#0#HTML" expanded="true" />
+            <marker date="1489577940493" expanded="false" signature="3048:3061" ph="..." />
+            <marker date="1489577940493" expanded="false" signature="3311:3335" ph="..." />
+            <marker date="1489577940493" expanded="false" signature="3857:3881" ph="..." />
+            <marker date="1489577940493" expanded="false" signature="4367:4392" ph="..." />
+            <marker date="1489577940493" expanded="false" signature="4748:4761" ph="..." />
           </folding>
         </state>
       </provider>

@@ -157,5 +157,40 @@ class MinionToGroupView(LoginRequiredMixin,View):
         print all_minions
         return render(request,'minionGroups.html',{
             'all_minions':all_minions,
-            'all_groups':all_groups,
+            'groups':all_groups,
                 })
+
+
+
+
+
+class GroupAddMinionsView(LoginRequiredMixin,View):
+    def get(self,request,group_id):
+        groups = MinionGroups.objects.all()
+        all_minions = AccHostList.objects.all()
+        group = MinionGroups.objects.get(id=str(group_id))
+        has_minions = group.minion.all()
+        no_has_minions = []
+        for minion in all_minions:
+            if minion not in has_minions:
+                no_has_minions.append(minion)
+        return render(request,'groupsaddminions.html',{
+            'all_minions':all_minions,
+            'group':group,
+            'groups':groups,
+            'has_minions':has_minions,
+            'no_has_minions':no_has_minions,
+
+        })
+    #def post(self,request):
+    #    all_minions = AccHostList.objects.all()
+    #    all_groups = MinionGroups.objects.all()
+    #    miniontogroup = MinionToGroupForm(request.POST)
+    #    if miniontogroup.is_valid():
+    #        addminions = request.POST.getlist('addminions','')
+    #        togroup = request.POST.get('togroup','')
+    #    print all_minions
+    #    return render(request,'minionGroups.html',{
+    #        'all_minions':all_minions,
+    #        'all_groups':all_groups,
+    #            })

@@ -27,7 +27,6 @@ class SaltExecuteView(View):
         all_acc_minion = AccHostList.objects.all()
         return render(request,'salt_excute.html',{
             'all_acc_minion': all_acc_minion,
-
         })
     def post(self,request):
         all_acc_minion = AccHostList.objects.all()

@@ -21,7 +21,7 @@
 {% block page-content %}
 
     <div class="panel">
-            <div id="grouplist" style="width: 1100px;">
+            <div id="grouplist" style="width: 1000px;">
                 <div class="row" style="float:left;width: 200px;"><li class="list-group-item " style="float:right;width: 200px;">
 					<div id="mainnav-menu-wrap" style="float:right;width: 170px;">
                         {% for Group in groups %}
@@ -29,12 +29,8 @@
                             <a href="#{{ Group.Group }}" class="nav-header" data-toggle="collapse">
 							<i class="glyphicon glyphicon-th-list"></i>
 							{{ Group.Group }}
-                                <div id="edit" style="float:right;">
-                                    <button type="button " class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-pencil"></span><a href="{% url 'hostlist:group_add_minions' Group.id %}">编辑</a>
-                                    </button>
-                                </div>
-						    </a>
+							   <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+						</a>
 						<ul id="{{ Group.Group }}" class="nav nav-list collapse secondmenu">
                             {% for minion in Group.minion.all %}
 							<li><a href="#"><i class="glyphicon glyphicon-asterisk"></i> {{ minion.minionid }}</a></li>
@@ -44,7 +40,7 @@
                         {% endfor %}
 						 </div>
                 </div></li>
-        <lu class="row" style="float:right;width: 900px;">
+        <lu class="row" style="float:right;width: 800px;">
 <!--Category name-->
             <li class="list-group-item " >创建群组</li>
              <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:minion_groups' %}">
@@ -65,26 +61,28 @@
                 </div>
             </div>{% csrf_token %}
                 </form>
-                            <!--
+
 									<!--Menu list item-->
-<!--Category name-->		<!--<li class="list-group-item " >分组</li>
+<!--Category name-->		<li class="list-group-item " >分组
+                                    <button type="button " class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-flag"></span>{{ group }}
+                                    </button>
                             <lu class="list-group-item" style="height: 70px;">
 
 									<!--Menu list item-->
-                                 <!--<form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:minion_to_group' %}">
-                                 <div style="float:left;width: 230px;">组
-                                 <select class="selectpicker" data-style="btn-danger" name="togroup" id="togroup" autocomplete="off" >
-                                     <option selected>--请选择--</option>
-                                     {% for group in groups %}
-                                         <option >{{ group }}</option>
+                                 <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:minion_to_group' %}">
+                                 <div style="float:left;width: 230px;">群组成员
+                                 <select data-style="btn-warning" name="addminions" id="addminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     {% for minion in has_minions %}
+                                         <option selected >{{ minion.minionid }}</option>
                                      {% endfor %}
                                  </select>
                                  </div>
-                                 <div style="float:left;width: 200px;">minion
-                                 <select data-style="btn-warning" name="addminions" id="addminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
-
-                                     <option></option>
-
+                                 <div style="float:left;width: 200px;">待加入
+                                 <select data-style="btn-danger" name="addminions" id="addminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     {% for minion in no_has_minions %}
+                                     <option>{{ minion.minionid }}</option>
+                                     {% endfor %}
                                  </select>
                                  </div>
                                  <div class="form-group">
@@ -95,7 +93,7 @@
                     {% csrf_token %}</form></lu>
              <div>
                     <button type="button" class="btn btn-primary btn-lg btn-block" style="height: 35px;">添加结果</button>
-                </div>-->
+                </div>
             </div>
 
     </div>

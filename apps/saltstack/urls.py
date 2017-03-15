@@ -7,10 +7,6 @@ urlpatterns = [
     #url(r'^list/$', OrgView.as_view(), name="org_list"),
     url(r'salt_deploy/$',  SaltDeployView.as_view(), name='salt_deploy'),
     url(r'^excute/$',SaltExecuteView.as_view(), name='salt_excute'),
-    #url(r'^deploy/$', DeployProgramViewas_view(), name='deploy'),
-    #url(r'^update/$', UpdateConfigViewas_view(), name='update'),
-    #url(r'^routine/$', RoutineMaintenanceViewas_view(), name='routine'),
-    #url(r'^api/execute/$', RemoteExecuteApiViewas_view(), name='execute_api'),
-    #url(r'^api/deploy/$', DeployProgramApiViewas_view(), name='deploy_api'),
+
 
 ]

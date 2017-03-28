@@ -19,7 +19,7 @@ from .models import Dzhuser, DataCenter, AccHostList,UnAccHostList,ErrorHostList
 from asset import tables
 from .adminx import AccHostListAdminx,UnAccHostListAdminx,ErrorHostListAdminx
 from hostlist.models import MinionGroups
-from .forms import CreateGroupsForm,MinionToGroupForm
+from .forms import CreateGroupsForm
 
 class AccMinionListView(LoginRequiredMixin,View):
     def get(self,request):
@@ -146,24 +146,6 @@ class MinionGroupsView(LoginRequiredMixin, View):
             from django.core.urlresolvers import reverse
             return HttpResponseRedirect(reverse('hostlist:minion_groups'))
 
-class MinionToGroupView(LoginRequiredMixin,View):
-    def post(self,request):
-        all_minions = AccHostList.objects.all()
-        all_groups = MinionGroups.objects.all()
-        miniontogroup = MinionToGroupForm(request.POST)
-        if miniontogroup.is_valid():
-            addminions = request.POST.getlist('addminions','')
-            togroup = request.POST.get('togroup','')
-        print all_minions
-        return render(request,'minionGroups.html',{
-            'all_minions':all_minions,
-            'groups':all_groups,
-                })
-
-
-
-
-
 class GroupAddMinionsView(LoginRequiredMixin,View):
     def get(self,request,group_id):
         groups = MinionGroups.objects.all()
@@ -180,17 +162,27 @@ class GroupAddMinionsView(LoginRequiredMixin,View):
             'groups':groups,
             'has_minions':has_minions,
             'no_has_minions':no_has_minions,
-
         })
-    #def post(self,request):
-    #    all_minions = AccHostList.objects.all()
-    #    all_groups = MinionGroups.objects.all()
-    #    miniontogroup = MinionToGroupForm(request.POST)
-    #    if miniontogroup.is_valid():
-    #        addminions = request.POST.getlist('addminions','')
-    #        togroup = request.POST.get('togroup','')
-    #    print all_minions
-    #    return render(request,'minionGroups.html',{
-    #        'all_minions':all_minions,
-    #        'all_groups':all_groups,
-    #            })
+
+    def post(self,request,group_id):
+        oldminions = request.POST.getlist('oldminions','')
+        newminions = request.POST.getlist('newminions','')
+        togroup = request.POST.get('togroup','')
+        all_add_minions = list(set(oldminions)|set(newminions))
+        all_minions_que = []
+        for minion in all_add_minions:
+            minion_que = AccHostList.objects.get(minionid=str(minion))
+            all_minions_que.append(minion_que)
+        del_old = MinionGroups.objects.get(Group=str(togroup)).delete()
+        #del_old.save()
+        group_save = MinionGroups.objects.create(Group=str(togroup))
+        group_save.save()
+        group_get_id = MinionGroups.objects.get(Group=str(togroup))
+        group_id = group_get_id.id
+        new_group = MinionGroups.objects.get(id=group_id)
+        for minion in all_minions_que:
+            group_asve = new_group.minion.add(minion)
+        #group_save.save()
+        from django.core.urlresolvers import reverse
+        return HttpResponseRedirect(reverse('hostlist:minion_groups'))
+

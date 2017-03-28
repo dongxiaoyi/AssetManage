@@ -2,7 +2,8 @@
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
 #from views import BaseView
-from .views import AccMinionListView,UnAccMinionListView,ErrMinionListView,AcceptUnaccView,MinionGroupsView,MinionToGroupView
+from .views import AccMinionListView,UnAccMinionListView,ErrMinionListView,AcceptUnaccView,MinionGroupsView\
+#from .views import MinionToGroupView
 from .views import GroupAddMinionsView
 urlpatterns = [
     url(r'^acc_minion_list/$', AccMinionListView.as_view(), name="acc_minion_list"),
@@ -11,7 +12,7 @@ urlpatterns = [
     #操作unaccept的minion通过验证
     url(r'^accept_unacc/$', AcceptUnaccView.as_view(), name="accept_unacc"),
     url(r'^minion_groups/$', MinionGroupsView.as_view(), name="minion_groups"),
-    url(r'^minion_to_group/$', MinionToGroupView.as_view(), name="minion_to_group"),
+    #url(r'^minion_to_group/$', MinionToGroupView.as_view(), name="minion_to_group"),
     url('minion_to_group/(?P<group_id>.*)/$', GroupAddMinionsView.as_view(), name="group_add_minions"),
 
 ]

@@ -133,12 +133,11 @@ WSGI_APPLICATION = 'AssetManage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'madking',
-        'USER': 'madking',
-        'PASSWORD': 'moonlight',
-        'HOST': '127.0.0.1',
+        'NAME': 'dongxiaoyi',
+        'USER': 'dongxiaoyi',
+        'PASSWORD': 'assetmanage',
+        'HOST': '172.18.0.1',
         'PORT': '43306',
-
     }
 }
 

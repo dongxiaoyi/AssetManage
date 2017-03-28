@@ -5,7 +5,7 @@ from  django.core.urlresolvers import reverse as url_reverse
 from django import template
 from django.utils.safestring import mark_safe
 import re
-
+from django.utils.html import format_html
 register = template.Library()
 
 

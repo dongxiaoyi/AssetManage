@@ -12,7 +12,6 @@ from hostlist.models import AccHostList,UnAccHostList,ErrorHostList
 #os.environ['DJANGO_SETTINGS_MODULE'] = 'AssetManage.settings'
 #@app.task
 
-
 def GetAccMinionOsfinger():
     '''获取通过验证的minion的系统版本'''
     acc_minion_osfinger = {}
@@ -22,28 +21,24 @@ def GetAccMinionOsfinger():
     for acc_osfinger in stdout:
         acc_minion_osfinger[str(acc_osfinger.split(':')[0])] = str(acc_osfinger.split(':')[1])
     return acc_minion_osfinger
-
 def GetAccMinionfqdn_ip4():
     '''获取通过验证的minion的ip'''
     acc_minion_fqdn_ip4 = {}
-    get_acc_minion_fqdn_ip4_cmd = "salt '*' cmd.run 'salt-call grains.get fqdn_ip4|head -2'|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/:-/:/g'"
+    get_acc_minion_fqdn_ip4_cmd = "salt '*' cmd.run 'salt-call grains.get fqdn_ip4|head -2'|grep -v INFO|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/:-/:/g'"
     get_acc_minion_fqdn_ip4 = subprocess.Popen(get_acc_minion_fqdn_ip4_cmd,stdout=subprocess.PIPE,shell=True)
     stdout = get_acc_minion_fqdn_ip4.communicate()[0].strip().split('\n')
     for acc_fqdn_ip4 in stdout:
         acc_minion_fqdn_ip4[str(acc_fqdn_ip4.split(':')[0])] = str(acc_fqdn_ip4.split(':')[1])
-    #print acc_minion_fqdn_ip4
     return acc_minion_fqdn_ip4
-#GetAccMinionfqdn_ip4()
 def GetAccMinionmachine_id():
     '''获取通过验证的minion的ip'''
     acc_minion_machine_id = {}
-    get_acc_minion_machine_id_cmd = "salt '*' cmd.run 'salt-call grains.get machine_id'|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/:-/:/g'"
+    get_acc_minion_machine_id_cmd = "salt '*' cmd.run 'salt-call grains.get machine_id'|grep -v INFO|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/:-/:/g'"
     get_acc_minion_machine_id = subprocess.Popen(get_acc_minion_machine_id_cmd,stdout=subprocess.PIPE,shell=True)
     stdout = get_acc_minion_machine_id.communicate()[0].strip().split('\n')
     for acc_machine_id in stdout:
         acc_minion_machine_id[str(acc_machine_id.split(':')[0])] = str(acc_machine_id.split(':')[1])
     return acc_minion_machine_id
-
 
 def GetMinionInfo():
     '''
@@ -212,7 +207,7 @@ def GetMinionInfo():
                 error.save
 
 
-if __name__ == "__main__":
-    GetMinionInfo()
+#if __name__ == "__main__":
+#    GetMinionInfo()
 #GetAccMinionOsfinger()
 

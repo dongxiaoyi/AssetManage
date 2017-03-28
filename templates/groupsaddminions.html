@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load custom_tag %}
 {% block header-css %}
 
 
@@ -70,19 +69,24 @@
                             <lu class="list-group-item" style="height: 70px;">
 
 									<!--Menu list item-->
-                                 <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:minion_to_group' %}">
+                                 <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:group_add_minions' group.id %}">
                                  <div style="float:left;width: 230px;">群组成员
-                                 <select data-style="btn-warning" name="addminions" id="addminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                 <select data-style="btn-warning" name="oldminions" id="oldminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
                                      {% for minion in has_minions %}
                                          <option selected >{{ minion.minionid }}</option>
                                      {% endfor %}
                                  </select>
                                  </div>
                                  <div style="float:left;width: 200px;">待加入
-                                 <select data-style="btn-danger" name="addminions" id="addminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                 <select data-style="btn-danger" name="newminions" id="newminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
                                      {% for minion in no_has_minions %}
                                      <option>{{ minion.minionid }}</option>
                                      {% endfor %}
+                                 </select>
+                                 </div>
+                                 <div style="float:left;width: 200px;" hidden>群组
+                                 <select hidden  data-style="btn-info" name="togroup" id="togroup" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     <option selected  value="{{ group }}" hidden>{{ group }}</option>
                                  </select>
                                  </div>
                                  <div class="form-group">
@@ -112,4 +116,11 @@
 {% endblock %}
 
 {% block bottom-js %}
+<script type="text/javascript">
+var workorderParamParentCode=document.getElementById("workorderParamParentCode");
+var i=workorderParamParentCode.selectedIndex;
+function setDefault() {
+workorderParamParentCode.selectedIndex=i;
+}
+</script>
 {% endblock %}

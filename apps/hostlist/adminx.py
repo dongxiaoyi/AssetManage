@@ -77,7 +77,7 @@ class UnAccHostListAdminx(object):
     refresh_times = [3,5]
 
 class MinionGroupsAdminx(object):
-    list_display = ['Group']
+    list_display = ['Group','minion']
     refresh_times = [3, 5]
     list_editable = ['Group']
 

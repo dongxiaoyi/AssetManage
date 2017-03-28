@@ -31,8 +31,11 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/hostlist/utils" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/scripts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/celerys" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/templates" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/static" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/templatetags" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 2.7.12 virtualenv at ~/.pyenv/versions/assetmanage" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

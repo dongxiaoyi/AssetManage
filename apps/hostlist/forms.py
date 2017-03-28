@@ -22,6 +22,7 @@ from django import forms
 class CreateGroupsForm(forms.Form):
     creategroups = forms.CharField(required=True,min_length=1)
 
-class MinionToGroupForm(forms.Form):
-    addminions = forms.CharField(required=True,min_length=1)
-    togroup = forms.CharField(required=True,min_length=1)
+#class MinionToGroupForm(forms.Form):
+#    oldminions = forms.CharField(required=True,min_length=0)
+#    newminions = forms.CharField(required=True,min_length=0)
+#    togroup = forms.CharField(required=True,min_length=1)

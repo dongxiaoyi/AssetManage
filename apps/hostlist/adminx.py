@@ -4,7 +4,7 @@ from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
 
-from .models import MinionGroups,AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, Catagory,ErrorHostList
+from .models import MinionGroups,AccHostList,UnAccHostList, Dzhuser, DataCenter, NetworkOperator, ProvinceArea, ErrorHostList
 
 
 class DzhuserAdminx(object):
@@ -51,27 +51,16 @@ class ProvinceAreaAdminx(object):
     #readonly_fields = ['trade_date',]
     refresh_times = [3,5]
 
-class CatagoryAdminx(object):
-    list_display = ['catagoryen','catagorycn']
-    #搜索框
-    search_fields = ['catagoryen','catagorycn']
-    #过滤器
-    list_filter = ['catagoryen','catagorycn']
-    ordering = ['-catagoryen']
-    #list_editable = ['name']
-    #readonly_fields = ['trade_date',]
-    refresh_times = [3,5]
-
 class UnAccHostListAdminx(object):
-    list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    list_display = ['id','minionid','remark','action']
     #搜索框
-    search_fields = ['ip','hostname','minionid','nocn','osfinger','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['id','minionid','remark','action']
     #过滤器
-    list_filter = ['ip','hostname','minionid','nocn','dccn','osfinger','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
-    ordering = ['-hostname']
+    list_filter = ['id','minionid','remark','action']
+    ordering = ['-minionid']
     list_per_page = 10
     choice_fields = []
-    fk_fields = ['ip','hostname','minionid']
+    fk_fields = ['minionid',]
     #list_editable = ['name']
     #readonly_fields = ['action',]
     refresh_times = [3,5]
@@ -83,30 +72,30 @@ class MinionGroupsAdminx(object):
 
 
 class AccHostListAdminx(object):
-    list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    list_display = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark','action']
     #搜索框
-    search_fields = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
     #过滤器
-    list_filter = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
-    ordering = ['-hostname']
+    list_filter = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
+    ordering = ['-minionid']
     list_per_page = 10
     choice_fields = []
-    fk_fields = ['ip','hostname','minionid']
+    fk_fields = ['wip','hostname','minionid']
     #list_editable = ['name']
     #readonly_fields = ['action',]
     refresh_times = [3,5]
 
 
 class ErrorHostListAdminx(object):
-    list_display = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark','action']
+    list_display = ['id','minionid','remark','action']
     #搜索框
-    search_fields = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
+    search_fields = ['id','minionid','remark','action']
     #过滤器
-    list_filter = ['ip','hostname','minionid','osfinger','nocn','dccn','engineer','mac_id','zsourceip','bsourceip','licdate','licstatus','idip','ipsame','remark']
-    ordering = ['-hostname']
+    list_filter = ['id','minionid','remark','action']
+    ordering = ['-minionid']
     list_per_page = 10
     choice_fields = []
-    fk_fields = ['ip','hostname','minionid']
+    fk_fields = ['minionid',]
     #list_editable = ['name']
     #readonly_fields = ['action',]
     refresh_times = [3,5]
@@ -121,6 +110,5 @@ xadmin.site.register(Dzhuser,DzhuserAdminx)
 xadmin.site.register(DataCenter,DataCenterAdminx)
 xadmin.site.register(NetworkOperator,NetworkOperatorAdminx)
 xadmin.site.register(ProvinceArea,ProvinceAreaAdminx)
-xadmin.site.register(Catagory,CatagoryAdminx)
 
 

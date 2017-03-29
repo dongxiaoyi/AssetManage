@@ -173,16 +173,15 @@ class GroupAddMinionsView(LoginRequiredMixin,View):
         for minion in all_add_minions:
             minion_que = AccHostList.objects.get(minionid=str(minion))
             all_minions_que.append(minion_que)
-        del_old = MinionGroups.objects.get(Group=str(togroup)).delete()
-        #del_old.save()
+        MinionGroups.objects.get(Group=str(togroup)).delete()
         group_save = MinionGroups.objects.create(Group=str(togroup))
         group_save.save()
         group_get_id = MinionGroups.objects.get(Group=str(togroup))
         group_id = group_get_id.id
         new_group = MinionGroups.objects.get(id=group_id)
         for minion in all_minions_que:
-            group_asve = new_group.minion.add(minion)
-        #group_save.save()
+            new_group.minion.add(minion)
         from django.core.urlresolvers import reverse
         return HttpResponseRedirect(reverse('hostlist:minion_groups'))
+
 

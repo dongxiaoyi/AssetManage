@@ -16,8 +16,4 @@ def saltcommands(minionlist,cmd):
             else:
                 cmd_line = cmd_line.replace(cmd_line,'<code>' + cmd_line + '</code>')
             result.append(cmd_line)
-    for i in result:
-         print i
     return result
-
-saltcommands(['salt-minion-2','salt-minion-3'],'date')

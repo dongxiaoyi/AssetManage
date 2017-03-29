@@ -12,33 +12,83 @@ from hostlist.models import AccHostList,UnAccHostList,ErrorHostList
 #os.environ['DJANGO_SETTINGS_MODULE'] = 'AssetManage.settings'
 #@app.task
 
-def GetAccMinionOsfinger():
-    '''获取通过验证的minion的系统版本'''
-    acc_minion_osfinger = {}
-    get_acc_minion_finger_cmd = "salt '*' grains.get osfinger|sed 'N;s/\\n//g'|sed 's/ //g'"
-    get_acc_minion_finger = subprocess.Popen(get_acc_minion_finger_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_finger.communicate()[0].strip().split('\n')
-    for acc_osfinger in stdout:
-        acc_minion_osfinger[str(acc_osfinger.split(':')[0])] = str(acc_osfinger.split(':')[1])
-    return acc_minion_osfinger
-def GetAccMinionfqdn_ip4():
-    '''获取通过验证的minion的ip'''
-    acc_minion_fqdn_ip4 = {}
-    get_acc_minion_fqdn_ip4_cmd = "salt '*' cmd.run 'salt-call grains.get fqdn_ip4|head -2'|grep -v INFO|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/:-/:/g'"
-    get_acc_minion_fqdn_ip4 = subprocess.Popen(get_acc_minion_fqdn_ip4_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_fqdn_ip4.communicate()[0].strip().split('\n')
-    for acc_fqdn_ip4 in stdout:
-        acc_minion_fqdn_ip4[str(acc_fqdn_ip4.split(':')[0])] = str(acc_fqdn_ip4.split(':')[1])
-    return acc_minion_fqdn_ip4
-def GetAccMinionmachine_id():
-    '''获取通过验证的minion的ip'''
-    acc_minion_machine_id = {}
-    get_acc_minion_machine_id_cmd = "salt '*' cmd.run 'salt-call grains.get machine_id'|grep -v INFO|grep -v local|sed 'N;s/\\n//g'|sed 's/ //g'|sed 's/:-/:/g'"
-    get_acc_minion_machine_id = subprocess.Popen(get_acc_minion_machine_id_cmd,stdout=subprocess.PIPE,shell=True)
-    stdout = get_acc_minion_machine_id.communicate()[0].strip().split('\n')
-    for acc_machine_id in stdout:
-        acc_minion_machine_id[str(acc_machine_id.split(':')[0])] = str(acc_machine_id.split(':')[1])
-    return acc_minion_machine_id
+All_minion_cmd = subprocess.Popen("salt-key -l acc|grep -v Acc",stdout=subprocess.PIPE,shell=True)
+All_minion = All_minion_cmd.communicate()[0].strip().split('\n')
+minions = []
+for minion in All_minion:
+    minions.append(minion)
+
+def get_all_osfinger():
+    all_osfinger = {}
+    for minion in minions:
+        get_osfinger_cmd = "salt " + str(minion) + " grains.get osfinger|sed 'N;s/\\n//g'"
+        get_osfinger = subprocess.Popen(get_osfinger_cmd,stdout=subprocess.PIPE,shell=True)
+        os_finger = get_osfinger.communicate()[0].strip().split(':    ')
+        all_osfinger[str(minion)] = str(os_finger[1])
+    return all_osfinger
+
+def get_all_mem_total():
+    all_mem_total = {}
+    for minion in minions:
+        get_mem_total_cmd = "salt " + str(minion) + " grains.get mem_total|sed 'N;s/\\n//g'"
+        get_mem_total = subprocess.Popen(get_mem_total_cmd,stdout=subprocess.PIPE,shell=True)
+        mem_total = get_mem_total.communicate()[0].strip().split(':    ')
+        all_mem_total[str(minion)] = int(mem_total[1])
+    return all_mem_total
+
+def get_all_cpu_model():
+    all_cpu_model = {}
+    for minion in minions:
+        get_cpu_model_cmd = "salt " + str(minion) + " grains.get cpu_model|sed 'N;s/\\n//g'"
+        get_cpu_model = subprocess.Popen(get_cpu_model_cmd,stdout=subprocess.PIPE,shell=True)
+        cpu_model = get_cpu_model.communicate()[0].strip().split(':    ')
+        all_cpu_model[str(minion)] = str(cpu_model[1])
+    return all_cpu_model
+
+def get_all_num_cpus():
+    all_num_cpus = {}
+    for minion in minions:
+        get_num_cpus_cmd = "salt " + str(minion) + " grains.get num_cpus|sed 'N;s/\\n//g'"
+        get_num_cpus = subprocess.Popen(get_num_cpus_cmd,stdout=subprocess.PIPE,shell=True)
+        num_cpus = get_num_cpus.communicate()[0].strip().split(':    ')
+        all_num_cpus[str(minion)] = int(num_cpus[1])
+    return all_num_cpus
+
+def get_all_cpuarch():
+    all_cpuarch = {}
+    for minion in minions:
+        get_cpuarch_cmd = "salt " + str(minion) + " grains.get cpuarch|sed 'N;s/\\n//g'"
+        get_cpuarch = subprocess.Popen(get_cpuarch_cmd,stdout=subprocess.PIPE,shell=True)
+        cpuarch = get_cpuarch.communicate()[0].strip().split(':    ')
+        all_cpuarch[str(minion)] = str(cpuarch[1])
+    return all_cpuarch
+
+def get_all_kernelrelease():
+    all_kernelrelease = {}
+    for minion in minions:
+        get_kernelrelease_cmd = "salt " + str(minion) + " grains.get kernelrelease|sed 'N;s/\\n//g'"
+        get_kernelrelease = subprocess.Popen(get_kernelrelease_cmd,stdout=subprocess.PIPE,shell=True)
+        kernelrelease = get_kernelrelease.communicate()[0].strip().split(':    ')
+        all_kernelrelease[str(minion)] = str(kernelrelease[1])
+    return all_kernelrelease
+
+def get_all_saltversion():
+    all_saltversion = {}
+    for minion in minions:
+        get_saltversion_cmd = "salt " + str(minion) + " grains.get saltversion|sed 'N;s/\\n//g'"
+        get_saltversion = subprocess.Popen(get_saltversion_cmd,stdout=subprocess.PIPE,shell=True)
+        saltversion = get_saltversion.communicate()[0].strip().split(':    ')
+        all_saltversion[str(minion)] = str(saltversion[1])
+    return all_saltversion
+
+def get_all_fqdn_ip4():
+    all_fqdn_ip4 = {}
+    for minion in minions:
+        get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
+        get_fqdn_ip4 = subprocess.Popen(get_fqdn_ip4_cmd,stdout=subprocess.PIPE,shell=True)
+        fqdn_ip4 = get_fqdn_ip4.communicate()[0].strip().split(':')
+        all_fqdn_ip4[str(minion)] = str(fqdn_ip4[1])
+    return all_fqdn_ip4
 
 def GetMinionInfo():
     '''
@@ -47,9 +97,14 @@ def GetMinionInfo():
 
     '''
     '''所有的资源信息'''
-    all_osfinger = GetAccMinionOsfinger()
-    all_fqdn_ip4 = GetAccMinionfqdn_ip4()
-    all_mac_id = GetAccMinionmachine_id()
+    all_osfinger = get_all_osfinger()
+    all_fqdn_ip4 = get_all_fqdn_ip4()
+    all_saltversion = get_all_saltversion()
+    all_kernelrelease = get_all_kernelrelease()
+    all_cpuarch = get_all_cpuarch()
+    all_num_cpus = get_all_num_cpus()
+    all_cpu_model = get_all_cpu_model()
+    all_mem_total = get_all_mem_total()
     '''获取acc的minion_id'''
     get_acc_minion_id_cmd = "salt-key -l acc|grep -v Acc"
     get_acc_minion_id = subprocess.Popen(get_acc_minion_id_cmd,stdout=subprocess.PIPE,shell=True)
@@ -73,18 +128,33 @@ def GetMinionInfo():
             if acc_id in all_acc_id_in_db:
                 '''更新数据'''
                 acc_minion = AccHostList
-                acc_minion.objects.filter(minionid=str(acc_id)).update(hostname=str(acc_id),ip=all_fqdn_ip4[str(acc_id)],mac_id=all_mac_id[str(acc_id)],osfinger=all_osfinger[str(acc_id)],
-                              key_tag='acc',action='无')
+                acc_minion.objects.filter(minionid=str(acc_id)).update(hostname=str(acc_id),
+                                                                       wip=all_fqdn_ip4[str(acc_id)],
+                                                                       osfinger=all_osfinger[str(acc_id)],
+                                                                       mem_total=all_mem_total[str(acc_id)],
+                                                                       cpu_model=all_cpu_model[str(acc_id)],
+                                                                       num_cpus=all_num_cpus[str(acc_id)],
+                                                                       cpuarch=all_cpuarch[str(acc_id)],
+                                                                       kernelrelease=all_kernelrelease[str(acc_id)],
+                                                                       saltversion=all_saltversion[str(acc_id)],
+                                                                       key_tag='acc',
+                                                                       action='无')
                 acc_minion.save
                 acc_id_list.append(str(acc_id))
             else:
                 '''创建数据'''
                 acc_minion = AccHostList
-                acc_minion.objects.create(hostname=str(acc_id), minionid=str(acc_id),
-                                                                        ip=all_fqdn_ip4[str(acc_id)],
-                                                                        mac_id=all_mac_id[str(acc_id)],
-                                                                        osfinger=all_osfinger[str(acc_id)],
-                                                                        key_tag='acc', action='无')
+                acc_minion.objects.create(hostname=str(acc_id),
+                                                                       wip=all_fqdn_ip4[str(acc_id)],
+                                                                       osfinger=all_osfinger[str(acc_id)],
+                                                                       mem_total=all_mem_total[str(acc_id)],
+                                                                       cpu_model=all_cpu_model[str(acc_id)],
+                                                                       num_cpus=all_num_cpus[str(acc_id)],
+                                                                       cpuarch=all_cpuarch[str(acc_id)],
+                                                                       kernelrelease=all_kernelrelease[str(acc_id)],
+                                                                       saltversion=all_saltversion[str(acc_id)],
+                                                                       key_tag='acc',
+                                                                       action='无')
                 acc_minion.save
                 acc_id_list.append(str(acc_id))
     '''获取unacc的minion_id'''
@@ -139,7 +209,7 @@ def GetMinionInfo():
     '''2.反查数据库数据是否都在新增acc列表'''
 
     for minion in all_acc_in_db_now:
-        if len(str(minion.ip)) > 15:
+        if len(str(minion.wip)) > 15:
             '''ip长度大于15，说明minion连接可能异常'''
             '''删除minion在acc的数据'''
             del_acc_minion = AccHostList

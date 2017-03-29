@@ -6,7 +6,7 @@
 {% load custom_tag %}
 
 {% block page-content-title %}
-SaltStacksalt_deploy.html
+SaltStack
 {% endblock %}
 {% load staticfiles %}
 {% block page-nav-tab %}
@@ -34,6 +34,16 @@ SaltStacksalt_deploy.html
                                  <select name="minions" id="minions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
                                      {% for minion in all_acc_minion %}
                                          <option >{{ minion.minionid }}</option>
+                                     {% endfor %}
+                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">组</label>
+                            <div class="col-sm-10" >
+                                 <select name="groups" id="groups" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     {% for group in all_groups %}
+                                         <option >{{ group.Group }}</option>
                                      {% endfor %}
                                  </select>
                             </div>
@@ -67,10 +77,10 @@ SaltStacksalt_deploy.html
 
             <div class="col-sm-10 col-sm-offset-1">
                 <div class='bg-success'></div>
-                <div>
+                <div >
                     <button type="button" class="btn btn-primary btn-lg btn-block">返回信息</button>
-                    <pre  id="result">
-                   {% for result_line in result %}{% autoescape off %}{{ result_line }}{% endautoescape %}{% endfor %}
+                    <pre  style="line-height:1px;" id="result">
+                   {% for result_line in result %}{% autoescape off %}{{ result_line }}{% endautoescape %}<hr>{% endfor %}
                     </pre>
                 </div>
             </div>

@@ -24,7 +24,7 @@ from .forms import CreateGroupsForm
 class AccMinionListView(LoginRequiredMixin,View):
     def get(self,request):
         #acc_obj_list = tables.table_filter(request, adminx.AccHostListAdminx, models.AccHostList)
-        acc_obj_list = AccHostList.objects.filter(key_tag='acc')
+        acc_obj_list = tables.table_filter(request, adminx.AccHostListAdminx, models.AccHostList)
 
         # asset_obj_list = models.Asset.objects.all()
         order_res = tables.get_orderby(request, acc_obj_list, adminx.AccHostListAdminx)
@@ -51,7 +51,7 @@ class AccMinionListView(LoginRequiredMixin,View):
 
 class UnAccMinionListView(LoginRequiredMixin,View):
     def get(self,request):
-        unacc_obj_list = UnAccHostList.objects.filter(key_tag='unacc')
+        unacc_obj_list = tables.table_filter(request, adminx.UnAccHostListAdminx, models.UnAccHostList)
         # asset_obj_list = models.Asset.objects.all()
         order_res_list = tables.get_orderby(request, unacc_obj_list, adminx.UnAccHostListAdminx)
         order_res = tables.get_orderby(request, unacc_obj_list, adminx.UnAccHostListAdminx)
@@ -78,7 +78,7 @@ class UnAccMinionListView(LoginRequiredMixin,View):
 
 class ErrMinionListView(LoginRequiredMixin,View):
     def get(self,request):
-        err_obj_list = ErrorHostList.objects.filter(key_tag='error')
+        err_obj_list = tables.table_filter(request, adminx.ErrorHostListAdminx, models.ErrorHostList)
         # asset_obj_list = models.Asset.objects.all()
         order_res_list = tables.get_orderby(request, err_obj_list, ErrorHostListAdminx)
         order_res = tables.get_orderby(request, err_obj_list, ErrorHostListAdminx)
@@ -137,11 +137,8 @@ class MinionGroupsView(LoginRequiredMixin, View):
                 msg = ": 创建成功！"
                 create_group = MinionGroups
                 create_group.objects.create(Group=new_group_name)
-                return render(request,'minionGroups.html',{
-                    'new_group':new_group,
-                    'msg':msg,
-                    'all_minions':all_minions
-                })
+                from django.core.urlresolvers import reverse
+                return HttpResponseRedirect(reverse('hostlist:minion_groups'))
         else:
             from django.core.urlresolvers import reverse
             return HttpResponseRedirect(reverse('hostlist:minion_groups'))
@@ -173,7 +170,7 @@ class GroupAddMinionsView(LoginRequiredMixin,View):
         for minion in all_add_minions:
             minion_que = AccHostList.objects.get(minionid=str(minion))
             all_minions_que.append(minion_que)
-        MinionGroups.objects.get(Group=str(togroup)).delete()
+        MinionGroups.objects.filter(Group=str(togroup)).delete()
         group_save = MinionGroups.objects.create(Group=str(togroup))
         group_save.save()
         group_get_id = MinionGroups.objects.get(Group=str(togroup))

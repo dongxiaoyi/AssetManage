@@ -581,8 +581,8 @@
 											</span>
 										</a>
                                         <ul class="collapse">
-											<li><a href="{% url 'salt:salt_deploy' %}">配置更新</a></li>
-											<li><a href="{% url 'hostlist:unacc_minion_list' %}">日常维护</a></li>
+											<li><a href="{% url 'salt:salt_deploy_dev' %}">服务创建与更新(开发)</a></li>
+											<li><a href="{% url 'salt:pulldevservices' %}">服务推送(开发)</a></li>
 											<li><a href="{% url 'salt:salt_excute' %}">远程操作</a></li>
 
                                             <!--
@@ -661,7 +661,6 @@
 
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="hide-fixed pull-right pad-rgt">Currently v2.2.2</div>
 
 
 

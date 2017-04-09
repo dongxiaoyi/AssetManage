@@ -1,0 +1,11 @@
+{% extends 'salt_deploy_dev_join.html' %}
+{% load custom_tag %}
+{% load staticfiles %}
+{% block pullresult %}
+    <div >
+        <button type="button" class="btn btn-primary btn-block">创建结果</button>
+        <pre  style="line-height:10px;width: auto" id="result">
+            {{ msg }}
+        </pre>
+    </div>
+{% endblock %}

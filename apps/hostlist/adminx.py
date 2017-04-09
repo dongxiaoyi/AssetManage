@@ -72,11 +72,11 @@ class MinionGroupsAdminx(object):
 
 
 class AccHostListAdminx(object):
-    list_display = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark','action']
+    list_display = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark','action']
     #搜索框
-    search_fields = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
+    search_fields = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
     #过滤器
-    list_filter = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
+    list_filter = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
     ordering = ['-minionid']
     list_per_page = 10
     choice_fields = []
@@ -84,6 +84,7 @@ class AccHostListAdminx(object):
     #list_editable = ['name']
     #readonly_fields = ['action',]
     refresh_times = [3,5]
+
 
 
 class ErrorHostListAdminx(object):

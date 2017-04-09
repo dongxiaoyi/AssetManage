@@ -15,8 +15,11 @@ from forms import LoginForm,RegisterForm
 from users.utils.email_send import send_register_email
 from AssetManage.settings import EMAIL_HOST_USER
 from users.models import UserMessage,EmaliVerifyRecord
+from users.utils.mixin_utils import LoginRequiredMixin
 
-class IndexView(View):
+
+
+class IndexView(LoginRequiredMixin,View):
     '''
     首页
     '''

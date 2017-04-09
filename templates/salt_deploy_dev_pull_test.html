@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% load staticfiles %}
+{% block header-css %}
+    <link href="{% static 'icheck/skins/flat/red.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block page-content-title %}
+SaltStack
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">服务配置(开发)</li></ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+    <div class="panel">
+
+
+    <a type="button" href="{% url 'salt:pulldevservices' %}" class="btn btn-primary btn-lg "  style="height: 40px;width: 100%;margin: -25px 0px 0px 0px">返回重新选择服务</a>
+            <div class="panel" style="margin: 0px 0px 0px 0px">
+            <div id="grouplist" style="margin: 0px 0px 0px 0px">
+
+    <button type="button" class="btn btn-danger btn-lg "  style="height: 40px;width: 100%;margin: 0px 0px 0px 0px">推送及测试当前服务</button>
+            <div class="panel" style="width: 100%;margin: 0px 0px 0px 0px">
+            <div id="grouplist" style="width: 100%;margin: 0px 0px 0px 0px">
+            <lu class="list-group-item " style="height: 30px;" >
+                <button type="button " class="btn btn-primary btn-sm" style="height: 30px;width: 200px;margin: -10px 0px 0px -15px;text-align: left;">
+                    <span class="glyphicon glyphicon-flag"></span>{{ join_service.name }}（当前服务配置）
+                </button>
+            </lu>
+            </lu>
+                            <ol class="list-group-item" style="height: 70px;">
+									<!--Menu list item-->
+                                {% for service,minions in service_minions_dict.items %}
+                                 <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:pulldevservices' %}">
+                                 <div style="float:left;width: 200px;" hidden>服务
+                                 <select hidden  data-style="btn-info" name="pulldevservicename" id="pulldevservicename" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     <option selected  value="{{ service.name }}" hidden>{{ service.name }}</option>
+                                 </select>
+                                 </div>
+                                 <div style="float:left;width: 230px;">主机<br>
+                                 {% for minion in minions %}
+                                    <button type="button " disabled="disabled" class="btn btn-info btn-sm" style="height: 30px;width: 140px;text-align: left;float: left">
+                                    <span class="glyphicon glyphicon-record"></span> {{ minion }}
+                                    </button>
+                                 {% endfor %}
+                                 <div hidden>
+                                  <select hidden data-style="btn-warning" name="pullminions" id="pullminions" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     {% for minion in minions %}
+                                     <option hidden selected>{{ minion }}</option>
+                                     {% endfor %}
+                                 </select></div>
+                                 </div><br>
+                                 <div style="float:left;width: 200px;">附件
+                                     <button type="button " disabled="disabled" class="btn btn-warning btn-sm" style="height: 30px;width: 140px;text-align: left">
+                                    <span class="glyphicon glyphicon-folder-open"></span>  {{ service.file.name }}
+                                     </button>
+                                     <div hidden>
+                                    <select  data-style="btn-info" name="pulldevfile" id="pulldevfile" class="selectpicker form-control"  data-live-search="true" data-live-search-placeholder="Search" >
+                                     <option selected>{{ service.file.name }}</option>
+                                    </select></div>
+                                 </div>
+                                 <!-- <div style="float:left;width: 640px;margin: 20px 0px 0px 0px">配置文件(.sls)
+                                   <textarea type="text" id="myInput" class="form-control"  rows="10" name="updatedevsls">{{ join_service.sls }}</textarea>
+                                    <div class="form-group">
+                                </div>
+                                 </div>-->
+                                 <div class="form-group">
+                                    <div  style="float:right;width: 100px;margin: 185px 20px 0px 0px"><br>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <div  style="float:right;width: 100px;margin: 0px 20px 0px 0px"><br>
+                                        <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -50px 10px 0px">测试当前</button>
+                                    </div>
+                                </div>
+                                    {% csrf_token %}
+                                 </form>
+                            {% endfor %}
+                            </ol>
+            {% block pullresult %}
+            <div >
+                    <button type="button" class="btn btn-primary btn-block btn-lg" style="height: 35px">推送结果</button>
+                    <pre  style="line-height:10px;width: auto" id="result">
+                   {{ msg }}
+                    </pre>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+{% endblock %}
+{% block bottom-js %}
+    <script src="{% static 'js/bootstrap-filestyle.js' %}"></script>
+    <script type="application/javascript">
+$(":file").filestyle({buttonName: "btn-primary"});
+</script>
+
+
+<script type="application/javascript">
+    $('ol').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+</script>
+
+    <script type="application/javascript">
+    $('textarea').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+</script>
+
+<script type="text/javascript">
+    var myInput = document.getElementById("myInput");
+    str = "    ";
+    if(myInput.addEventListener ) {
+        myInput.addEventListener('keydown',this.keyHandler,false);
+    } else if(myInput.attachEvent ) {
+        myInput.attachEvent('onkeydown',this.keyHandler); /* damn IE hack */
+    }
+
+    function keyHandler(e) {
+        var TABKEY = 9;
+        if(e.keyCode == TABKEY) {
+            insertText(myInput,str);
+            if(e.preventDefault) {
+                e.preventDefault();
+            }
+        }
+    }
+    function insertText(obj,str) {
+        if (document.selection) {
+            var sel = document.selection.createRange();
+            sel.text = str;
+        } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+            var startPos = obj.selectionStart,
+                endPos = obj.selectionEnd,
+                cursorPos = startPos,
+                tmpStr = obj.value;
+            obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+            cursorPos += str.length;
+            obj.selectionStart = obj.selectionEnd = cursorPos;
+        } else {
+            obj.value += str;
+        }
+    }
+</script>
+
+	<script src="{% static 'icheck/icheck.js' %}"></script>
+    <script>
+$(document).ready(function(){
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat-red',
+    radioClass: 'iradio_flat-red'
+  });
+});
+</script>
+{% endblock %}

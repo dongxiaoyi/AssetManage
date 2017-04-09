@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% load staticfiles %}
+{% block header-css %}
+{% endblock %}
+
+{% block page-content-title %}
+SaltStack
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">服务配置(开发)</li></ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+    <div class="panel">
+            <div id="grouplist" style="width: 1550px;">
+                <div class="row" style="float:left;width: 200px;">
+                    <li class="list-group-item " style="float:right;width: 300px;margin: 0px -100px 0px 0px"><br>服务列表<hr>
+					<div id="mainnav-menu-wrap" style="float:right;width: 250px;margin: -50px 20px 0px 20px">
+                        {% for service in all_service_dev %}
+						<ul id="mainnav-menu1" class="list-group">
+                            <a href="#{{ service.name }}" class="nav-header" data-toggle="collapse">
+							<i class="glyphicon glyphicon-th-list" style="height: 20px"></i>
+							{{ service.name }}
+
+                                <div id="edit" style="float:right;margin: 0px -30px 0px 0px">
+                                    <button type="button " class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-magnet"></span><a href="{% url 'fileupload:upload_join' service.id %}">更新关联</a>
+                                    </button>
+                                </div>
+						    </a>
+						<ul id="{{ service.name }}" class="nav nav-list collapse secondmenu" style="width: 200px">
+                            {% for minion in service.minions.all %}
+							<li><a href="#"><i class="glyphicon glyphicon-record"></i> {{ minion.minionid }}</a></li>
+                            {% endfor %}
+						</ul>
+                        </ul>
+                        {% endfor %}
+						 </div>
+                </div>
+                    <div class="row" style="float:right;width: 200px;">
+                        <li class="list-group-item " style="float:right;width: 370px;"><br>附件列表<hr>
+					<div id="mainnav-menu-wrap" style="float:right;width: 340px;">
+                        {% for file in all_files %}
+						<ul id="mainnav-menu1" class="list-group">
+                              <a href="#{{ file.name }}" class="nav-header" data-toggle="collapse">
+							<i class="glyphicon glyphicon-th-list" style="height: 30px"></i>
+							{{ file.name }}
+                                <div id="edit" style="float:right;">
+                                    <button type="submit" class="btn btn-default btn-sm" >
+                                        <span class="glyphicon glyphicon-trash"></span><a href="{% url 'fileupload:upload_remove' %}?fileremove={{ file.name }}">移除</a>
+                                    </button>
+                                </div>
+						    </a>
+						</ul>
+                        {% endfor %}
+						 </div>
+                </div>
+        <lu class="row" style="float:right;width: 900px;margin: -0px 190px 0px 50px">
+<!--Category name-->
+              <button type="button" class="btn btn-danger btn-lg "  style="height: 40px;width: 900px;margin: 0px 0px 0px 0px">创建服务</button>
+             <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:salt_deploy_dev' %}">
+             <div class="panel panel-default">
+                     <div class="panel-body" style="float:left;width: 250px;height: 35px;">
+                      <button type="button" class="btn btn-primary btn-lg btn-block"  style="height: 40px;">服务名称</button>
+                    </div>
+                    <div class="panel-body" style="float:right;width: 650px;">
+                     <input type="text" style="height: 40px;" class="form-control bg-info text-muted" name="servicename" value='' placeholder="请输入想要创建的服务名称" >
+                    </div>
+
+                 <div class="panel-body" style="float:left;width: 250px;height: 35px;">
+                         <p style="height: 30px;"></p>
+                      <button type="button" class="btn btn-primary btn-lg btn-block"  style="height: 40px;">sls配置文件</button>
+                    </div>
+                    <div class="panel-body" style="float:right;width: 650px;">
+                        <textarea type="text" id="myInput" class="form-control"  rows="10" name="sls"></textarea>
+                    </div>
+            <div class="form-group">
+                 <div class="panel-body" style="float:right;width: 140px;">
+
+                 </div>
+            </div>
+                <div class='bg-primary'>
+                    <h4 id="info"></h4>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block" style="height: 35px;" id="execapi">确认创建</button>
+                                    <div class='bg-info'></div>
+                <div >
+                    <br>
+                    <button type="button" class="btn btn-primary btn-block">创建结果</button>
+                    <pre  style="line-height:10px;width: auto" id="result">
+                   {{ msg }}
+                    </pre>
+                </div>
+                </div>
+
+            </div>{% csrf_token %}
+                </form>
+        </lu></div>
+    </div>
+</div>
+<button type="button" class="btn btn-danger btn-lg "  style="height: 40px;width: 900px;margin: 0px 0px 0px 120px">附件上传</button>
+
+        <div class="panel">
+            <div id="grouplist" style="width: 1200px;">
+                <lu class="row" style="float:right;width: 900px;background:#fcfcfe;">
+     <div class="panel panel-default">
+            <div class="panel-body" style="float:left;width: 250px;height: 35px;">
+                <p style="height: 0px;"></p>
+                <button type="button" class="btn btn-primary btn-lg btn-block"  style="height: 40px;">附件</button>
+            </div>
+            <div class="panel-body" style="float:right;width: 650px;">
+                    <div class="form-group">
+
+                <form id="uploader" class="wu-example" method="post" action="{% url 'fileupload:upload' %}" enctype="multipart/form-data">
+                    <!--用来存放文件信息-->
+                    <div id="thelist" class="uploader-list"></div>
+                    <div class="btns">
+                        <div id="picker" style="float:left;width:300px;margin: 20px;">
+                        <input type="file" name="filesource" class="filestyle" data-buttonName="btn-primary">
+                        </div>
+                        <button id="ctlBtn" class="btn btn-default" type="submit" style="float: right;margin: 20px; width:85px">开始上传</button>
+                    </div>{% csrf_token %}
+                </form>
+                </div>
+            </div>
+     </div>
+                    <div class="panel panel-default">
+            <div class="panel-body" style="float:left;width: 250px;height: 35px;">
+                <p style="height: 0px;"></p>
+                <button type="button" class="btn btn-primary btn-lg btn-block"  style="height: 40px;margin: 30px 0px 0px 0px">GIT</button>
+            </div>
+            <div class="panel-body" style="float:right;width: 650px;">
+                    <div class="form-group">
+
+                <form id="uploader" class="wu-example" method="post" action="{% url 'fileupload:upload_git' %}" enctype="multipart/form-data">
+                    <!--用来存放文件信息-->
+                    <div id="thelist" class="uploader-list"></div>
+                    <div class="btns">
+                        <div id="picker" style="float:left;width:300px;margin: -40px 0px 0px 20px;">
+                            <input type="text" style="height: 40px;" class="form-control bg-warning text-muted" name="gitaddr" value='' placeholder="请输入git地址" >
+                        </div>
+                        <button id="ctlBtn" class="btn btn-default" type="submit" style="float: right;margin: -35px 20px 0px 0px; width:85px">开始上传</button>
+                    </div>{% csrf_token %}
+                </form>
+                </div>
+            </div>
+     </div>
+   </lu>
+            </div>
+
+        </div>
+
+{% endblock %}
+{% block bottom-js %}
+    <script src="{% static 'js/bootstrap-filestyle.js' %}"></script>
+    <script type="application/javascript">
+$(":file").filestyle({buttonName: "btn-primary"});
+</script>
+
+
+<script type="application/javascript">
+    $('textarea').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+</script>
+
+<script type="text/javascript">
+    var myInput = document.getElementById("myInput");
+    str = "    ";
+    if(myInput.addEventListener ) {
+        myInput.addEventListener('keydown',this.keyHandler,false);
+    } else if(myInput.attachEvent ) {
+        myInput.attachEvent('onkeydown',this.keyHandler); /* damn IE hack */
+    }
+
+    function keyHandler(e) {
+        var TABKEY = 9;
+        if(e.keyCode == TABKEY) {
+            insertText(myInput,str);
+            if(e.preventDefault) {
+                e.preventDefault();
+            }
+        }
+    }
+    function insertText(obj,str) {
+        if (document.selection) {
+            var sel = document.selection.createRange();
+            sel.text = str;
+        } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+            var startPos = obj.selectionStart,
+                endPos = obj.selectionEnd,
+                cursorPos = startPos,
+                tmpStr = obj.value;
+            obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+            cursorPos += str.length;
+            obj.selectionStart = obj.selectionEnd = cursorPos;
+        } else {
+            obj.value += str;
+        }
+    }
+</script>
+{% endblock %}

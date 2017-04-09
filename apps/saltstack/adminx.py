@@ -3,9 +3,21 @@ import xadmin
 from xadmin import views
 from xadmin.views import CommAdminView
 from xadmin.plugins.auth import UserAdmin
+from .models import Service
 
+class ServiceAdminx(object):
+    list_display = ['name','envtag','minions','groups','sls','file']
+    #搜索框
+    search_fields = ['name','envtag','minions','groups']
+    #过滤器
+    list_filter = ['name','envtag','minions','groups']
+    ordering = ['-name']
+    list_editable = ['name','envtag']
+    #readonly_fields = ['trade_date',]
+    refresh_times = [3,5]
+    #style_fields = {'sls': 'ueditor',}
 
-
+xadmin.site.register(Service,ServiceAdminx)
 
 #from .models import DangerCommand, ModulesLock, DeployModules, ConfigUpdate, CommonOperate
 #

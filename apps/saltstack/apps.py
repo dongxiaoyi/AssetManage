@@ -5,3 +5,4 @@ from django.apps import AppConfig
 
 class SaltstackConfig(AppConfig):
     name = 'saltstack'
+    verbose_name = u'Salt'

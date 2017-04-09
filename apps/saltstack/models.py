@@ -3,9 +3,25 @@ from __future__ import unicode_literals
 
 from django.db import models
 # Create your models here.
+from DjangoUeditor.models import UEditorField
+from hostlist.models import AccHostList,MinionGroups
+from fileupload.models import UploadFiles
 
-#minion的分组
 
+class Service(models.Model):
+    name = models.CharField(verbose_name=u'服务名称',max_length=50,blank=True,null=True,unique=True)
+    envtag = models.CharField(choices= (('pro','生产'),('dev','开发')),default='dev', max_length=20, verbose_name=u'环境状态')
+    minions = models.ManyToManyField(AccHostList,blank=True,null=True,verbose_name='主机')
+    groups = models.ManyToManyField(MinionGroups,blank=True,null=True,verbose_name='群组')
+    sls = models.TextField(max_length=99999,blank=True,null=True,verbose_name=u'sls配置文件')
+    file = models.ForeignKey(UploadFiles,verbose_name=u'配置附件',blank=True,null=True)
+
+    class Meta:
+        verbose_name = u'服务(.sls)'
+        verbose_name_plural = verbose_name
+
+    def __unicode__(self):
+        return self.name
 
 
 

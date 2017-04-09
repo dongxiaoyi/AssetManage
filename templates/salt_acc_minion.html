@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block header-css %}
-    {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="/static/plugins/DataTables/datatables.min.css"/>
-
 {% endblock %}
-{% load custom_tag %}
 {% block page-content-title %}
 资产列表
 {% endblock %}
+{% load custom_tag %}
 
 {% block page-nav-tab %}
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -23,7 +21,7 @@
 
 {% block page-content %}
 <div class="panel">
-        <div class="panel-heading">
+ <div class="panel-heading">
             <h3 class="panel-title">所有资产</h3>
             {{ table_ob.admin_class.list_display }}
         </div>
@@ -161,7 +159,7 @@ $(document).ready( function () {
 } );//end doc ready
 
 </script>
-    <script type="text/JavaScript">
+<script type="text/JavaScript">
 function accept(){
     if (!confirm("确认要Accept？")) {  window.event.returnValue = false;  }
 }

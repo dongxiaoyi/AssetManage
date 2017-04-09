@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% load staticfiles %}
+{% block header-css %}
+    <link href="{% static 'icheck/skins/flat/red.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block page-content-title %}
+SaltStack
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">服务配置(开发)</li></ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+    <div class="panel">
+
+
+    <button type="button" class="btn btn-danger btn-lg "  style="height: 40px;width: 100%;margin: -25px 0px 0px 0px">服务选择</button>
+            <div class="panel" style="margin: 0px 0px 0px 0px">
+            <div id="grouplist" style="margin: 0px 0px 0px 0px">
+            <lu class="list-group-item " style="height: 30px;width: 100%;" ><button type="button" class="btn btn-primary btn-block"  style="height: 30px;width: 165px;text-align:left;margin: -10px 0px 0px -15px">选择需要更新的服务</button>
+</lu>
+            </lu>
+                <ol class="list-group-item" style="height: 100px;list-style-type: none">
+                    <!--Menu list item-->
+                    <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:pulldevservices' %}">
+                        <ul class="list" style="list-style-type: none">
+                            {% for service in all_service_dev %}
+                                <li style="line-height: 20px;float:left; margin: 5px">
+                                    <input name="pulldevservicesnames" type="checkbox" id="flat-checkbox-1" value="{{ service.name }}">
+                                    <label for="flat-checkbox-1"><strong>{{ service.name }}</strong></label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <br>
+                        <div class="form-group">
+                            <div  style="margin: 185px 20px 0px 0px">
+                                <button type="button" class="btn btn-warning btn-block"  style="height: 30px;width: 85px;text-align:left;margin: 0px 0px 0px 0px">操作指南</button>
+                                <br>
+                                <pre style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px;text-align: left">{% autoescape off %}
+    1. 执行推送操作前，请先在<服务创建与更新>中配置并且确认好服务;
+
+    2. 建议服务应该最好以组推送，保持service与minion的一致与同步;
+
+    3. 如有特殊情况需要单个minion推送服务，请在<服务创建与更新>临时单独配置一次再来此推送：比如灰度操作，应先新建灰度服务添加单独的minion，来此测试推送，而不应该破坏正式服务与组别的关系！
+                                {% endautoescape %}</pre>
+                            </div>
+                        </div>
+                        <br>
+                    <button type="button" class="btn btn-info btn-block"  style="height: 30px;width: 85px;text-align:left;margin: 0px 0px 0px -15px">额外信息</button>
+                        <pre  style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px" id="result">
+    <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> {{ msg }}
+                        </pre>
+                        <div class="form-group">
+                            <div  style="float:right;width: 100px;margin: 0px 20px 10px 0px">
+                                <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -0px 10px 0px">确认服务</button>
+                            </div>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                </ol>
+            </div>
+            </div>
+{% endblock %}
+{% block bottom-js %}
+    <script src="{% static 'js/bootstrap-filestyle.js' %}"></script>
+    <script type="application/javascript">
+$(":file").filestyle({buttonName: "btn-primary"});
+</script>
+
+
+<script type="application/javascript">
+    $('ol').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+</script>
+
+    <script type="application/javascript">
+    $('textarea').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+</script>
+
+<script type="text/javascript">
+    var myInput = document.getElementById("myInput");
+    str = "    ";
+    if(myInput.addEventListener ) {
+        myInput.addEventListener('keydown',this.keyHandler,false);
+    } else if(myInput.attachEvent ) {
+        myInput.attachEvent('onkeydown',this.keyHandler); /* damn IE hack */
+    }
+
+    function keyHandler(e) {
+        var TABKEY = 9;
+        if(e.keyCode == TABKEY) {
+            insertText(myInput,str);
+            if(e.preventDefault) {
+                e.preventDefault();
+            }
+        }
+    }
+    function insertText(obj,str) {
+        if (document.selection) {
+            var sel = document.selection.createRange();
+            sel.text = str;
+        } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+            var startPos = obj.selectionStart,
+                endPos = obj.selectionEnd,
+                cursorPos = startPos,
+                tmpStr = obj.value;
+            obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+            cursorPos += str.length;
+            obj.selectionStart = obj.selectionEnd = cursorPos;
+        } else {
+            obj.value += str;
+        }
+    }
+</script>
+
+	<script src="{% static 'icheck/icheck.js' %}"></script>
+    <script>
+$(document).ready(function(){
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat-red',
+    radioClass: 'iradio_flat-red'
+  });
+});
+</script>
+{% endblock %}

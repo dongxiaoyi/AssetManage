@@ -20,6 +20,9 @@ urlpatterns = [
     url(r'^asset/', include('asset.urls', namespace='asset'), ),
     url(r'^salt/', include('saltstack.urls', namespace='salt'), ),
     url(r'^hostlist/', include('hostlist.urls', namespace='hostlist'), ),
+    #文件上传相关
+    url(r'^fileupload/', include('fileupload.urls', namespace='fileupload'), ),
+
     url('^$', IndexView.as_view(),name="index"),
     url(r'^login/$', AccLoginView.as_view(), name='login'),
     url(r'^logout/$', AccLogoutView.as_view(), name='logout'),

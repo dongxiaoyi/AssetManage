@@ -2,7 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
-
+from DjangoUeditor.models import UEditorField
 
 class Dzhuser(models.Model):
     username = models.ForeignKey(User, blank=True, verbose_name=u'用户名')
@@ -76,7 +76,7 @@ class UnAccHostList(models.Model):
 class AccHostList(models.Model):
     wip = models.CharField(max_length=100, blank=True, null=True, verbose_name=u'外网IP地址')
     nip = models.CharField(max_length=100, blank=True, null=True, verbose_name=u'内网IP地址')
-    hostname = models.CharField(max_length=30, verbose_name=u'主机名')
+    hostname = models.CharField(max_length=60, verbose_name=u'主机名')
     minionid = models.CharField(max_length=60, verbose_name=u'MinionID')
     osfinger = models.CharField(max_length=60, verbose_name='OS', blank=True, null=True, default='linux')
     mem_total = models.IntegerField(max_length=99999,verbose_name='Mem总量',blank=True,null=True)
@@ -94,7 +94,7 @@ class AccHostList(models.Model):
     remark = models.TextField(max_length=200, blank=True, null=True, verbose_name=u'备注')
     action = models.CharField(max_length=1000, verbose_name='操作', default='无')
     def __unicode__(self):
-        return u'%s %s' % (self.minionid, self.ip)
+        return u'%s %s' % (self.minionid, self.wip)
     class Meta:
         ordering = ['minionid']
         verbose_name = u'Accepted keys列表'
@@ -108,7 +108,6 @@ class MinionGroups(models.Model):
         verbose_name_plural = verbose_name
     def __unicode__(self):
         return self.Group
-
 
 class ErrorHostList(models.Model):
     ip = models.CharField(max_length=100, blank=True, null=True, verbose_name=u'IP地址')

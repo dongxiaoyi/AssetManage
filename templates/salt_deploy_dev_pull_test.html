@@ -38,7 +38,7 @@ SaltStack
                             <ul class="list" style="list-style-type: none">
 									<!--Menu list item-->
 
-                                 <li style="line-height: 20px;float:left; margin: 0px 0px 0px -50px;">
+                                 <li style="line-height: 20px;float:left; margin: 0px 25px 0px -50px;">
                                      <input name="pulldevservicestestselectnames" type="checkbox" id="flat-checkbox-1" value="{{ service.name }}" style="margin: 0px 0px 0px -50px;">
                                 </li>
                                 <button type="button " class="btn btn-primary btn-sm" style="height: 30px;width: 190px;margin: 0px 0px 0px 10px;text-align: left;">
@@ -84,31 +84,44 @@ SaltStack
                                 </div>
                                  </div>-->
                                  <div class="form-group">
-                                    <div  style="float:right;width: 100px;margin: 185px 20px 0px 0px"><br>
+                                    <div  style="float:right;width: 100px;height:10px;margin: 185px 20px 0px 0px"><br>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <li style="line-height: 20px;float:right; margin: 0px 10px 0px 0px;">
+                                     <input name="pulldevserviceselect" type="checkbox" id="flat-checkbox-1" value="agree" style="margin: -20px 0px 0px -50px;">
+                                         <button type="button" class="btn btn-danger" style="width: 235px;height: 40px;margin: 0px 30px 10px 0px">确认推送（正式推送需要勾选）</button>
+                                    </li>
+                                </div>
                                  <div class="form-group">
-                                    <div  style="float:right;width: 100px;margin: 0px 20px 0px 0px"><br>
+                                    <div  style="float:right;width: 100px;margin: -30px 175px 0px 0px"><br>
                                         <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -50px 10px 0px">测试当前</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div  style="float:right;width: 100px;margin: -73px 40px 0px 0px"><br>
+                                        <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -50px 10px 0px">正式推送</button>
                                     </div>
                                 </div>
                             </ul>
                         </ol>
                             {% endfor %}
                                  <div class="form-group">
-                                    <div  style="float:right;width: 100px;margin: 0px 20px 0px 0px"><br>
+
+                                    <div  style="float:right;width: 100px;margin: 0px 55px 0px 0px"><br>
+                                        <button type="submit" class="btn btn-danger" style="width: 100px;margin: 0px -50px 10px 0px">批量正式推送</button>
+                                    </div>
+                                     <div  style="float:right;width: 100px;margin: 0px 35px 0px 0px"><br>
                                         <button type="submit" class="btn btn-danger" style="width: 100px;margin: 0px -50px 10px 0px">批量测试</button>
                                     </div>
+                                     <ul class="list" style="list-style-type: none">
+                                     <li style="line-height: 20px;float:right; margin: 10px 0px 0px 0px;">
+                                     <input name="pulldevservicesselect" type="checkbox" id="flat-checkbox-1" value="agree" style="margin: -20px 0px 0px -50px;">
+                                         <button type="button" class="btn btn-danger" style="width: 200px;height: 40px;margin: 0px 30px 10px 0px">确认推送（正式推送需要勾选）</button>
+                                     </li>
+                                     </ul>
                                 </div>
                                 {% csrf_token %} </form>
-            {% block pullresult %}
-            <div >
-                    <button type="button" class="btn btn-primary btn-block btn-lg" style="height: 35px">推送结果</button>
-                    <pre  style="line-height:10px;width: auto" id="result">
-                   {{ msg }}
-                    </pre>
-                </div>
-                {% endblock %}
             </div>
         </div>
 {% endblock %}

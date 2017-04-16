@@ -24,6 +24,18 @@ class PullDevServicesTestForm(forms.Form):
     pulldevtestminions = forms.CharField(required=False)
     pulldevtestfile = forms.CharField(required=True, max_length=255)
 
+class PullDevServicesForm(forms.Form):
+    pulldevservicestestnames = forms.CharField(required=True,max_length=255)
+    pulldevtestminions = forms.CharField(required=False)
+    pulldevtestfile = forms.CharField(required=True, max_length=255)
+    pulldevservicesselect = 'agree'
+
+class PullDevServicesTestSelectForm(forms.Form):
+    pulldevservicestestselectnames = forms.CharField(required=True,max_length=255)
+
+class PullDevServicesSelectForm(forms.Form):
+    pulldevservicestestselectnames = forms.CharField(required=True,max_length=255)
+    pulldevservicesselect = 'agree'
 
 class PullservicesnamesForm(forms.Form):
     pulldevservicesnames = forms.CharField(required=True, max_length=255)

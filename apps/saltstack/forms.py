@@ -19,11 +19,10 @@ class UpdateDevServiceForm(forms.Form):
     updatedevsls = forms.Textarea()
 
 
-class PullDevServiceForm(forms.Form):
-    pulldevservicename = forms.CharField(required=True,max_length=255)
-    pulldevminions = forms.CharField(required=False)
-    pulldevgroups = forms.CharField(required=False)
-    pulldevfile = forms.CharField(required=True, max_length=255)
+class PullDevServicesTestForm(forms.Form):
+    pulldevservicestestnames = forms.CharField(required=True,max_length=255)
+    pulldevtestminions = forms.CharField(required=False)
+    pulldevtestfile = forms.CharField(required=True, max_length=255)
 
 
 class PullservicesnamesForm(forms.Form):

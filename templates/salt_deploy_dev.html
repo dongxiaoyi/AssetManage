@@ -148,7 +148,21 @@ SaltStack
                             <input type="text" style="height: 40px;" class="form-control bg-warning text-muted" name="gitaddr" value='' placeholder="请输入git地址" >
                         </div>
                         <button id="ctlBtn" class="btn btn-default" type="submit" style="float: right;margin: -35px 20px 0px 0px; width:85px">开始上传</button>
-                    </div>{% csrf_token %}
+                    <br>
+                        <button type="button" class="btn btn-warning btn-block"  style="height: 30px;width: 85px;text-align:left;margin: 0px 0px 0px -250px">操作指南</button>
+                                <pre style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px;text-align: left;margin: 0px 0px 0px -250px">
+                                    {% autoescape off %}
+    1. 本地上传文件格式必须为tar.gz或者zip格式。
+
+    2. 上传的文件解压后的目录名称必须对应于服务名称，sls配置中的文件源也必须使用服务名称。
+                                {% endautoescape %}</pre>
+                    <button type="button" class="btn btn-info btn-block"  style="height: 30px;width: 85px;text-align:left;margin: 0px 0px 0px -250px">额外信息</button>
+                        <pre  style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px;margin: 0px 0px 0px -250px" id="result">
+    <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> {{ msg_file }}
+                        </pre>
+                    </div>
+
+                    {% csrf_token %}
                 </form>
                 </div>
             </div>

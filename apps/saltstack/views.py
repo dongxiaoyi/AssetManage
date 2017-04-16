@@ -18,9 +18,9 @@ from .forms import MinionCmdForm
 from scripts.script.saltcmd import saltcommands
 from fileupload.models import UploadFiles
 from .models import Service
-from .forms import DevServiceForm,UpdateDevServiceForm,PullDevServiceForm,PullservicesnamesForm
+from .forms import DevServiceForm,UpdateDevServiceForm,PullDevServicesTestForm,PullservicesnamesForm
 from AssetManage.settings import MEDIA_ROOT
-import json,os,types,subprocess
+import json,os,types,subprocess,tarfile,zipfile,shutil
 # Create your views here.
 
 
@@ -175,74 +175,78 @@ class SaltExecuteView(LoginRequiredMixin,View):
 
 class PullDevServicesTestView(LoginRequiredMixin,View):
     def post(self,request):
-        pullserviceforms = PullDevServiceForm(request.POST)
+        pullserviceforms = PullDevServicesTestForm(request.POST)
         if pullserviceforms.is_valid():
-            pulldevservicename = request.POST.get('pulldevservicename', '')
-            pulldevservice = Service.objects.get(name=str(pulldevservicename))
-            pulldevservicecode = pulldevservice.id
-            pulldevminions = request.POST.getlist(' pulldevminions', '')
-            pulldevgroups = request.POST.getlist('pulldevgroups', '')
-            pulldevfile = request.POST.get('pulldevfile', '')
-            join_service = Service.objects.get(id=str(pulldevservicecode))
-            pullsls = pulldevservice.sls
+            pulldevservicestestnames = request.POST.get('pulldevservicestestnames', '')
+            pulldevservicetest = Service.objects.get(name=str(pulldevservicestestnames))
+            pulldevservicetestcode = pulldevservicetest.id
+            pulldevtestminions = request.POST.getlist(' pulldevtestminions', [])
+            pulldevtestfile = request.POST.get('pulldevtestfile', '')
+            join_service = Service.objects.get(id=str(pulldevservicetestcode))
+            pullsls = pulldevservicetest.sls
             all_acc_minion = AccHostList.objects.all()
             all_groups = MinionGroups.objects.all()
             all_sevices = Service.objects.all()
             all_service_dev = Service.objects.filter(envtag='dev')
             all_files = UploadFiles.objects.all()
-            if type(pulldevminions) == types.StringType:
-                if type(pulldevgroups) == types.StringType:
-                    msg = '推送主机或组不可以全部为空！'
+            SAVE_DIR = os.path.join(MEDIA_ROOT, 'upload/sls')
+            msg = {}
+            top_path = '/etc/salt/top.sls'
+            '''解压配置文件包，并做判断'''
+            file_path = '/etc/salt/dev/services/' + str(pulldevservicestestnames)
+            print os.path.exists(file_path)
+            if os.path.exists(file_path):
+                shutil.rmtree(file_path)
+                os.makedirs(file_path)
+            else:
+                os.makedirs(file_path)
+            file_path_extra = os.path.join(file_path,str(pulldevtestfile).split('.')[0])
+            if os.path.exists(file_path_extra) == True:
+                shutil.rmtree(file_path_extra)
+                os.rmdir(file_path_extra)
+                if os.path.join(SAVE_DIR,str(pulldevtestfile)).split('.')[-1] == "gz":
+                    tar_extra_command = 'tar xf ' + str(os.path.join(SAVE_DIR,str(pulldevtestfile))) + ' -C ' + file_path
+                    tar_extra = subprocess.Popen(tar_extra_command, stdout=subprocess.PIPE, shell=True)
+                    tar_extra_stdout = tar_extra.communicate()[0]
+                elif os.path.join(SAVE_DIR,str(pulldevtestfile)).split('.')[-1] == "zip":
+                    zip_extra_command = 'unzip ' + str(os.path.join(SAVE_DIR,str(pulldevtestfile))) + ' -d ' + file_path
+                    zip_extra = subprocess.Popen(zip_extra_command, stdout=subprocess.PIPE, shell=True)
+                    zip_extra_stdout = zip_extra.communicate()[0]
+            else:
+                if os.path.join(SAVE_DIR,str(pulldevtestfile)).split('.')[-1] == "gz":
+                    tar_extra_command = 'tar xf ' + str(os.path.join(SAVE_DIR,str(pulldevtestfile))) + ' -C ' + file_path
+                    tar_extra = subprocess.Popen(tar_extra_command, stdout=subprocess.PIPE, shell=True)
+                    tar_extra_stdout = tar_extra.communicate()[0]
+                elif os.path.join(SAVE_DIR,str(pulldevtestfile)).split('.')[-1] == "zip":
+                    zip_extra_command = 'unzip ' + str(os.path.join(SAVE_DIR,str(pulldevtestfile))) + ' -d ' + file_path
+                    zip_extra = subprocess.Popen(zip_extra_command, stdout=subprocess.PIPE, shell=True)
+                    zip_extra_stdout = zip_extra.communicate()[0]
+            '''获取解压后目录名称'''
+            dirs = {}
+            for dir in os.listdir(file_path):
+                dirs[0] = str(dir)
+            extra_dir = dirs[0]
+            '''服务推送'''
+            for minion in pulldevtestminions:
+                pull_test_command = 'salt ' + str(minion) + ' state.highstate test=true'
+            return render(request,'index.html')
 
-                    return render(request, 'salt_deploy_dev_join.html', {
-                        'all_acc_minion': all_acc_minion,
-                        'all_groups': all_groups,
-                        'all_service_dev': all_service_dev,
-                        'all_files': all_files,
-                        'join_service': join_service,
-                        'msg':msg
+            #pulltest_command = "salt " + str('') + " state.highstate"
+            #pulltest = subprocess.Popen(pulltest_command, stdout=subprocess.PIPE, shell=True)
+            #pulltest_stdout = pulltest.communicate()[0].split('\n')
+            #with open(top_path, 'a') as top:
+            #    top.truncate()
+            #    top.write('dev:\n')
+            #    top.write("\'  \*:'\n")
+            #for minion in pulldevtestminions:
+            #    top.write("    - " + str(pulldevservicestestnames))
+#
+            #    pulltest_command = "salt " + str(minion) + " state.highstate"
+            #    pulltest = subprocess.Popen(pulltest_command,stdout=subprocess.PIPE,shell=True)
+            #    pulltest_stdout = pulltest.communicate()[0].split('\n')
+            #    msg[str(minion)] = pulltest_stdout
+            #return
 
-                    })
-                else:
-                    '''组名不是空，但是得判断一下组内是否有minion'''
-                    minions = []
-                    for group in pulldevgroups:
-                        group_query = MinionGroups.objects.get(Group=str(group))
-                        minion_query = group_query.minion.all()
-                        for minion_que in minion_query:
-                            for minion in minion_que.minionid.split('\n'):
-                                print minion
-                                minions.append(str(minion))
-                                minions = list(set(minions))
-                        if minions == []:
-                            msg = '推送主机选择为空，选择组内主机不可再全部为空！'
-
-                            return render(request, 'salt_deploy_dev_pull.html', {
-                                'all_acc_minion': all_acc_minion,
-                                'all_groups': all_groups,
-                                'all_service_dev': all_service_dev,
-                                'all_files': all_files,
-                                'join_service': join_service,
-                                'msg': msg
-
-                            })
-                        else:
-                            '''保证有主机可以开始测试推送'''
-
-
-                    #SLS_PATH = '/etc/salt/'
-                    #slsfilename = pullsls + '.sls'
-                    #sls_path = os.path.join(SLS_PATH,slsfilename)
-                    #if os.path.exists(sls_path) == True:
-                    #    with open(sls_path) as truncate_sls:
-                    #        truncate_sls.truncate()
-                    #    with open(os.path.join(SLS_PATH,slsfilename),'w') as sls_w:
-                    #        sls_w.write("base:\n  " + str(pulldevservicename) + ":\n")
-                    #    for minion in pulldevminions:
-                    #        with open(os.path.join(SLS_PATH, slsfilename), 'w') as sls_a:
-                    #            sls_w.write("    " + str(minion + "\n"))
-        else:
-            print 'bbbbbbbbbbbbbbbbb'
 
 class PullDevServicesView(LoginRequiredMixin, View):
     def post(self, request):
@@ -263,7 +267,7 @@ class PullDevServicesView(LoginRequiredMixin, View):
                 if get_service_minions == []:
                     if get_service_groups == []:
                         remove_service[str(servicename)] = u'推送服务主机与组别均为空！'
-                        msg = u'推送服务主机与组别均为空！'
+                        msg = u'请确保推送服务主机与组别不都为空！'
                         return render(request, 'salt_deploy_dev_pull.html', {'msg': msg,
                                                                              'all_service_dev': all_service_dev,
                                                                              })
@@ -288,21 +292,14 @@ class PullDevServicesView(LoginRequiredMixin, View):
                             #    pull_service = subprocess.Popen(pull_command,stdout=subprocess.PIPE,shell=True)
                             #    pull_stdout = pull_service.communicate()[0].split('\n')
                             #    service_minions_dict[str(minion)] = pull_stdout
-                            return render(request, 'salt_deploy_dev_pull_test.html', {'service_minions_dict': service_minions_dict,
-                                                                                 'all_service_dev': all_service_dev,
-                                                                                 })
                 else:
                     '''服务的主机为空，判断组别是否为空'''
                     get_minion_query_minoionid = []
                     for minion_query in get_service_minions:
                         get_minion_query_minoionid.append(str(minion_query.minionid))
                     if get_service_groups == []:
-                        service = Service.objects.get(str(servicename))
+                        service = Service.objects.get(name=str(servicename))
                         service_minions_dict[service] = get_minion_query_minoionid
-                        return render(request, 'salt_deploy_dev_pull_test.html',
-                                      {'service_minions_dict': service_minions_dict,
-                                       'all_service_dev': all_service_dev,
-                                       })
                     else:
                         get_service_groups_minions = []
                         for service_group in get_service_groups:
@@ -312,20 +309,17 @@ class PullDevServicesView(LoginRequiredMixin, View):
                         if get_service_groups_minions == []:
                             service = Service.objects.get(name=str(servicename))
                             service_minions_dict[service] = get_minion_query_minoionid
-                            return render(request, 'salt_deploy_dev_pull_test.html',
-                                          {'service_minions_dict': service_minions_dict,
-                                           'all_service_dev': all_service_dev,
-                                           })
                         else:
                             for minion_in_groups in get_service_groups_minions:
                                 get_minion_query_minoionid.append(str(minion_in_groups))
                                 get_minion_query_minoionid = list(set(get_minion_query_minoionid))
                             service = Service.objects.get(name=str(servicename))
                             service_minions_dict[service] = get_minion_query_minoionid
-                            return render(request, 'salt_deploy_dev_pull_test.html',
-                                          {'service_minions_dict': service_minions_dict,
-                                           'all_service_dev': all_service_dev,
-                                           })
+                            print service_minions_dict
+            return render(request, 'salt_deploy_dev_pull_test.html',
+                          {'service_minions_dict': service_minions_dict,
+                           'all_service_dev': all_service_dev,
+                           })
         else:
             msg = u'尚未选择服务！'
             return render(request, 'salt_deploy_dev_pull.html', {'msg': msg,

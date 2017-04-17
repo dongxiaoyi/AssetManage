@@ -39,3 +39,9 @@ class PullDevServicesSelectForm(forms.Form):
 
 class PullservicesnamesForm(forms.Form):
     pulldevservicesnames = forms.CharField(required=True, max_length=255)
+
+class PullservicenameForm(forms.Form):
+    pulldevservicename = forms.CharField(required=True, max_length=255)
+
+class DevServiceDeleteForm(forms.Form):
+    devservicedelete = forms.CharField(required=True, max_length=255)

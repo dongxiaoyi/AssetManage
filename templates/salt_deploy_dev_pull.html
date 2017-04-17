@@ -13,7 +13,7 @@ SaltStack
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li class="active">服务配置(开发)</li></ol>
+    <li class="active">服务推送(开发)</li></ol>
 {% endblock %}
 
 
@@ -25,12 +25,31 @@ SaltStack
     <button type="button" class="btn btn-danger btn-lg "  style="height: 40px;width: 100%;margin: -25px 0px 0px 0px">服务选择</button>
             <div class="panel" style="margin: 0px 0px 0px 0px">
             <div id="grouplist" style="margin: 0px 0px 0px 0px">
-            <lu class="list-group-item " style="height: 30px;width: 100%;" ><button type="button" class="btn btn-primary btn-block"  style="height: 30px;width: 165px;text-align:left;margin: -10px 0px 0px -15px">选择需要更新的服务</button>
+            <lu class="list-group-item " style="height: 30px;width: 100%;" ><button type="button" class="btn btn-primary btn-block"  style="height: 30px;width: 100px;text-align:left;margin: -10px 0px 0px -15px">单服务推送</button>
 </lu>
             </lu>
                 <ol class="list-group-item" style="height: 100px;list-style-type: none">
                     <!--Menu list item-->
-                    <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:pulldevservices' %}">
+                <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:pulldevservice' %}">
+                        <ul class="list" style="list-style-type: none">
+                            {% for service in all_service_dev %}
+                                <li style="line-height: 20px;float:left; margin: 5px">
+                                    <input name="pulldevservicename" type="radio" id="flat-checkbox-1" value="{{ service.name }}">
+                                    <label for="flat-checkbox-1"><strong>{{ service.name }}</strong></label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+<br><br>
+                        <div class="form-group">
+                            <div  style="float:right;width: 100px;margin: 50px 20px 0px 0px">
+                                <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -0px 10px 0px">确认服务</button>
+                            </div>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                <lu class="list-group-item " style="height: 30px;width: 100%;" ><button type="button" class="btn btn-primary btn-block"  style="height: 30px;width: 100px;text-align:left;margin: -10px 0px 0px -35px">服务批量推送</button>
+                </lu>
+                    <form class="form-horizontal form-border" method="post" style="margin: 10px 0px 0px 0px" enctype="multipart/form-data" action="{% url 'salt:pulldevservices' %}">
                         <ul class="list" style="list-style-type: none">
                             {% for service in all_service_dev %}
                                 <li style="line-height: 20px;float:left; margin: 5px">
@@ -40,12 +59,16 @@ SaltStack
                             {% endfor %}
                         </ul>
                         <br>
+                                            <div class="form-group">
+                            <div  style="float:right;width: 100px;margin: 0px 20px 10px 0px">
+                                <button type="submit" class="btn btn-primary" style="width: 100px;margin: 50px -0px 10px 0px">确认服务</button>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div  style="margin: 185px 20px 0px 0px">
-                                <button type="button" class="btn btn-warning btn-block"  style="height: 30px;width: 85px;text-align:left;margin: 0px 0px 0px 0px">操作指南</button>
+                                <button type="button" class="btn btn-warning btn-block"  style="height: 30px;width: 85px;text-align:left;margin: -200px 0px 0px 0px">操作指南</button>
                                 <br>
-                                <pre style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px;text-align: left">
-                                    {% autoescape off %}
+                                <pre style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px;text-align: left">                                    {% autoescape off %}
     1. 执行推送操作前，请先在<服务创建与更新>中配置并且确认好服务;
 
     2. 建议服务应该最好以组推送，保持service与minion的一致与同步;
@@ -55,15 +78,11 @@ SaltStack
                             </div>
                         </div>
                         <br>
-                    <button type="button" class="btn btn-info btn-block"  style="height: 30px;width: 85px;text-align:left;margin: 0px 0px 0px -15px">额外信息</button>
+                    <button type="button" class="btn btn-info btn-block"  style="height: 30px;width: 85px;text-align:left;margin: -40px 0px 0px -15px">额外信息</button>
                         <pre  style="line-height:10px;width: auto;background: #ffffff;border:dashed 0px" id="result">
     <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> {{ msg }}
                         </pre>
-                        <div class="form-group">
-                            <div  style="float:right;width: 100px;margin: 0px 20px 10px 0px">
-                                <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -0px 10px 0px">确认服务</button>
-                            </div>
-                        </div>
+
                         {% csrf_token %}
                     </form>
                 </ol>

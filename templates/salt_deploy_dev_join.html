@@ -26,8 +26,8 @@ SaltStack
                         {% for service in all_service_dev %}
 						<ul id="mainnav-menu1" class="list-group">
                             <a href="#{{ service.name }}" class="nav-header" data-toggle="collapse">
-							<i class="glyphicon glyphicon-th-list" style="height: 20px"></i>
-							{{ service.name }}
+                                <i class="glyphicon glyphicon-asterisk" style="height: 20px;width:170px;word-wrap: break-word;font-size: 15px;letter-spacing:0.4px;"><span>{{ service.name }}</span></i>
+
 
                                 <div id="edit" style="float:right;margin: 0px -30px 0px 0px">
                                     <button type="button " class="btn btn-default btn-sm">
@@ -55,6 +55,11 @@ SaltStack
                                 <div id="edit" style="float:right;">
                                     <button type="submit" class="btn btn-default btn-sm" >
                                         <span class="glyphicon glyphicon-trash"></span><a href="{% url 'fileupload:upload_remove' %}?fileremove={{ file.name }}">移除</a>
+                                    </button>
+                                </div>
+                                  <div id="edit" style="float:right;">
+                                    <button type="submit" class="btn btn-default btn-sm" >
+                                        <span class="glyphicon glyphicon-save"></span><a href="{% url 'fileupload:upload_download' %}?filedownload={{ file.name }}">下载</a>
                                     </button>
                                 </div>
 						    </a>
@@ -208,10 +213,14 @@ SaltStack
                                  </div>
                                  <div style="float:left;width: 640px;margin: 20px 0px 0px 0px">配置文件(.sls)
                                    <textarea type="text" id="myInput" class="form-control"  rows="10" name="updatedevsls">{{ join_service.sls }}</textarea>
-                                    <div class="form-group">
+                                     <div  style="float:right;width: 100px;margin: -0px -200px 30px 0px"><br>
+                                         <button type="submit" class="btn btn-primary" id="execapi">更新关联</button>
+                                     </div>
+                                 <br>
+                                     <div class="form-group">
                                         <div  style="margin: 15px 20px 0px 0px;width: 100%">
                                         <button type="button" class="btn btn-danger btn-block"  style="width: 150px;text-align:left;margin: 0px 0px 0px 0px">当前附件解压缩后位置</button>
-                                <br>
+
                                 <pre style="line-height:10px;width: 100%;background: #ffffff;border:dashed 0px;text-align: left">{% autoescape off %}
     1. 建议解压后目录名称与服务名称一一对应，则sls文件源格式为：服务名/目录名;
 
@@ -223,13 +232,21 @@ SaltStack
     1. 服务必须关联一个附件，哪怕附件为空的压缩包，建议打包名称为服务名称
                                 {% endautoescape %}</pre>
                             </div>
-                                    <div  style="float:right;width: 100px;margin: -0px -200px 30px 0px"><br>
-                                        <button type="submit" class="btn btn-primary" id="execapi">更新关联</button>
-                                </div>
+
                                 </div>
                                  </div>
                     {% csrf_token %}</form>
-                            </ol></div></div>
+                            </ol>
+                <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:devservicedelete' %}">
+                    <div hidden>
+                        <select hidden  data-style="btn-info" name="devservicedelete" id="devservicedelete" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     <option selected  value="{{ join_service.name }}" hidden>{{ join_service.name }}</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-lg "  style="height: 40px;width: 900px;margin: 0px 0px 0px 0px">删除当前服务（谨慎操作）</button>
+                {% csrf_token %}</form>
+            </div>
+            </div>
 
         </div>
 {% endblock %}

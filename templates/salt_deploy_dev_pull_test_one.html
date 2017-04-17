@@ -13,7 +13,7 @@ SaltStack
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li class="active">服务推送(开发)</li></ol>
+    <li class="active">服务配置(开发)</li></ol>
 {% endblock %}
 
 
@@ -31,18 +31,14 @@ SaltStack
 
                 <div class="panel" style="width: 100%;margin: 0px 0px 0px 0px">
             <div id="grouplist" style="width: 100%;margin: 0px 0px 0px 0px">
-                            <form class="form-horizontal form-border"  method="post" enctype="multipart/form-data" action="{% url 'salt:pulldevservicesalltest' %}">
-
-                                {% for service,minions in service_minions_dict.items %}
+                            <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:pulldevservicestest' %}">
+                            {% for service,minions in service_minions_dict.items %}
                                 <ol class="list-group-item" style="height: 70px;margin: 0px auto;text-align: left">
 
                             <ul class="list" style="list-style-type: none">
 									<!--Menu list item-->
 
-                                 <li style="line-height: 20px;float:left; margin: 0px 25px 0px -50px;">
-                                     <input name="pulldevservicestestselectnames" type="checkbox" id="flat-checkbox-1" value="{{ service.name }}" style="margin: 0px 0px 0px -50px;">
-                                </li>
-                                <button type="button " class="btn btn-primary btn-sm" style="height: 30px;width: 190px;margin: 0px 0px 0px 10px;text-align: left;">
+                                <button type="button " class="btn btn-primary btn-sm" style="height: 30px;width: 250px;margin: 0px 0px 0px -50px;text-align: left;">
                                     <label for="flat-checkbox-1"><span class="glyphicon glyphicon-flag"></span> {{ service.name }}（当前服务配置）</label>
                                 </button>
                                  <div style="float:left;width: 200px;" hidden>服务
@@ -79,32 +75,39 @@ SaltStack
                                     </select></div>
                                  </div>
 
+                                 <!-- <div style="float:left;width: 640px;margin: 20px 0px 0px 0px">配置文件(.sls)
+                                   <textarea type="text" id="myInput" class="form-control"  rows="10" name="updatedevsls">{{ join_service.sls }}</textarea>
+                                    <div class="form-group">
+                                </div>
+                                 </div>-->
+                                 <div class="form-group">
+                                    <div  style="float:right;width: 100px;height:10px;margin: 185px 20px 0px 0px"><br>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <li style="line-height: 20px;float:right; margin: 0px 10px 0px 0px;">
+                                     <input name="pulldevserviceselect" type="checkbox" id="flat-checkbox-1" value="agree" style="margin: -20px 0px 0px -50px;">
+                                         <button type="button" class="btn btn-danger" style="width: 235px;height: 40px;margin: 0px 30px 10px 0px">确认推送（正式推送需要勾选）</button>
+                                    </li>
+                                </div>
+                                 <div class="form-group">
+                                    <div  style="float:right;width: 100px;margin: -30px 175px 0px 0px"><br>
+                                        <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -50px 10px 0px">测试当前</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div  style="float:right;width: 100px;margin: -73px 40px 0px 0px"><br>
+                                        <button type="submit" class="btn btn-primary" style="width: 100px;margin: 0px -50px 10px 0px">正式推送</button>
+                                    </div>
+                                </div>
                             </ul>
                         </ol>
                             {% endfor %}
-                                 <div class="form-group">
-
-                                    <div  style="float:right;width: 100px;margin: 0px 55px 0px 0px"><br>
-                                        <button type="submit" class="btn btn-danger" style="width: 100px;margin: 0px -50px 10px 0px">批量正式推送</button>
-                                    </div>
-                                     <div  style="float:right;width: 100px;margin: 0px 35px 0px 0px"><br>
-                                        <button type="submit" class="btn btn-danger" style="width: 100px;margin: 0px -50px 10px 0px">批量测试</button>
-                                    </div>
-                                     <ul class="list" style="list-style-type: none">
-                                     <li style="line-height: 20px;float:right; margin: 10px 0px 0px 0px;">
-                                     <input name="pulldevservicesselect" type="checkbox" id="flat-checkbox-1" value="agree" style="margin: -20px 0px 0px -50px;">
-                                         <button type="button" class="btn btn-danger" style="width: 200px;height: 40px;margin: 0px 30px 10px 10px">确认推送（正式推送需要勾选）</button>
-                                     </li>
-                                     </ul>
-                                </div>
                                 {% csrf_token %} </form>
             </div>
         </div>
 {% endblock %}
 {% block bottom-js %}
-
-
-
     <script src="{% static 'js/bootstrap-filestyle.js' %}"></script>
     <script type="application/javascript">
 $(":file").filestyle({buttonName: "btn-primary"});
@@ -174,5 +177,4 @@ $(document).ready(function(){
   });
 });
 </script>
-
 {% endblock %}

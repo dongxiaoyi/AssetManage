@@ -11,7 +11,7 @@ class OperateRecord(models.Model):
     '''
     nowtime = models.DateTimeField(blank=True, null=True, verbose_name=u'操作时间')
     username = models.ForeignKey(User, blank=True, verbose_name=u'用户名')
-    user_operate = models.CharField(max_length=100, blank=True, verbose_name=u'操作记录')
+    user_operate = models.CharField(max_length=9999, blank=True, verbose_name=u'操作记录')
     #jid = models.CharField(max_length=255, blank=True, verbose_name=u'jid')
 
     class Meta:

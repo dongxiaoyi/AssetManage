@@ -26,9 +26,7 @@ SaltStack
                         {% for service in all_service_dev %}
 						<ul id="mainnav-menu1" class="list-group">
                             <a href="#{{ service.name }}" class="nav-header" data-toggle="collapse">
-							<i class="glyphicon glyphicon-th-list" style="height: 20px"></i>
-							{{ service.name }}
-
+                                <i class="glyphicon glyphicon-asterisk" style="height: 20px;width:170px;word-wrap: break-word;font-size: 14px;"><span>{{ service.name }}</span></i>
                                 <div id="edit" style="float:right;margin: 0px -30px 0px 0px">
                                     <button type="button " class="btn btn-default btn-sm">
                                     <span class="glyphicon glyphicon-magnet"></span><a href="{% url 'fileupload:upload_join' service.id %}">更新关联</a>
@@ -50,11 +48,15 @@ SaltStack
                         {% for file in all_files %}
 						<ul id="mainnav-menu1" class="list-group">
                               <a href="#{{ file.name }}" class="nav-header" data-toggle="collapse">
-							<i class="glyphicon glyphicon-th-list" style="height: 30px"></i>
-							{{ file.name }}
+							<i class="glyphicon glyphicon-briefcase" style="height: 30px;width:170px;word-wrap: break-word;font-size: 14px;"><span>{{ file.name }}</span></i>
                                 <div id="edit" style="float:right;">
                                     <button type="submit" class="btn btn-default btn-sm" >
                                         <span class="glyphicon glyphicon-trash"></span><a href="{% url 'fileupload:upload_remove' %}?fileremove={{ file.name }}">移除</a>
+                                    </button>
+                                </div>
+                                  <div id="edit" style="float:right;">
+                                    <button type="submit" class="btn btn-default btn-sm" >
+                                        <span class="glyphicon glyphicon-save"></span><a href="{% url 'fileupload:upload_download' %}?filedownload={{ file.name }}">下载</a>
                                     </button>
                                 </div>
 						    </a>

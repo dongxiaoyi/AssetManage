@@ -204,3 +204,27 @@ class UploadRemoveView(LoginRequiredMixin,View):
         UploadFiles.objects.filter(name=str(file_remove)).delete()
         from django.core.urlresolvers import reverse
         return HttpResponseRedirect(reverse('salt:salt_deploy_dev'))
+
+class UploadDownloadView(LoginRequiredMixin,View):
+    def get(self,request):
+        print u'开始下载'
+        SAVE_DIR = os.path.join(MEDIA_ROOT, 'upload/sls')
+        file_download = request.GET.get('filedownload','')
+        file = os.path.join(SAVE_DIR,str(file_download))
+        def file_read(file_name, chunk_size=1024):
+            # itertor return the file's chunk, if the file size is very large,it must be useful, so server won't OOM
+            with open(file_name, 'rb') as f:
+                while True:
+                    chunks = f.read(chunk_size)
+                    if chunks:
+                        yield chunks
+                    else:
+                        break
+        from django.http import StreamingHttpResponse
+
+        response_data = StreamingHttpResponse(file_read(file))
+        response_data['Content-Type'] = 'application/octet-stream'  # set the type as stream then PC will save it in their disk
+        response_data['Content-Disposition'] = 'attachment;filename="%s"' % (file)  # set the file name
+        return response_data
+
+

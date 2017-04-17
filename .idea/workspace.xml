@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c23e1e6d-914c-45aa-b241-57d409f279b3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/scripts/tests.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/fileupload/urls.py" afterPath="$PROJECT_DIR$/apps/fileupload/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/fileupload/views.py" afterPath="$PROJECT_DIR$/apps/fileupload/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/record/models.py" afterPath="$PROJECT_DIR$/apps/record/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/forms.py" afterPath="$PROJECT_DIR$/apps/saltstack/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/urls.py" afterPath="$PROJECT_DIR$/apps/saltstack/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/saltstack/views.py" afterPath="$PROJECT_DIR$/apps/saltstack/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/salt_deploy_dev.html" afterPath="$PROJECT_DIR$/templates/salt_deploy_dev.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/salt_deploy_dev_join.html" afterPath="$PROJECT_DIR$/templates/salt_deploy_dev_join.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/salt_deploy_dev_pull.html" afterPath="$PROJECT_DIR$/templates/salt_deploy_dev_pull.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/salt_deploy_dev_pull_test.html" afterPath="$PROJECT_DIR$/templates/salt_deploy_dev_pull_test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssetManage/views.py" afterPath="$PROJECT_DIR$/AssetManage/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,153 +45,54 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="29" column="57" lean-forward="true" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="61" />
+              <folding>
+                <element signature="e#448#480#0#HTML" expanded="true" />
+                <element signature="e#760#766#0#HTML" expanded="true" />
+                <element signature="e#766#772#0#HTML" expanded="true" />
+                <element signature="e#772#778#0#HTML" expanded="true" />
+                <element signature="e#792#798#0#HTML" expanded="true" />
+                <element signature="e#1021#1027#0#HTML" expanded="true" />
+                <element signature="e#1027#1033#0#HTML" expanded="true" />
+                <element signature="e#1033#1039#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="saltcmd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/scripts/script/saltcmd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="68" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="11" selection-end-column="68" />
+              <folding>
+                <element signature="e#20#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AssetManage/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
+        <entry file="file://$PROJECT_DIR$/AssetManage/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="854" column="65" lean-forward="false" selection-start-line="854" selection-start-column="65" selection-end-line="854" selection-end-column="65" />
+            <state relative-caret-position="700">
+              <caret line="56" column="41" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
               <folding>
-                <element signature="e#22#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt_deploy_dev_join.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev_join.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-              <folding>
-                <element signature="e#1044#1136#0#HTML" expanded="true" />
-                <element signature="e#2153#2186#0#HTML" expanded="true" />
-                <element signature="e#2515#2535#0#HTML" expanded="true" />
-                <element signature="e#3026#3046#0#HTML" expanded="true" />
-                <element signature="e#15445#15502#0#HTML" expanded="true" />
-                <marker date="1492455298460" expanded="false" signature="3983:4020" ph="..." />
-                <marker date="1492455298460" expanded="false" signature="4223:4248" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt_deploy_dev.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
-              <caret line="60" column="38" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="60" selection-end-column="38" />
-              <folding>
-                <element signature="e#1044#1115#0#HTML" expanded="true" />
-                <element signature="e#2494#2565#0#HTML" expanded="true" />
-                <element signature="e#2646#2666#0#HTML" expanded="true" />
-                <element signature="e#3061#3081#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/fileupload/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="219" column="0" lean-forward="false" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt_deploy_dev_pull.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev_pull.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-              <folding>
-                <element signature="e#892#969#0#HTML" expanded="true" />
-                <element signature="e#1325#1354#0#HTML" expanded="true" />
-                <element signature="e#1457#1506#0#HTML" expanded="true" />
-                <element signature="e#1949#2007#0#HTML" expanded="true" />
-                <element signature="e#2087#2133#0#HTML" expanded="true" />
-                <element signature="e#2328#2361#0#HTML" expanded="true" />
-                <element signature="e#2420#2497#0#HTML" expanded="true" />
-                <element signature="e#2612#2644#0#HTML" expanded="true" />
-                <element signature="e#2759#2788#0#HTML" expanded="true" />
-                <element signature="e#3566#3613#0#HTML" expanded="true" />
-                <element signature="e#3902#3977#0#HTML" expanded="true" />
-                <element signature="e#4632#4708#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt_deploy_dev_pull_test.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev_pull_test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-317">
-              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-              <folding>
-                <element signature="e#1079#1122#0#HTML" expanded="true" />
-                <element signature="e#1438#1492#0#HTML" expanded="true" />
-                <element signature="e#1540#1569#0#HTML" expanded="true" />
-                <element signature="e#1640#1705#0#HTML" expanded="true" />
-                <element signature="e#1853#1887#0#HTML" expanded="true" />
-                <element signature="e#2862#2911#0#HTML" expanded="true" />
-                <element signature="e#3216#3247#0#HTML" expanded="true" />
-                <element signature="e#4314#4351#0#HTML" expanded="true" />
-                <element signature="e#4655#4686#0#HTML" expanded="true" />
-                <element signature="e#5688#5745#0#HTML" expanded="true" />
-                <element signature="e#5986#6043#0#HTML" expanded="true" />
-                <element signature="e#6293#6322#0#HTML" expanded="true" />
-                <element signature="e#6365#6429#0#HTML" expanded="true" />
-                <element signature="e#6555#6591#0#HTML" expanded="true" />
-                <element signature="e#6679#6739#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/saltstack/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="81" lean-forward="true" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="81" />
-              <folding>
-                <element signature="e#23#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/fileupload/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/saltstack/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="854">
-              <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt_deploy_dev_pull_test_result.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev_pull_test_result.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="46" selection-end-column="14" />
-              <folding>
-                <element signature="e#889#945#0#HTML" expanded="true" />
-                <element signature="e#997#1040#0#HTML" expanded="true" />
-                <element signature="e#1075#1118#0#HTML" expanded="true" />
-                <element signature="e#1203#1257#0#HTML" expanded="true" />
-                <element signature="e#1304#1340#0#HTML" expanded="true" />
+                <element signature="e#22#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -269,7 +163,6 @@
         <option value="$PROJECT_DIR$/templates/minionGroups.html" />
         <option value="$PROJECT_DIR$/templates/salt_excute.html" />
         <option value="$PROJECT_DIR$/templates/salt_deploy.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/webuploader/syntax.css" />
         <option value="$PROJECT_DIR$/static/webuploader/global.js" />
         <option value="$PROJECT_DIR$/templates/test_webuploader.html" />
@@ -280,7 +173,6 @@
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/static/webuploader/style.css" />
         <option value="$PROJECT_DIR$/apps/fileupload/forms.py" />
-        <option value="$PROJECT_DIR$/AssetManage/views.py" />
         <option value="$PROJECT_DIR$/templates/groupsaddminions.html" />
         <option value="$PROJECT_DIR$/apps/fileupload/models.py" />
         <option value="$PROJECT_DIR$/apps/fileupload/adminx.py" />
@@ -307,6 +199,8 @@
         <option value="$PROJECT_DIR$/templates/salt_deploy_dev.html" />
         <option value="$PROJECT_DIR$/templates/salt_deploy_dev_join.html" />
         <option value="$PROJECT_DIR$/apps/fileupload/views.py" />
+        <option value="$PROJECT_DIR$/AssetManage/views.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -376,60 +270,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assetmanage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assetmanage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sls" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assetmanage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assetmanage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assetmanage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assetmanage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="apps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -448,7 +288,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="saltstack" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -466,7 +306,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fileupload" />
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -949,26 +793,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/forgetpwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1029,14 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="8" column="32176" lean-forward="false" selection-start-line="8" selection-start-column="32169" selection-end-line="8" selection-end-column="32176" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssetManage/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1108,6 +928,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="196" column="18" lean-forward="false" selection-start-line="196" selection-start-column="18" selection-end-line="196" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,14 +955,6 @@
           <folding>
             <element signature="e#3544#3569#0#HTML" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/scripts/script/saltcmd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="17" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,14 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AssetManage/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev_pull_test_one.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -1241,11 +1046,11 @@
         <state relative-caret-position="270">
           <caret line="29" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="46" selection-end-column="14" />
           <folding>
-            <element signature="e#889#945#0#HTML" expanded="true" />
-            <element signature="e#997#1040#0#HTML" expanded="true" />
-            <element signature="e#1075#1118#0#HTML" expanded="true" />
-            <element signature="e#1203#1257#0#HTML" expanded="true" />
-            <element signature="e#1304#1340#0#HTML" expanded="true" />
+            <element signature="e#889#945#0#HTML" expanded="false" />
+            <element signature="e#997#1040#0#HTML" expanded="false" />
+            <element signature="e#1075#1118#0#HTML" expanded="false" />
+            <element signature="e#1203#1257#0#HTML" expanded="false" />
+            <element signature="e#1304#1340#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1279,18 +1084,18 @@
         <state relative-caret-position="152">
           <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
-            <element signature="e#892#969#0#HTML" expanded="true" />
-            <element signature="e#1325#1354#0#HTML" expanded="true" />
-            <element signature="e#1457#1506#0#HTML" expanded="true" />
-            <element signature="e#1949#2007#0#HTML" expanded="true" />
-            <element signature="e#2087#2133#0#HTML" expanded="true" />
-            <element signature="e#2328#2361#0#HTML" expanded="true" />
-            <element signature="e#2420#2497#0#HTML" expanded="true" />
-            <element signature="e#2612#2644#0#HTML" expanded="true" />
-            <element signature="e#2759#2788#0#HTML" expanded="true" />
-            <element signature="e#3566#3613#0#HTML" expanded="true" />
-            <element signature="e#3902#3977#0#HTML" expanded="true" />
-            <element signature="e#4632#4708#0#HTML" expanded="true" />
+            <element signature="e#892#969#0#HTML" expanded="false" />
+            <element signature="e#1325#1354#0#HTML" expanded="false" />
+            <element signature="e#1457#1506#0#HTML" expanded="false" />
+            <element signature="e#1949#2007#0#HTML" expanded="false" />
+            <element signature="e#2087#2133#0#HTML" expanded="false" />
+            <element signature="e#2328#2361#0#HTML" expanded="false" />
+            <element signature="e#2420#2497#0#HTML" expanded="false" />
+            <element signature="e#2612#2644#0#HTML" expanded="false" />
+            <element signature="e#2759#2788#0#HTML" expanded="false" />
+            <element signature="e#3566#3613#0#HTML" expanded="false" />
+            <element signature="e#3902#3977#0#HTML" expanded="false" />
+            <element signature="e#4632#4708#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1316,7 +1121,7 @@
         <state relative-caret-position="180">
           <caret line="9" column="81" lean-forward="true" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="81" />
           <folding>
-            <element signature="e#23#64#0" expanded="true" />
+            <element signature="e#23#64#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1326,10 +1131,10 @@
         <state relative-caret-position="699">
           <caret line="60" column="38" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="60" selection-end-column="38" />
           <folding>
-            <element signature="e#1044#1115#0#HTML" expanded="true" />
-            <element signature="e#2494#2565#0#HTML" expanded="true" />
-            <element signature="e#2646#2666#0#HTML" expanded="true" />
-            <element signature="e#3061#3081#0#HTML" expanded="true" />
+            <element signature="e#1044#1115#0#HTML" expanded="false" />
+            <element signature="e#2494#2565#0#HTML" expanded="false" />
+            <element signature="e#2646#2666#0#HTML" expanded="false" />
+            <element signature="e#3061#3081#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1350,21 +1155,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="854" column="65" lean-forward="false" selection-start-line="854" selection-start-column="65" selection-end-line="854" selection-end-column="65" />
-          <folding>
-            <element signature="e#22#75#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/fileupload/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="219" column="0" lean-forward="false" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13801">
+          <caret line="854" column="65" lean-forward="false" selection-start-line="854" selection-start-column="65" selection-end-line="854" selection-end-column="65" />
+          <folding>
+            <element signature="e#22#75#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetManage/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/scripts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/scripts/script/saltcmd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="68" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="11" selection-end-column="68" />
+          <folding>
+            <element signature="e#20#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssetManage/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="56" column="41" lean-forward="false" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding>
+            <element signature="e#22#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="29" column="57" lean-forward="true" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="61" />
+          <folding>
+            <element signature="e#448#480#0#HTML" expanded="true" />
+            <element signature="e#760#766#0#HTML" expanded="true" />
+            <element signature="e#766#772#0#HTML" expanded="true" />
+            <element signature="e#772#778#0#HTML" expanded="true" />
+            <element signature="e#792#798#0#HTML" expanded="true" />
+            <element signature="e#1021#1027#0#HTML" expanded="true" />
+            <element signature="e#1027#1033#0#HTML" expanded="true" />
+            <element signature="e#1033#1039#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

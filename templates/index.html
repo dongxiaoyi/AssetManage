@@ -21,26 +21,26 @@ Dashboard
 <div class="row">
     <div class="panel">
         <div class="panel-body" >
-            <div id="asset_categories" style="width: 1000px;height:500px;">
-                <div class="col-sm-4 placeholder">
+            <div id="asset_categories" style="width: 90%;height:500px;">
+                <div class="col-sm-3 placeholder">
                   <ul class="list-group">
-                    <li class="list-group-item  active">服务器信息(<!--{{ret.nowtime|date:"Y-m-d H:i:s"}}-->)</li>
-                    <li class="list-group-item">系统负载 : <strong><!--{{ret.sysone}}, {{ret.sysfive}}, {{ret.sysfifteen}}--></strong></li>
-                    <li class="list-group-item">CPU利用率 : <strong><!--{{ret.cpuperc}}-->%</strong></li>
-                    <li class="list-group-item">内存 : <strong><!--{{ret.memused}}G/{{ret.memtotal}}G {{ret.memperc}}-->%</strong></li>
+                    <li class="list-group-item  active">Master服务器信息 ( {{ now_time }} )</li>
+                    <li class="list-group-item">系统负载 : {% for cpuload in cpuloads %}<strong> &nbsp;&nbsp;&nbsp; {{ cpuload }}&nbsp;</strong>{% endfor %}</li>
+                    <li class="list-group-item">CPU利用率 :</li>
+                    <li class="list-group-item">内存 : <br><br>{% for memname,meminfo in mem.items %} <strong>{{ memname }}{{ meminfo }}&nbsp;&nbsp;&nbsp;</strong>{% endfor %}</li>
                     <li class="list-group-item">硬盘 : <strong><!--{{ret.diskused}}G/{{ret.disktotal}}G {{ret.diskperc}}-->%</strong></li>
                   </ul>
                 </div>
-                <div class="col-sm-4 placeholder">
+                <div class="col-sm-3 placeholder">
                   <ul class="list-group">
-                    <li class="list-group-item active">组件状态(<!--{{ret.proctime|date:"Y-m-d H:i:s"}}-->)</li>
+                    <li class="list-group-item active">组件状态 ( {{ now_time }} )</li>
                     <li class="list-group-item">SaltStack进程 : <strong><!--{{ret.saltst}}--></strong></li>
                     <li class="list-group-item">Salt-API进程 : <strong><!--{{ret.apist}}--></strong></li>
                     <li class="list-group-item">MySQL进程 : <strong><!--{{ret.myst}}--></strong></li>
                     <li class="list-group-item">SNMP进程 : <strong><!--{{ret.snmpst}}--></strong></li>
                   </ul>
                 </div>
-                <div class="col-sm-2 placeholder">
+                <div class="col-sm-3 placeholder">
                   <ul class="list-group">
                     <li class="list-group-item active">Minions状态</li>
                     <li class="list-group-item">总量 : <strong><!--{{ret.num_miniall}}--></strong> 台</li>
@@ -49,7 +49,7 @@ Dashboard
                     <!--li class="list-group-item">备用</li-->
                   </ul>
                 </div>
-                <div class="col-sm-2 placeholder">
+                <div class="col-sm-3 placeholder">
                   <ul class="list-group">
                     <a class="list-group-item active">Key列表</a>
                     <a class="list-group-item">已接受 : <strong><!--{{ret.num_mini}}--></strong> 台</a>
@@ -58,7 +58,7 @@ Dashboard
                     <!--li class="list-group-item">备用</li-->
                   </ul>
                 </div>
-                <div class="col-sm-8 placeholder">
+                <div class="col-sm-12 placeholder">
                   <div class="panel panel-primary">
                     <div class="panel-heading">
                       <h3 class="panel-title">操作记录</h3>

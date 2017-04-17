@@ -11,6 +11,7 @@ from django.contrib.auth.hashers import make_password
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 import json
+import time,subprocess
 from forms import LoginForm,RegisterForm
 from users.utils.email_send import send_register_email
 from AssetManage.settings import EMAIL_HOST_USER
@@ -24,8 +25,43 @@ class IndexView(LoginRequiredMixin,View):
     首页
     '''
     def get(self,request):
-        return render(request,'index.html',{
-        })
+        now_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
+        '''当前服务器负载'''
+        with open('/proc/loadavg','r') as loadavg:
+            cpuload = loadavg.readline()
+        cpuloads = []
+        for load in cpuload.split(' '):
+            cpuloads.append(str(load))
+        cpuloads = cpuloads
+        '''内存信息'''
+        mem = {}
+        mem_command = 'free -m|head -3|tail -2'
+        mems = subprocess.Popen(mem_command, stdout=subprocess.PIPE, shell=True)
+        mem_stdout = mems.communicate()[0]
+        mem_info_list = []
+        for mem_line in mem_stdout.split('\n'):
+            mem_info_list.append(str(mem_line))
+        buffers_cached_line = mem_info_list[0]
+        buffer_cache_list = []
+        for buffer_cache in buffers_cached_line.strip('\n').split('        '):
+            buffer_cache_list.append(buffer_cache)
+        for buffer in buffer_cache_list[-2:-1]:
+            mem['buffers: '] = str(buffer)
+        for cache in buffer_cache_list[-1:]:
+            mem['cached: '] = str(cache)
+        trust_mem_used_free_info_line = mem_info_list[1]
+        mem_used_free_list = []
+        for mem_used_free in trust_mem_used_free_info_line.strip('\n').split('        '):
+            mem_used_free_list.append(str(mem_used_free))
+        for mem_used in mem_used_free_list[-2:-1]:
+            mem['used: '] = str(mem_used)
+        for mem_free in mem_used_free_list[-1:]:
+            mem['free: '] = str(mem_free)
+        print mem
+        return render(request,'index.html',{'now_time':now_time,
+                                            'cpuloads':cpuloads,
+                                            'mem':mem
+                                            })
 
 
 class AccLoginView(View):

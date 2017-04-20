@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block header-css %}
+
+
+{% endblock %}
+
+{% block page-content-title %}
+Dashboard
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="{% url 'record:user_record' %}">操作记录</a></li>
+</ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+<div class="row">
+    <div class="panel">
+        <div class="panel-body" >
+                <div class="col-sm-12 placeholder">
+                  <div class="panel panel-primary">
+
+                    <div class="panel-body" style="margin: 15px 0px 0px 0px;">
+                    <div style="float:left;width: 1600px;">
+                        <button type="button" class="btn btn-primary btn-lg " disabled style="height:50px;width: 1500px;display: inline-block;margin-left: 0px">用户操作记录</button>
+                        <button type="button" class="btn btn-warning btn-lg " disabled style="width: 300px;display: inline-block;margin: 0px 0px 0px 0px;">说明</button>
+                        <button type="button" class="btn btn-warning btn-lg " disabled style="width: 1200px;display: inline-block;margin: 0px 0px 0px -3px;text-align: center">显示不完整的请点击查看，具体执行过程记录请查看日志。</button>
+                        <button type="button" class="btn btn-danger btn-lg " disabled style="height:40px;width: 300px;display: inline-block;margin-left: 0px">用户</button>
+                        <button type="button" class="btn btn-danger btn-lg " disabled style="height:40px;width: 300px;display: inline-block;margin: 0px 0px 0px -3px">时间</button>
+                        <button type="button" class="btn btn-primary btn-lg " style="height:40px;width: 900px;display: inline-block;margin: 0px 0px 0px -4px;">用户操作</button>
+                    </div>
+                      {% for record in records.object_list %}
+                          <div style="float:left;width: 1600px;">
+<form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'record:get_all_record' %}">
+                              <button type="button" class="btn btn-danger btn-lg " disabled style="width: 300px;display: inline-block;margin: 0px 0px 0px 0px;">{{ record.username }}</button>
+                              <button type="button" class="btn btn-danger btn-lg " disabled style="width: 300px;display: inline-block;margin: 0px 0px 0px -3px">{{ record.nowtime }}</button>
+                                <div hidden>
+                                    <input type="text" class="form-control" name="record" value='{{ record.id }}' >
+                                </div>
+                              <button type="submit" class="btn btn-primary btn-lg " style="width: 900px;display: inline-block;margin: 0px 0px 0px -4px;text-align: left;">{{ record.user_operate }}</button>
+    {% csrf_token %}</form></div>
+                      {% endfor %}
+                              <div class="pageturn">
+      <ul class="pagelist">
+          {% load i18n %}
+         <div class="pagination">
+             {% if records.has_previous %}
+                 <li class="long"><a href="?{{ records.previous_page_number.querystring }}">上一页</a> </li>
+             {% endif %}
+             {% for page in records.pages %}
+                 {% if page %}
+                     {% ifequal page record.number %}
+                         <li class="active"><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                     {% else %}
+                         <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
+                     {% endifequal %}
+                 {% else %}
+                     <li class="none"><a href="">...</a></li>
+                 {% endif %}
+             {% endfor %}
+             {% if records.has_next %}
+                 <li class="long"><a href="?{{ records.next_page_number.querystring }}">下一页</a></li>
+             {% endif %}
+         </div>
+      </ul>
+     </div>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!--
+<div class="row">
+    <div class="panel col-md-7">
+        <div class="panel-body" >
+            <div id="business_load" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+</div>
+-->
+{% endblock %}
+
+{% block bottom-js %}
+    <script type="application/javascript">
+    $('ol').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+{% endblock %}

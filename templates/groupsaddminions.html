@@ -41,25 +41,10 @@
                 </div></li>
         <lu class="row" style="float:right;width: 800px;">
 <!--Category name-->
-            <li class="list-group-item " >创建群组</li>
-             <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:minion_groups' %}">
-             <div class="panel panel-default">
-                    <div class="panel-body" style="float:left;width: 650px;">
-                     <input type="text" class="form-control" name="creategroups" value='' placeholder="请输入想要创建的群组名称" >
-                </div>
-            <div class="form-group">
-                 <div class="panel-body" style="float:right;width: 140px;">
-                    <button type="submit" class="btn btn-primary" id="execapi">确认创建</button>
-                 </div>
-            </div>
-                <div class='bg-primary'>
-                    <h4 id="info"></h4>
-                </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" style="height: 35px;">创建结果{{ msg }}</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" style="height: 35px;"><a href="{% url 'hostlist:minion_groups' %}">返回</a></button>
                 </div>
-            </div>{% csrf_token %}
-                </form>
+
 
 									<!--Menu list item-->
 <!--Category name-->		<lu class="list-group-item " >分组
@@ -96,9 +81,17 @@
                                 </div>
                     {% csrf_token %}</form></lu>
              <div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" style="height: 35px;">添加结果</button>
-                </div>
-        </div>
+                  <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'hostlist:delete_group' %}">
+                    <div style="float:left;width: 200px;" hidden>群组
+                                 <select data-style="btn-danger" name="deletegroupname" id="deletegroupname" class="selectpicker form-control" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     <option selected value="{{ group }}">{{ group }}</option>
+                                 </select>
+                                 </div>
+                      <button type="submit" class="btn btn-danger btn-lg btn-block" style="height: 35px;">删除群组（谨慎操作）</button>
+                  {% csrf_token %}
+                  </form>
+             </div>
+        </lu></div>
 
     </div>
 

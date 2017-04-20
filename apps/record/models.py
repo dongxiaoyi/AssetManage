@@ -15,8 +15,8 @@ class OperateRecord(models.Model):
     #jid = models.CharField(max_length=255, blank=True, verbose_name=u'jid')
 
     class Meta:
-        verbose_name = u'用户操作信息'
-        verbose_name_plural = u"用户操作信息"
+        verbose_name = u'用户操作记录（无后台）'
+        verbose_name_plural = u"用户操作记录（无后台）"
 
     def __unicode__(self):
         return u'%s %s %s' %(self.nowtime, self.username, self.user_operate,)

@@ -7,4 +7,4 @@ from django.apps import AppConfig
 
 class RecordConfig(AppConfig):
     name = 'record'
-    verbose_name = u'前端操作记录'
+    verbose_name = u'操作记录'

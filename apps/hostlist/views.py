@@ -13,13 +13,15 @@ from django.views.decorators.csrf import csrf_exempt
 from . import models,adminx
 from django.contrib.auth.decorators import login_required
 from users.utils.mixin_utils import LoginRequiredMixin
-import json,logging
+import json,logging,time
 import xadmin
 from .models import Dzhuser, DataCenter, AccHostList,UnAccHostList,ErrorHostList
 from asset import tables
 from .adminx import AccHostListAdminx,UnAccHostListAdminx,ErrorHostListAdminx
 from hostlist.models import MinionGroups
-from .forms import CreateGroupsForm
+from .forms import CreateGroupsForm,DeleteGroupIdForm
+from record.models import OperateRecord
+
 
 class AccMinionListView(LoginRequiredMixin,View):
     def get(self,request):
@@ -107,7 +109,7 @@ class AcceptUnaccView(LoginRequiredMixin,View):
    def get(self,request):
        return render(request,'index.html')
 
-
+#创建群组
 class MinionGroupsView(LoginRequiredMixin, View):
     def get(self, request):
         all_minions = AccHostList.objects.all()
@@ -127,18 +129,28 @@ class MinionGroupsView(LoginRequiredMixin, View):
             for groups in all_groups:
                 all_groups_name.append(groups.Group)
             if new_group_name in all_groups_name:
+                groups = MinionGroups.objects.all()
                 msg = ": group已存在，请重新命名！"
                 return render(request,'minionGroups.html',{
                     'new_group':new_group,
                     'msg':msg,
-                    'all_minions':all_minions
+                    'all_minions':all_minions,
+                    'groups':groups
                 })
             else:
+                groups = MinionGroups.objects.all()
                 msg = ": 创建成功！"
                 create_group = MinionGroups
                 create_group.objects.create(Group=new_group_name)
-                from django.core.urlresolvers import reverse
-                return HttpResponseRedirect(reverse('hostlist:minion_groups'))
+                userid = request.user.id
+                user = User.objects.get(id=userid)
+                create_record = OperateRecord.objects.create(username=user,nowtime=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime()),user_operate="创建群组： " + str(new_group_name))
+                create_record.save()
+                return render(request, 'minionGroups.html', {
+                    'msg': msg,
+                    'all_minions': all_minions,
+                    'groups': groups
+                })
         else:
             from django.core.urlresolvers import reverse
             return HttpResponseRedirect(reverse('hostlist:minion_groups'))
@@ -149,6 +161,8 @@ class GroupAddMinionsView(LoginRequiredMixin,View):
         all_minions = AccHostList.objects.all()
         group = MinionGroups.objects.get(id=str(group_id))
         has_minions = group.minion.all()
+        groupid=group_id
+        to_group = MinionGroups.objects.get(id=int(groupid))
         no_has_minions = []
         for minion in all_minions:
             if minion not in has_minions:
@@ -159,6 +173,7 @@ class GroupAddMinionsView(LoginRequiredMixin,View):
             'groups':groups,
             'has_minions':has_minions,
             'no_has_minions':no_has_minions,
+            'to_group':to_group
         })
 
     def post(self,request,group_id):
@@ -178,7 +193,30 @@ class GroupAddMinionsView(LoginRequiredMixin,View):
         new_group = MinionGroups.objects.get(id=group_id)
         for minion in all_minions_que:
             new_group.minion.add(minion)
+        all_minions_que_id = []
+        for minion in all_minions_que:
+            all_minions_que_id.append(str(minion.minionid))
+        userid = request.user.id
+        user = User.objects.get(id=userid)
+        create_record = OperateRecord.objects.create(username=user,
+                                                     nowtime=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()),
+                                                     user_operate="群组 " + str(togroup) + " 更新群组成员为：" + str(all_minions_que_id))
+        create_record.save()
         from django.core.urlresolvers import reverse
         return HttpResponseRedirect(reverse('hostlist:minion_groups'))
 
 
+class DeleteGroupView(LoginRequiredMixin,View):
+    def post(self,request):
+        deletegroupidform = DeleteGroupIdForm(request.POST)
+        if deletegroupidform.is_valid():
+            deletegroupname = request.POST.get('deletegroupname','')
+            MinionGroups.objects.filter(Group=str(deletegroupname)).delete()
+            userid = request.user.id
+            user = User.objects.get(id=userid)
+            create_record = OperateRecord.objects.create(username=user,
+                                                         nowtime=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()),
+                                                         user_operate="删除群组 " + str(deletegroupname))
+            create_record.save()
+            from django.core.urlresolvers import reverse
+            return HttpResponseRedirect(reverse('hostlist:minion_groups'))

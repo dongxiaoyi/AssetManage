@@ -22,6 +22,8 @@ from django import forms
 class CreateGroupsForm(forms.Form):
     creategroups = forms.CharField(required=True,min_length=1)
 
+class DeleteGroupIdForm(forms.Form):
+    deletegroupname = forms.CharField(required=True)
 #class MinionToGroupForm(forms.Form):
 #    oldminions = forms.CharField(required=True,min_length=0)
 #    newminions = forms.CharField(required=True,min_length=0)

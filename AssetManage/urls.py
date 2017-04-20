@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^hostlist/', include('hostlist.urls', namespace='hostlist'), ),
     #文件上传相关
     url(r'^fileupload/', include('fileupload.urls', namespace='fileupload'), ),
+    url(r'^record/', include('record.urls', namespace='record'), ),
 
     url('^$', IndexView.as_view(),name="index"),
     url('^indexminions/$', IndexMinionsView.as_view(), name="indexminions"),

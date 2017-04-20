@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block header-css %}
+
+
+{% endblock %}
+
+{% block page-content-title %}
+Dashboard
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="{% url 'record:user_record' %}">操作记录</a></li>
+</ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+<div class="row">
+    <div class="panel">
+        <div class="panel-body" >
+                <div class="col-sm-12 placeholder">
+                  <div class="panel panel-primary">
+
+                    <div class="panel-body" style="margin: 15px 0px 0px 0px;">
+                    <div style="float:left;width: 1600px;">
+                        <button type="button" class="btn btn-primary btn-lg " disabled style="height:50px;width: 1500px;display: inline-block;margin-left: 0px">用户操作记录</button>
+                        <button type="button" class="btn btn-warning btn-lg " style="width: 1500px;display: inline-block;margin: 0px 0px 0px 0px;text-align: center"><a href="{% url 'record:user_record' %}">返回</a></button>
+                    </div>
+
+                        <button type="button" class="btn btn-danger btn-lg " disabled style="height:40px;width: 1500px;display: inline-block;margin: 0px 0px 0px 0px;">用户操作</button>
+
+                        <pre  style="line-height:15px;width: 1500px;text-align: left" id="result;">
+    用户： {{ record.username }}
+
+    时间： {{ record.nowtime }}
+
+    操作： {{ record.user_operate }}
+                        </pre>
+
+                  </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!--
+<div class="row">
+    <div class="panel col-md-7">
+        <div class="panel-body" >
+            <div id="business_load" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+</div>
+-->
+{% endblock %}
+
+{% block bottom-js %}
+
+<script type="application/javascript">
+    $('ol').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('pre', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+</script>
+
+    <script type="application/javascript">
+    $('ol').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+{% endblock %}

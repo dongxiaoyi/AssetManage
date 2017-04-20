@@ -20,8 +20,9 @@ from fileupload.models import UploadFiles
 from .models import Service
 from .forms import DevServiceForm,UpdateDevServiceForm,PullDevServicesTestForm,PullservicesnamesForm,PullDevServicesTestSelectForm,PullDevServicesForm,PullDevServicesSelectForm,PullservicenameForm
 from .forms import DevServiceDeleteForm
+from record.models import OperateRecord
 from AssetManage.settings import MEDIA_ROOT
-import json,os,types,subprocess,tarfile,zipfile,shutil
+import json,os,types,subprocess,tarfile,zipfile,shutil,time
 # Create your views here.
 
 '''开发环境服务创建'''
@@ -55,6 +56,13 @@ class SaltDeployDevView(LoginRequiredMixin,View):
                                                      sls=sls)
                 service_add.save()
                 msg = u'创建成功！'
+                userid = request.user.id
+                user = User.objects.get(id=userid)
+                create_record = OperateRecord.objects.create(username=user,
+                                                             nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                                   time.localtime()),
+                                                             user_operate="创建服务 " + str(servicename))
+                create_record.save()
                 return render(request,'salt_deploy_dev.html',{
                 'msg':msg,
                 'all_service_dev': all_service_dev,
@@ -163,6 +171,12 @@ class SaltExecuteView(LoginRequiredMixin,View):
                         #print all_minionid
                     result = saltcommands(all_minionid,cmd)
                     #print result
+            userid = request.user.id
+            user = User.objects.get(id=userid)
+            create_record = OperateRecord.objects.create(username=user,
+                                                         nowtime=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()),
+                                                         user_operate="执行命令 " + str(cmd))
+            create_record.save()
             return render(request, 'salt_excute.html', {
                 'all_acc_minion': all_acc_minion,
                 'all_groups': all_groups,
@@ -285,9 +299,15 @@ class PullDevServicesAllTestView(LoginRequiredMixin,View):
                         for cmd_line in pulltest_stdout.split('\n'):
                             cmd_line = cmd_line.replace(cmd_line, '<code>' + cmd_line + '</code>')
                             result.append(cmd_line)
-                        msg[
-                            '<ul class="nav nav-pills nav-stacked"><li class="active"><a href="#">' + u'主机： ' + minion + u'  服务： ' + servicename + '</a></li></ul>'] = result
+                        msg['<ul class="nav nav-pills nav-stacked"><li class="active"><a href="#">' + u'主机： ' + minion + u'  服务： ' + servicename + '</a></li></ul>'] = result
 
+                userid = request.user.id
+                user = User.objects.get(id=userid)
+                create_record = OperateRecord.objects.create(username=user,
+                                                             nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                                   time.localtime()),
+                                                             user_operate="服务批量测试推送： " + str(pullservicename))
+                create_record.save()
                 return render(request, 'salt_deploy_dev_pull_test_result.html', {'msg': msg,
                                                                                  })
         elif pulldevservicesselectform.is_valid():
@@ -390,7 +410,13 @@ class PullDevServicesAllTestView(LoginRequiredMixin,View):
                         cmd_line = cmd_line.replace(cmd_line, '<code>' + cmd_line + '</code>')
                         result.append(cmd_line)
                     msg['<ul class="nav nav-pills nav-stacked"><li class="active"><a href="#">' + u'主机： ' + minion + u'  服务： ' + servicename + '</a></li></ul>'] = result
-
+            userid = request.user.id
+            user = User.objects.get(id=userid)
+            create_record = OperateRecord.objects.create(username=user,
+                                                         nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                               time.localtime()),
+                                                         user_operate="服务批量推送： " + str(pulldevservicestestselectnames))
+            create_record.save()
             return render(request, 'salt_deploy_dev_pull_test_result.html', {'msg': msg,
                                                                              })
         else:
@@ -469,6 +495,13 @@ class PullDevServicesTestView(LoginRequiredMixin,View):
                     cmd_line = cmd_line.replace(cmd_line, '<code>' + cmd_line + '</code>')
                     result.append(cmd_line)
                 msg['<ul class="nav nav-pills nav-stacked"><li class="active"><a href="#">' + u'主机： ' + minion + u'  服务： ' + pulldevservicestestnames + '</a></li></ul>'] = result
+            userid = request.user.id
+            user = User.objects.get(id=userid)
+            create_record = OperateRecord.objects.create(username=user,
+                                                         nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                               time.localtime()),
+                                                         user_operate="服务测试推送： " + str(pulldevservicestestnames))
+            create_record.save()
             return render(request,'salt_deploy_dev_pull_test_result.html',{'msg':msg,
                                                                            'pulldevservicestestnames':pulldevservicestestnames,
                                                                            })
@@ -543,6 +576,13 @@ class PullDevServicesTestView(LoginRequiredMixin,View):
                     cmd_line = cmd_line.replace(cmd_line, '<code>' + cmd_line + '</code>')
                     result.append(cmd_line)
                 msg['<ul class="nav nav-pills nav-stacked"><li class="active"><a href="#">' + u'主机： ' + minion + u'  服务： ' + pulldevservicestestnames + '</a></li></ul>'] = result
+            userid = request.user.id
+            user = User.objects.get(id=userid)
+            create_record = OperateRecord.objects.create(username=user,
+                                                         nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                               time.localtime()),
+                                                         user_operate="服务推送： " + str(pulldevservicestestnames))
+            create_record.save()
             return render(request, 'salt_deploy_dev_pull_test_result.html', {'msg': msg,
                                                                              'pulldevservicestestnames': pulldevservicestestnames,
                                                                              })
@@ -736,8 +776,6 @@ class UpdateDevServiceView(LoginRequiredMixin,View):
             file_id = file_queryset.id
             file_path = os.path.join(SAVE_DIR,str(updatedevfilename))
             FILENAME = str(updatedevservicename) + '.sls'
-            print type(updatedevminions)
-            print type(updatedevgroups)
             if type(updatedevminions) == types.StringType:
                 if type(updatedevgroups) == types.StringType:
                     updateservice = Service.objects.filter(name=str(updatedevservicename)).update(envtag='dev',
@@ -757,6 +795,13 @@ class UpdateDevServiceView(LoginRequiredMixin,View):
                     updategroupservice.groups.clear()
                     #for group in all_groups:
                     #    updategroupservice.groups.delete(id=group.id)
+                    userid = request.user.id
+                    user = User.objects.get(id=userid)
+                    create_record = OperateRecord.objects.create(username=user,
+                                                                 nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                                       time.localtime()),
+                                                                 user_operate="服务配置更新： " + str(updatedevservicename))
+                    create_record.save()
                     from django.core.urlresolvers import reverse
                     return HttpResponseRedirect(reverse('fileupload:upload_join',args=[str(updatedevservicecode),]))
                 else:
@@ -781,6 +826,13 @@ class UpdateDevServiceView(LoginRequiredMixin,View):
                     updategroupservice.groups.clear()
                     for query_group in update_group_query:
                         updategroupservice.groups.add(query_group)
+                    userid = request.user.id
+                    user = User.objects.get(id=userid)
+                    create_record = OperateRecord.objects.create(username=user,
+                                                                 nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                                       time.localtime()),
+                                                                 user_operate="服务配置更新： " + str(updatedevservicename))
+                    create_record.save()
                     from django.core.urlresolvers import reverse
                     return HttpResponseRedirect(reverse('fileupload:upload_join',args=[str(updatedevservicecode),]))
             else:
@@ -806,6 +858,13 @@ class UpdateDevServiceView(LoginRequiredMixin,View):
                     updategroupservice.groups.clear()
                     #for group in all_groups:
                     #    updategroupservice.groups.delete(id=group.id)
+                    userid = request.user.id
+                    user = User.objects.get(id=userid)
+                    create_record = OperateRecord.objects.create(username=user,
+                                                                 nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                                       time.localtime()),
+                                                                 user_operate="服务配置更新： " + str(updatedevservicename))
+                    create_record.save()
                     from django.core.urlresolvers import reverse
                     return HttpResponseRedirect(reverse('fileupload:upload_join',args=[str(updatedevservicecode),]))
                 else:
@@ -834,6 +893,13 @@ class UpdateDevServiceView(LoginRequiredMixin,View):
                     updategroupservice.groups.clear()
                     for query_group in update_group_query:
                         updategroupservice.groups.add(query_group)
+                    userid = request.user.id
+                    user = User.objects.get(id=userid)
+                    create_record = OperateRecord.objects.create(username=user,
+                                                                 nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                                       time.localtime()),
+                                                                 user_operate="服务配置更新： " + str(updatedevservicename))
+                    create_record.save()
                     from django.core.urlresolvers import reverse
                     return HttpResponseRedirect(reverse('fileupload:upload_join',args=[str(updatedevservicecode),]))
         else:
@@ -851,5 +917,12 @@ class  DevServiceDeleteView(LoginRequiredMixin,View):
         if devservicedelete.is_valid():
             devservicedelete = request.POST.get('devservicedelete','')
             Service.objects.filter(name=str(devservicedelete)).delete()
+        userid = request.user.id
+        user = User.objects.get(id=userid)
+        create_record = OperateRecord.objects.create(username=user,
+                                                     nowtime=time.strftime('%Y-%m-%d %H:%M:%S',
+                                                                           time.localtime()),
+                                                     user_operate="服务删除： " + str(devservicedelete))
+        create_record.save()
         from django.core.urlresolvers import reverse
         return HttpResponseRedirect(reverse('salt:salt_deploy_dev'))

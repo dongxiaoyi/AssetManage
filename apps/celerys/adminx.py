@@ -183,7 +183,7 @@ class PeriodicTaskAdminx(object):
     )
     refresh_times = [3,5]
     search_fields = ('name', 'task')
-    ordering = ('-enabled', 'name')
+    ordering = ('name','-enabled')
     fieldsets = (
         (None, {
             'fields': ('name', 'regtask', 'task', 'enabled'),

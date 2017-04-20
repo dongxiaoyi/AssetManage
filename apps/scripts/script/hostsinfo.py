@@ -11,6 +11,8 @@ django.setup()
 from hostlist.models import AccHostList,UnAccHostList,ErrorHostList
 #os.environ['DJANGO_SETTINGS_MODULE'] = 'AssetManage.settings'
 #@app.task
+'''获取minion端的信息'''
+
 
 All_minion_cmd = subprocess.Popen("salt-key -l acc|grep -v Acc",stdout=subprocess.PIPE,shell=True)
 All_minion = All_minion_cmd.communicate()[0].strip().split('\n')
@@ -33,7 +35,7 @@ def get_all_mem_total():
         get_mem_total_cmd = "salt " + str(minion) + " grains.get mem_total|sed 'N;s/\\n//g'"
         get_mem_total = subprocess.Popen(get_mem_total_cmd,stdout=subprocess.PIPE,shell=True)
         mem_total = get_mem_total.communicate()[0].strip().split(':    ')
-        all_mem_total[str(minion)] = int(mem_total[1])
+        all_mem_total[str(minion)] = str(mem_total[1])
     return all_mem_total
 
 def get_all_cpu_model():
@@ -51,7 +53,7 @@ def get_all_num_cpus():
         get_num_cpus_cmd = "salt " + str(minion) + " grains.get num_cpus|sed 'N;s/\\n//g'"
         get_num_cpus = subprocess.Popen(get_num_cpus_cmd,stdout=subprocess.PIPE,shell=True)
         num_cpus = get_num_cpus.communicate()[0].strip().split(':    ')
-        all_num_cpus[str(minion)] = int(num_cpus[1])
+        all_num_cpus[str(minion)] = str(num_cpus[1])
     return all_num_cpus
 
 def get_all_cpuarch():
@@ -139,8 +141,8 @@ def GetMinionInfo():
     else:
         for minion in all_unacc_minion:
             all_unacc_minionid.append(str(minion.minionid))
-    '''如果这个minionid本来就有，就更新数据，没有就创建数据,如果这个minionid在unacc中，自动创建acc，并且删除unacc数据'''
-    '''如果服务器返回的minionid为['']，得看一下数据库的是否为空！！！'''
+    #'''如果这个minionid本来就有，就更新数据，没有就创建数据,如果这个minionid在unacc中，自动创建acc，并且删除unacc数据'''
+    #'''如果服务器返回的minionid为['']，得看一下数据库的是否为空！！！'''
     if acc_stdout == ['']:
         if all_acc_minion == []:
             pass
@@ -235,7 +237,7 @@ def GetMinionInfo():
                                                                            saltversion=all_saltversion[str(acc_id)],
                                                                            key_tag='acc',
                                                                            action='无')
-        '''反向从数据库的minionid查看是否都在服务器返回的minionid列表中，在的pass'''
+        #'''反向从数据库的minionid查看是否都在服务器返回的minionid列表中，在的pass'''
         for acc_id in all_acc_minionid:
             if str(acc_id) in acc_stdout:
                 pass
@@ -268,8 +270,8 @@ def GetMinionInfo():
                                                          action='无',
                                                          remark='acc组minion连接可能有问题,服务器并未返回此minionid，请核实！')
                     error.save()
-    '''接下来判断unacc'''
-    '''如果服务器返回的unacc在数据库中就pass，在acc中也不用处理，此前数据库反查，如果acc中的数据在数据库unacc和服务器返回的unacc中都不用处理'''
+    #'''接下来判断unacc'''
+    #'''如果服务器返回的unacc在数据库中就pass，在acc中也不用处理，此前数据库反查，如果acc中的数据在数据库unacc和服务器返回的unacc中都不用处理'''
     if unacc_stdout == ['']:
         pass
     else:
@@ -282,6 +284,7 @@ def GetMinionInfo():
                 '''但是数据库unacc和acc都没有的话就创建数据'''
                 unacc_create = UnAccHostList.objects.create(minionid=str(unacc_id))
                 unacc_create.save()
+
 
 
 '''下面代码作废，以前写的，不知道写的啥。。。。'''

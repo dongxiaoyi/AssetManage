@@ -11,6 +11,7 @@ from .settings import MEDIA_ROOT
 #from .settings import STATIC_ROOT
 
 from .views import IndexView,AccLoginView,AccLogoutView,RegisterView,ActiveUserView
+from dashboard.views import IndexMinionsView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,6 +25,7 @@ urlpatterns = [
     url(r'^fileupload/', include('fileupload.urls', namespace='fileupload'), ),
 
     url('^$', IndexView.as_view(),name="index"),
+    url('^indexminions/$', IndexMinionsView.as_view(), name="indexminions"),
     url(r'^login/$', AccLoginView.as_view(), name='login'),
     url(r'^logout/$', AccLogoutView.as_view(), name='logout'),
     url('^register/$', RegisterView.as_view(), name="register"),

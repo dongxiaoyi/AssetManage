@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import os,sys,subprocess
 import json
-
+'''命令执行交互返回前端操作'''
 def saltcommands(minionlist,cmd):
     result = []
     for minion in minionlist:

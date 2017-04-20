@@ -72,7 +72,7 @@ class MinionGroupsAdminx(object):
 
 
 class AccHostListAdminx(object):
-    list_display = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark','action']
+    list_display = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpuarch','num_cpus','kernelrelease','nocn', 'engineer','saltversion','remark','action']
     #搜索框
     search_fields = ['minionid','wip','nip','hostname','osfinger','mem_total','cpu_model','cpuarch','kernelrelease','nocn', 'engineer','saltversion','remark']
     #过滤器

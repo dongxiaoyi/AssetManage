@@ -17,8 +17,8 @@ from users.utils.email_send import send_register_email
 from AssetManage.settings import EMAIL_HOST_USER
 from users.models import UserMessage,EmaliVerifyRecord
 from users.utils.mixin_utils import LoginRequiredMixin
-
-
+from hostlist.models import AccHostList,UnAccHostList,ErrorHostList
+from dashboard.models import MasterLoadAvg,MasterProcessStatus,MinionOnlineNumber
 
 class IndexView(LoginRequiredMixin,View):
     '''
@@ -26,42 +26,82 @@ class IndexView(LoginRequiredMixin,View):
     '''
     def get(self,request):
         now_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
-        '''当前服务器负载'''
-        with open('/proc/loadavg','r') as loadavg:
-            cpuload = loadavg.readline()
-        cpuloads = []
-        for load in cpuload.split(' '):
-            cpuloads.append(str(load))
-        cpuloads = cpuloads
-        '''内存信息'''
+        all_acc_minions = AccHostList.objects.all()
+        all_unacc_minons = UnAccHostList.objects.all()
+        all_error_minions = ErrorHostList.objects.all()
+        '''master负载'''
+        master_loadavg_query_list = MasterLoadAvg.objects.all()
+        master_loadavg_list = []
+        for loadavg in master_loadavg_query_list:
+            master_loadavg_list.append(loadavg)
+        loadavg = master_loadavg_list[-1]
+        '''内存信息()'''
         mem = {}
-        mem_command = 'free -m|head -3|tail -2'
-        mems = subprocess.Popen(mem_command, stdout=subprocess.PIPE, shell=True)
-        mem_stdout = mems.communicate()[0]
-        mem_info_list = []
-        for mem_line in mem_stdout.split('\n'):
-            mem_info_list.append(str(mem_line))
-        buffers_cached_line = mem_info_list[0]
-        buffer_cache_list = []
-        for buffer_cache in buffers_cached_line.strip('\n').split('        '):
-            buffer_cache_list.append(buffer_cache)
-        for buffer in buffer_cache_list[-2:-1]:
-            mem['buffers: '] = str(buffer)
-        for cache in buffer_cache_list[-1:]:
-            mem['cached: '] = str(cache)
-        trust_mem_used_free_info_line = mem_info_list[1]
-        mem_used_free_list = []
-        for mem_used_free in trust_mem_used_free_info_line.strip('\n').split('        '):
-            mem_used_free_list.append(str(mem_used_free))
-        for mem_used in mem_used_free_list[-2:-1]:
-            mem['used: '] = str(mem_used)
-        for mem_free in mem_used_free_list[-1:]:
-            mem['free: '] = str(mem_free)
-        print mem
+        sys_version_command = str('uname -a|grep -i ubuntu|wc -l')
+        sys_version = subprocess.Popen(sys_version_command, stdout=subprocess.PIPE, shell=True)
+        sys_version_stdout =sys_version.communicate()[0]
+        if int(sys_version_stdout) == int(1):
+            mem = {}
+        else:
+            mem_command = 'free -m|head -3|tail -2'
+            mems = subprocess.Popen(mem_command, stdout=subprocess.PIPE, shell=True)
+            mem_stdout = mems.communicate()[0]
+            print mem_stdout
+            mem_info_list = []
+            for mem_line in mem_stdout.split('\n'):
+                mem_info_list.append(str(mem_line))
+            buffers_cached_line = mem_info_list[0]
+            buffer_cache_list = []
+            for buffer_cache in buffers_cached_line.strip('\n').split('        '):
+                buffer_cache_list.append(buffer_cache)
+            for buffer in buffer_cache_list[-2:-1]:
+                mem['buffers: '] = str(buffer)
+            for cache in buffer_cache_list[-1:]:
+                mem['cached: '] = str(cache)
+            trust_mem_used_free_info_line = mem_info_list[1]
+            mem_used_free_list = []
+            for mem_used_free in trust_mem_used_free_info_line.strip('\n').split('        '):
+                mem_used_free_list.append(str(mem_used_free))
+            for mem_used in mem_used_free_list[-2:-1]:
+                mem['mem_used: '] = str(mem_used)
+            for mem_free in mem_used_free_list[-1:]:
+                mem['mem_free: '] = str(mem_free)
+            swap_used_free_line = mem_info_list[2]
+            swap_used_free_list = []
+            for swap_used_free in swap_used_free_line.strip('\n').split('        '):
+                swap_used_free_list.append(str(swap_used_free))
+            for swap_used in swap_used_free_list[-2:-1]:
+                mem['swap_used: '] = str(swap_used)
+            for swap_free in mem_used_free_list[-1:]:
+                mem['swap_free: '] = str(swap_free)
+        '''进程状态'''
+        master_status_query_all = MasterProcessStatus.objects.all()
+        master_query_status_list = []
+        for master_status_query in master_status_query_all:
+            master_query_status_list.append(master_status_query)
+        master_status = master_query_status_list[-1]
+        '''minion数量'''
+        acc_minions_count = all_acc_minions.count()
+        unacc_minions_count = all_unacc_minons.count()
+        error_minions_count = all_error_minions.count()
+        '''minion在线数量'''
+        all_online = MinionOnlineNumber.objects.all()
+        online_list = []
+        for online_query in all_online:
+            online_list.append(online_query)
+        online = online_list[-1]
         return render(request,'index.html',{'now_time':now_time,
-                                            'cpuloads':cpuloads,
-                                            'mem':mem
+                                            'loadavg':loadavg,
+                                            'mem':mem,
+                                            'master_status':master_status,
+                                            'all_acc_minions':all_acc_minions,
+                                            'acc_minions_count':acc_minions_count,
+                                            'unacc_minions_count':unacc_minions_count,
+                                            'error_minions_count':error_minions_count,
+                                            'online':online,
                                             })
+
+
 
 
 class AccLoginView(View):

@@ -35,6 +35,7 @@
       <sourceFolder url="file://$MODULE_DIR$/static" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/templatetags" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/fileupload" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/dashboard" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 2.7.12 virtualenv at ~/.pyenv/versions/assetmanage" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

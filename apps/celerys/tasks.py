@@ -21,7 +21,25 @@ from celery import shared_task,task
 #    print "Print from celery task"
 #
 from scripts.script.hostsinfo import GetMinionInfo
+from scripts.script.dashboardinfo import DashboardInfos
+from scripts.script.get_master_info import MasterInfo,Masterprocessstatus,Miniononline
 
 @task
 def hostsinfo():
     GetMinionInfo()
+
+@task
+def dashboardinfo():
+    DashboardInfos()
+
+@task
+def masterinfo():
+    MasterInfo()
+
+@task
+def masterprocessstatus():
+    Masterprocessstatus()
+
+@task
+def miniononline():
+    Miniononline()

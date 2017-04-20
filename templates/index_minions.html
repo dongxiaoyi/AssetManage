@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block header-css %}
+
+
+{% endblock %}
+
+{% block page-content-title %}
+Dashboard
+{% endblock %}
+{% load staticfiles %}
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="{% url 'index' %}">仪表盘</a></li>
+</ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+<div class="row">
+    <div class="panel">
+        <div class="panel-body" >
+
+           <div class="form-group">
+               <div  style="float: left;width: 1440px;margin: 10px" >
+
+									<!--Menu list item-->
+                                 <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="{% url 'salt:update_dev_service' %}">
+
+                                 <div style="float:left;width: 200px;">
+                                 <button type="button" class="btn btn-danger btn-lg " disabled style="height:40px;width: 140px;margin: 0px 0px 0px 0px">Minion Info</button>
+                                 </div>
+                                 <div style="float:left;width: 1000px;height: 40px;margin: 5px">
+
+                                 <select  data-size="8" style="height: 40px" data-style="btn-default" name="infominionid" id="infominionid" class="selectpicker form-control"  data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+                                     {% for minion in all_acc_minions %}
+                                         <option style="height: 30px">{{ minion.minionid }}</option>
+                                     {% endfor %}
+                                 </select>
+                                </div>
+                                 <div style="float:right;width: 200px;margin: 0px -70px 0px 0px">
+                                 <button type="submit" class="btn btn-primary btn-lg "  style="height:40px;width: 140px;margin: 0px 0px 0px 0px">确        定</button>
+                                 </select>
+                                 </div>
+                    {% csrf_token %}</form>
+
+               </div>
+           </div>
+<button type="button" class="btn btn-danger btn-lg " disabled  style="height: 40px;width: 1440px;margin: 0px 0px 10px 10px">{{ loadavg.minionid }}</button><br>
+            <div id="asset_categories" style="width: 90%;height:500px;">
+                <div class="col-sm-3 placeholder">
+                  <ul class="list-group">
+                    <li class="list-group-item  active">负载信息 ( {{ loadavg.updatetime }} )</li>
+                    <li class="list-group-item">系统负载(1min 5min 15min) : <br><br>&nbsp;<strong>{{ loadavg.one }}&nbsp;{{ loadavg.five }}&nbsp;{{ loadavg.fifteen }}&nbsp;{{ loadavg.processes }} &nbsp;{{ loadavg.nowprocesspid }}</strong></li>
+                    <li class="list-group-item">CPU利用率 :</li>
+                    <li class="list-group-item">内存(MB) : <br><strong>&nbsp;</strong></li>
+                    <li class="list-group-item">硬盘 : <strong><!--{{ret.diskused}}G/{{ret.disktotal}}G {{ret.diskperc}}-->%</strong></li>
+                  </ul>
+                </div>
+                <div class="col-sm-3 placeholder">
+                  <ul class="list-group">
+                    <li class="list-group-item active">组件状态 ( {{ now_time }} )</li>
+                    <li class="list-group-item">SaltStack进程 : <strong><!--{{ret.saltst}}--></strong></li>
+                    <li class="list-group-item">Salt-API进程 : <strong><!--{{ret.apist}}--></strong></li>
+                    <li class="list-group-item">MySQL进程 : <strong><!--{{ret.myst}}--></strong></li>
+                    <li class="list-group-item">SNMP进程 : <strong><!--{{ret.snmpst}}--></strong></li>
+                  </ul>
+                </div>
+                <div class="col-sm-3 placeholder">
+                  <ul class="list-group">
+                    <li class="list-group-item active">Minions状态</li>
+                    <li class="list-group-item">总量 : <strong><!--{{ret.num_miniall}}--></strong> 台</li>
+                    <li class="list-group-item">在线 : <strong><!--{{ret.num_miniup}}--></strong> 台</li>
+                    <li class="list-group-item">离线 : <strong><!--{{ret.num_minidown}}--></strong> 台</li>
+                    <!--li class="list-group-item">备用</li-->
+                  </ul>
+                </div>
+                <div class="col-sm-3 placeholder">
+                  <ul class="list-group">
+                    <a class="list-group-item active">Key列表</a>
+                    <a class="list-group-item">已接受 : <strong><!--{{ret.num_mini}}--></strong> 台</a>
+                    <a class="list-group-item">待接受 : <strong><!--{{ret.num_minipre}}--></strong> 台</a>
+                    <a class="list-group-item">已拒绝 : <strong><!--{{ret.num_minirej}}--></strong> 台</a>
+                    <!--li class="list-group-item">备用</li-->
+                  </ul>
+                </div>
+                <div class="col-sm-12 placeholder">
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">操作记录</h3>
+                    </div>
+                    <div class="panel-body">
+                      <pre><!--{{ stret }}--></pre>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--
+<div class="row">
+    <div class="panel col-md-7">
+        <div class="panel-body" >
+            <div id="business_load" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+</div>
+-->
+{% endblock %}
+
+{% block bottom-js %}
+    <script type="application/javascript">
+    $('ol').each(function () {
+  this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+}).on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+});
+{% endblock %}

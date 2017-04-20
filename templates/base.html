@@ -534,10 +534,10 @@
 										</a>
 									</li>
 						
-									<!--Menu list item-->
+									<!--Menu list item
 									<li>
 										<a href="#">
-											<i class="fa fa-tag"></i>
+											<i class="glyphicon glyphicon-th-large"></i>
 											<span class="menu-title">
 												固有资产
 											</span>
@@ -547,58 +547,52 @@
 
                                             <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
-											-->
+
 											<li><a href="#">Another link</a></li>
-
-
 										</ul>
-
-									</li>
-													<li>
+									</li>-->
+										<li>
 										<a href="#">
-											<i class="fa fa-tag"></i>
+											<i class="glyphicon glyphicon-record"></i>
 											<span class="menu-title">
 												主机列表
 											</span>
 										</a>
                                         <ul class="collapse">
-											<li><a href="{% url 'hostlist:acc_minion_list' %}">Accept列表</a></li>
-											<li><a href="{% url 'hostlist:unacc_minion_list' %}">UnAccept列表</a></li>
-											<li><a href="{% url 'hostlist:error_minion_list' %}">Error列表</a></li>
-                 							<li><a href="{% url 'hostlist:minion_groups' %}">群组</a></li>
+											<li><a href="{% url 'hostlist:acc_minion_list' %}"><span class="glyphicon glyphicon-ok-sign"> Accept列表</span></a></li>
+                                            <li><a href="{% url 'hostlist:unacc_minion_list' %}"><span class="glyphicon glyphicon-info-sign"> UnAccept列表</span></a></li>
+                                            <li><a href="{% url 'hostlist:error_minion_list' %}"><span class="glyphicon glyphicon-question-sign"> Error列表</span></a></li>
+                                            <li><a href="{% url 'hostlist:minion_groups' %}"><span class="glyphicon glyphicon-th-list"> 群组</span></a></li>
                                             <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
 											-->
 										</ul>
 
 									</li>
-									</li>
-													<li>
+										<li>
 										<a href="#">
-											<i class="fa fa-tag"></i>
+											<i class="glyphicon glyphicon-flash"></i>
 											<span class="menu-title">
 												SaltStack
 											</span>
 										</a>
                                         <ul class="collapse">
-											<li><a href="{% url 'salt:salt_deploy_dev' %}">服务创建与更新(开发)</a></li>
-											<li><a href="{% url 'salt:pulldevservices' %}">服务推送(开发)</a></li>
-											<li><a href="{% url 'salt:salt_excute' %}">远程操作</a></li>
+                                            <li><a href="{% url 'salt:salt_deploy_dev' %}"><span class="glyphicon glyphicon-link"> 服务创建与更新(开发)</span></a></li>
+                                            <li><a href="{% url 'salt:pulldevservices' %}"><span class="glyphicon glyphicon-hand-right"> 服务推送(开发)</span></a></li>
+                                            <li><a href="{% url 'salt:salt_excute' %}"><span class="glyphicon glyphicon-send"> 远程操作</span></a></li>
 
                                             <!--
 											<li class=""><a href="{% url 'asset:asset_category' %}">分类视图</a></li>
 											-->
 										</ul>
-
 									</li>
-
-
-
+                                    <li class="">
+										<a href="/">
+											<i class="glyphicon glyphicon-edit"></i>
+											<span class="menu-title">操作记录</span>
+										</a>
+									</li>
 								</ul>
-
-
-
-
 							</div>
 						</div>
 					</div>

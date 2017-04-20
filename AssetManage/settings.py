@@ -73,7 +73,8 @@ INSTALLED_APPS = [
     'hostlist',
     'celerys',
     'scripts',
-    'fileupload'
+    'fileupload',
+    'dashboard',
 ]
 
 

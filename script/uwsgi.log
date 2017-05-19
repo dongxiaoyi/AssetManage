@@ -1,0 +1,1044 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 17:46:07 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+writing pidfile to /root/assetmanage/script/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55647efbc780
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 31114, cores: 1)
+spawned uWSGI worker 2 (pid: 31115, cores: 1)
+spawned uWSGI worker 3 (pid: 31116, cores: 1)
+spawned uWSGI worker 4 (pid: 31117, cores: 1)
+spawned uWSGI worker 5 (pid: 31118, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 31118|app: -1|req: -1/1] 127.0.0.1 () {40 vars in 614 bytes} [Sun May  7 18:22:03 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31116|app: -1|req: -1/2] 127.0.0.1 () {38 vars in 541 bytes} [Sun May  7 18:22:03 2017] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31115|app: -1|req: -1/3] 127.0.0.1 () {38 vars in 601 bytes} [Sun May  7 18:22:03 2017] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:26:11 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+writing pidfile to /root/assetmanage/script/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55de52631750
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 16639, cores: 1)
+spawned uWSGI worker 2 (pid: 16640, cores: 1)
+spawned uWSGI worker 3 (pid: 16641, cores: 1)
+spawned uWSGI worker 4 (pid: 16642, cores: 1)
+spawned uWSGI worker 5 (pid: 16643, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:26:30 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x56279ee3e640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 16686, cores: 1)
+spawned uWSGI worker 2 (pid: 16687, cores: 1)
+spawned uWSGI worker 3 (pid: 16688, cores: 1)
+spawned uWSGI worker 4 (pid: 16689, cores: 1)
+spawned uWSGI worker 5 (pid: 16690, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:26:36 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55cc157de640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 16720, cores: 1)
+spawned uWSGI worker 2 (pid: 16721, cores: 1)
+spawned uWSGI worker 3 (pid: 16722, cores: 1)
+spawned uWSGI worker 4 (pid: 16723, cores: 1)
+spawned uWSGI worker 5 (pid: 16724, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:26:42 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x558b35695640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 16785, cores: 1)
+spawned uWSGI worker 2 (pid: 16786, cores: 1)
+spawned uWSGI worker 3 (pid: 16787, cores: 1)
+spawned uWSGI worker 4 (pid: 16788, cores: 1)
+spawned uWSGI worker 5 (pid: 16789, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:26:44 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x557f9584e640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 16804, cores: 1)
+spawned uWSGI worker 2 (pid: 16805, cores: 1)
+spawned uWSGI worker 3 (pid: 16806, cores: 1)
+spawned uWSGI worker 4 (pid: 16807, cores: 1)
+spawned uWSGI worker 5 (pid: 16808, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:26:52 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55cef5bcc640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 16839, cores: 1)
+spawned uWSGI worker 2 (pid: 16840, cores: 1)
+spawned uWSGI worker 3 (pid: 16841, cores: 1)
+spawned uWSGI worker 4 (pid: 16842, cores: 1)
+spawned uWSGI worker 5 (pid: 16843, cores: 1)
+...brutally killing workers...
+...brutally killing workers...
+worker 1 buried after 0 seconds
+worker 2 buried after 0 seconds
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:27:05 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:27:05 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python main interpreter initialized at 0x5563c1766640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 17180, cores: 1)
+spawned uWSGI worker 2 (pid: 17181, cores: 1)
+spawned uWSGI worker 3 (pid: 17182, cores: 1)
+spawned uWSGI worker 4 (pid: 17183, cores: 1)
+spawned uWSGI worker 5 (pid: 17184, cores: 1)
+Python main interpreter initialized at 0x557b49f36640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 17185, cores: 1)
+spawned uWSGI worker 2 (pid: 17186, cores: 1)
+spawned uWSGI worker 3 (pid: 17187, cores: 1)
+spawned uWSGI worker 4 (pid: 17188, cores: 1)
+spawned uWSGI worker 5 (pid: 17189, cores: 1)
+...brutally killing workers...
+...brutally killing workers...
+worker 3 buried after 0 seconds
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:27:15 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:27:15 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55ef7e6ef640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 17237, cores: 1)
+spawned uWSGI worker 2 (pid: 17238, cores: 1)
+spawned uWSGI worker 3 (pid: 17239, cores: 1)
+spawned uWSGI worker 4 (pid: 17240, cores: 1)
+spawned uWSGI worker 5 (pid: 17241, cores: 1)
+Python main interpreter initialized at 0x55fb5b05d640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 17242, cores: 1)
+spawned uWSGI worker 2 (pid: 17243, cores: 1)
+spawned uWSGI worker 3 (pid: 17244, cores: 1)
+spawned uWSGI worker 4 (pid: 17245, cores: 1)
+spawned uWSGI worker 5 (pid: 17246, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:28:04 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55f3444bf640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 17646, cores: 1)
+spawned uWSGI worker 2 (pid: 17652, cores: 1)
+spawned uWSGI worker 3 (pid: 17653, cores: 1)
+spawned uWSGI worker 4 (pid: 17654, cores: 1)
+spawned uWSGI worker 5 (pid: 17655, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:28:05 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x557f05f18640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 17684, cores: 1)
+spawned uWSGI worker 2 (pid: 17685, cores: 1)
+spawned uWSGI worker 3 (pid: 17686, cores: 1)
+spawned uWSGI worker 4 (pid: 17687, cores: 1)
+spawned uWSGI worker 5 (pid: 17688, cores: 1)
+...brutally killing workers...
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:29:37 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:29:37 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55cbd9880640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 18164, cores: 1)
+Python main interpreter initialized at 0x559418a94640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+spawned uWSGI worker 2 (pid: 18165, cores: 1)
+spawned uWSGI worker 3 (pid: 18166, cores: 1)
+spawned uWSGI worker 4 (pid: 18167, cores: 1)
+spawned uWSGI worker 5 (pid: 18168, cores: 1)
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 18169, cores: 1)
+spawned uWSGI worker 2 (pid: 18170, cores: 1)
+spawned uWSGI worker 3 (pid: 18171, cores: 1)
+spawned uWSGI worker 4 (pid: 18172, cores: 1)
+spawned uWSGI worker 5 (pid: 18173, cores: 1)
+...brutally killing workers...
+...brutally killing workers...
+worker 4 buried after 0 seconds
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:29:39 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /root/assetmanage/script
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/root/assetmanage/script/uwsgi.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:29:39 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 inherited UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x55b4b34db640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 16624)
+spawned uWSGI worker 1 (pid: 18189, cores: 1)
+spawned uWSGI worker 2 (pid: 18190, cores: 1)
+spawned uWSGI worker 3 (pid: 18191, cores: 1)
+spawned uWSGI worker 4 (pid: 18192, cores: 1)
+spawned uWSGI worker 5 (pid: 18193, cores: 1)
+Python main interpreter initialized at 0x56219d664640
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 31099)
+spawned uWSGI worker 1 (pid: 18194, cores: 1)
+spawned uWSGI worker 2 (pid: 18195, cores: 1)
+spawned uWSGI worker 3 (pid: 18196, cores: 1)
+spawned uWSGI worker 4 (pid: 18197, cores: 1)
+spawned uWSGI worker 5 (pid: 18198, cores: 1)
+Sun May  7 18:30:02 2017 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:02 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:02 2017 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:02 2017 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:02 2017 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:09 2017 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:09 2017 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:09 2017 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:09 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:30:09 2017 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:30:22 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+writing pidfile to /root/assetmanage/script/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x5641b472e750
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+ImportError: No module named AssetManage.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18630)
+spawned uWSGI worker 1 (pid: 18645, cores: 1)
+spawned uWSGI worker 2 (pid: 18646, cores: 1)
+spawned uWSGI worker 3 (pid: 18647, cores: 1)
+spawned uWSGI worker 4 (pid: 18648, cores: 1)
+spawned uWSGI worker 5 (pid: 18649, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18645|app: -1|req: -1/1] 127.0.0.1 () {42 vars in 645 bytes} [Sun May  7 18:30:35 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 18647|app: -1|req: -1/2] 127.0.0.1 () {42 vars in 645 bytes} [Sun May  7 18:30:36 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 18649|app: -1|req: -1/3] 127.0.0.1 () {42 vars in 645 bytes} [Sun May  7 18:30:37 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 18646|app: -1|req: -1/4] 127.0.0.1 () {40 vars in 614 bytes} [Sun May  7 18:30:46 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Sun May  7 18:33:47 2017 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:33:47 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:33:47 2017 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:33:47 2017 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:33:47 2017 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:33:57 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+writing pidfile to /root/assetmanage/script/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x555901e78750
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named AssetManage.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19905)
+spawned uWSGI worker 1 (pid: 19921, cores: 1)
+spawned uWSGI worker 2 (pid: 19922, cores: 1)
+spawned uWSGI worker 3 (pid: 19923, cores: 1)
+spawned uWSGI worker 4 (pid: 19924, cores: 1)
+spawned uWSGI worker 5 (pid: 19925, cores: 1)
+Sun May  7 18:34:35 2017 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:34:35 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:34:35 2017 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:34:35 2017 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:34:35 2017 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  7 18:37:17 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+writing pidfile to /root/assetmanage/script/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x557df1261750
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named AssetManage.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21373)
+spawned uWSGI worker 1 (pid: 21389, cores: 1)
+spawned uWSGI worker 2 (pid: 21390, cores: 1)
+spawned uWSGI worker 3 (pid: 21391, cores: 1)
+spawned uWSGI worker 4 (pid: 21392, cores: 1)
+spawned uWSGI worker 5 (pid: 21393, cores: 1)
+Sun May  7 18:38:13 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:38:13 2017 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:38:13 2017 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:38:13 2017 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Sun May  7 18:38:13 2017 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.15 (64bit) on [Mon May  8 09:58:35 2017] ***
+compiled with version: 6.2.0 20161005 on 07 May 2017 17:10:52
+os: Linux-4.8.0-39-generic #42~16.04.1-Ubuntu SMP Mon Feb 20 15:06:07 UTC 2017
+nodename: dongxiaoyi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /root/assetmanage/script
+writing pidfile to /root/assetmanage/script/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/assetmanage/AssetManage
+your processes number limit is 30697
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: enabled
+uwsgi socket 0 bound to UNIX address /root/assetmanage/script/uwsgi.sock fd 3
+Python version: 2.7.12+ (default, Sep 17 2016, 12:08:02)  [GCC 6.2.0 20160914]
+Python main interpreter initialized at 0x5648b5a28750
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 485760 bytes (474 KB) for 5 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    django.setup()
+  File "/usr/local/lib/python2.7/dist-packages/django/__init__.py", line 17, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 55, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 43, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 99, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named AssetManage.settings
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14972)
+spawned uWSGI worker 1 (pid: 14988, cores: 1)
+spawned uWSGI worker 2 (pid: 14989, cores: 1)
+spawned uWSGI worker 3 (pid: 14990, cores: 1)
+spawned uWSGI worker 4 (pid: 14991, cores: 1)
+spawned uWSGI worker 5 (pid: 14992, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 14988|app: -1|req: -1/1] 127.0.0.1 () {42 vars in 715 bytes} [Mon May  8 10:03:20 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14989|app: -1|req: -1/2] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:08:13 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14990|app: -1|req: -1/3] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:08:53 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14991|app: -1|req: -1/4] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:08:53 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14992|app: -1|req: -1/5] 127.0.0.1 () {44 vars in 832 bytes} [Mon May  8 10:09:37 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14988|app: -1|req: -1/6] 127.0.0.1 () {44 vars in 832 bytes} [Mon May  8 10:09:38 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14989|app: -1|req: -1/7] 127.0.0.1 () {44 vars in 832 bytes} [Mon May  8 10:09:38 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14990|app: -1|req: -1/8] 127.0.0.1 () {42 vars in 749 bytes} [Mon May  8 10:09:48 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14991|app: -1|req: -1/9] 127.0.0.1 () {44 vars in 780 bytes} [Mon May  8 10:09:51 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14992|app: -1|req: -1/10] 127.0.0.1 () {44 vars in 832 bytes} [Mon May  8 10:09:54 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14988|app: -1|req: -1/11] 127.0.0.1 () {44 vars in 832 bytes} [Mon May  8 10:09:54 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14989|app: -1|req: -1/12] 127.0.0.1 () {44 vars in 832 bytes} [Mon May  8 10:09:54 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14990|app: -1|req: -1/13] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:12:33 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14991|app: -1|req: -1/14] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:12:34 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14992|app: -1|req: -1/15] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:12:47 2017] GET / => generated 21 bytes in 1 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14988|app: -1|req: -1/16] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:12:48 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 14989|app: -1|req: -1/17] 127.0.0.1 () {44 vars in 746 bytes} [Mon May  8 10:12:56 2017] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Mon May  8 10:15:11 2017 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon May  8 10:15:11 2017 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon May  8 10:15:11 2017 - uWSGI worker 5 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon May  8 10:15:11 2017 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon May  8 10:15:11 2017 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!

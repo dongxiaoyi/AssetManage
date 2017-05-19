@@ -41,7 +41,7 @@ def pack():
 
     local('rm -f /data/projects/tar/%s_bak' % TAR_FILE_NAME)
     local('rm -fr /data/projects/tar/%s && mkdir -p /data/projects/tar/%s' % (git_version,git_version))
-    local('tar -cvzf %s %s -C /data/projects/git/ %s' % ('/data/projects/tar/' + TAR_FILE_NAME, ' '.join(exclude_files), git_version))
+    local('tar -cvzf %s %s -C /data/projects/git/ %s' % ('/data/projects/tar_git/' + TAR_FILE_NAME, ' '.join(exclude_files), git_version))
     print('在当前目录创建一个打包文件: %s' % TAR_FILE_NAME)
 
 @task
@@ -51,15 +51,16 @@ def deploy():
     定义一个部署任务
     :return:
     """
-    get_tar = '/data/projects/tar/%s' % TAR_FILE_NAME
-    run('rm -f %s' % get_tar)
+    get_tar = '/data/projects/tar_git/%s' % TAR_FILE_NAME
+    tar_file = '/data/projects/tar/%s' % TAR_FILE_NAME
+    run('rm -f %s' % tar_file)
     # 上传tar文件至远程服务器, local_path, remote_path
-    put('/data/projects/tar/' + TAR_FILE_NAME, '/data/projects/tar/')
+    put(get_tar, '/data/projects/tar/')
     # cd 命令将远程主机的工作目录切换到指定目录
     remote_dist_dir = '/data/projects/html/'
     with cd(remote_dist_dir):
         print('解压文件到到目录: %s' % remote_dist_dir)
-        run('tar -xzvf %s -C %s' % (get_tar,remote_dist_dir))
+        run('tar -xzvf %s -C %s' % (tar_file,remote_dist_dir))
         print('安装 requirements.txt 中的依赖包')
         # 我使用的是 python2.7环境 来开发
         run('pip install -r /data/projects/html/%s/requirements.txt' % version)

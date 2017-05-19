@@ -40,7 +40,8 @@ def pack():
     exclude_files = ['--exclude=\'%s\'' % t for t in exclude_files]
 
     local('rm -f /data/projects/tar/%s_bak' % TAR_FILE_NAME)
-    local('tar -cvzf %s %s -C /data/projects/git/ %s' % ('/data/projects/tar/' + TAR_FILE_NAME, ' '.join(exclude_files), version))
+    local('rm -fr /data/projects/tar/%s && mkdir -p /data/projects/tar/%S' % (git_version,git_version))
+    local('tar -cvzf %s %s -C /data/projects/git/ %s' % ('/data/projects/tar/' + TAR_FILE_NAME, ' '.join(exclude_files), git_version))
     print('在当前目录创建一个打包文件: %s' % TAR_FILE_NAME)
 
 @task

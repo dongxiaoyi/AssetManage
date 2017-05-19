@@ -11,7 +11,7 @@ env.password = 'sk927312*'
 # 如果有多个主机，fabric会自动依次部署
 env.hosts = ['salt-master',]
 #定义分组
-env.roledefs = {'web':['192.168.0.4',],'db':['192.168.0.4','192.168.0.5']}
+env.roledefs = {'web':['192.168.0.4',],'db_master':['192.168.0.5',]}
 
 version = 'v1.0'
 
@@ -68,6 +68,18 @@ def deploy():
         remote_nginx_file = '/etc/nginx/conf.d/django_asset.conf'
         print('复制 nginx 配置文件 %s' % nginx_file)
         run('/usr/bin/cp %s %s' % (nginx_file, remote_nginx_file))
+
+
+#migrate数据库结构
+@task
+@runs_once
+def migrate():
+    #更新数据库表结构
+    local('python /data/projects/html/%s/manage.py makemigrations  && python /data/projects/html/%s/manage.py makemigrate')
+
+@task
+@roles('web')
+def reload_nginx():
     # 重新加载 nginx 的配置文件
     run('nginx -t && nginx -s reload')
     # 删除本地的打包文件

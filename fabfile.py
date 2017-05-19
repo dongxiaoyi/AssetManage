@@ -64,7 +64,7 @@ def deploy():
         print('安装 requirements.txt 中的依赖包')
         # 我使用的是 python2.7环境 来开发
         run('pip install -r /data/projects/html/%s/requirements.txt' % version)
-        run('pip uninstall xadmin')
+        run('pip uninstall xadmin -y')
         nginx_file = ('/data/projects/html/%s/script/nginx_asset.conf' % version)
         remote_nginx_file = '/etc/nginx/conf.d/django_asset.conf'
         print('复制 nginx 配置文件 %s' % nginx_file)

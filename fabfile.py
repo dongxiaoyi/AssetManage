@@ -58,7 +58,7 @@ def deploy():
     remote_dist_dir = '/data/projects/html/'
     with cd(remote_dist_dir):
         print('解压文件到到目录: %s' % remote_dist_dir)
-        run('tar -xzvf %s -C %s' % (remote_tar,remote_dist_dir))
+        run('tar -xzvf %s -C %s' % (get_tar,remote_dist_dir))
         print('安装 requirements.txt 中的依赖包')
         # 我使用的是 python2.7环境 来开发
         run('pip install -r /data/projects/html/%s/requirements.txt' % version)

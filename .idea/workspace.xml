@@ -104,8 +104,8 @@
       <file leaf-file-name="fabfile.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fabfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="42" column="128" lean-forward="false" selection-start-line="42" selection-start-column="128" selection-end-line="42" selection-end-column="128" />
+            <state relative-caret-position="340">
+              <caret line="60" column="48" lean-forward="false" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
               <folding>
                 <element signature="e#86#106#0" expanded="true" />
               </folding>
@@ -1170,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fabfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="42" column="128" lean-forward="false" selection-start-line="42" selection-start-column="128" selection-end-line="42" selection-end-column="128" />
+        <state relative-caret-position="340">
+          <caret line="60" column="48" lean-forward="false" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
           <folding>
             <element signature="e#86#106#0" expanded="true" />
           </folding>

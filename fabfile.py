@@ -27,21 +27,20 @@ def pack():
     git_version = version
     lcd('/data/projects/')
     git_menu = '/data/projects/git/'
-    pro_menu = '/Assetmanage'
-    exclude_files = ['%s%s%s/fabfile.py' % (git_menu,git_version,pro_menu),
-                     '%s%s%s/AssetManageClient' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/apps/addfields/migrations' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/apps/asset/migrations' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/apps/dashboard/migrations' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/apps/fileupload/migrations' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/apps/record/migrations' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/apps/saltstack/migrations' % (git_menu, git_version, pro_menu),
-                     '%s%s%s/extra_apps/xadmin/migrations' % (git_menu, git_version, pro_menu),
+    exclude_files = ['%s%s/fabfile.py' % (git_menu,git_version),
+                     '%s%s/AssetManageClient' % (git_menu, git_version),
+                     '%s%s/apps/addfields/migrations' % (git_menu, git_version),
+                     '%s%s/apps/asset/migrations' % (git_menu, git_version),
+                     '%s%s/apps/dashboard/migrations' % (git_menu, git_version),
+                     '%s%s/apps/fileupload/migrations' % (git_menu, git_version),
+                     '%s%s/apps/record/migrations' % (git_menu, git_version),
+                     '%s%s/apps/saltstack/migrations' % (git_menu, git_version),
+                     '%s%s/extra_apps/xadmin/migrations' % (git_menu, git_version),
                     ]
     exclude_files = ['--exclude=\'%s\'' % t for t in exclude_files]
 
     local('rm -f /data/projects/tar/%s_bak' % TAR_FILE_NAME)
-    local('tar -cvzf %s %s -C /data/projects/git/ %s' % ('/data/projects/tar/' + TAR_FILE_NAME, ' '.join(exclude_files), tar_file))
+    local('tar -cvzf %s %s -C /data/projects/git/ %s' % ('/data/projects/tar/' + TAR_FILE_NAME, ' '.join(exclude_files), version))
     print('在当前目录创建一个打包文件: %s' % TAR_FILE_NAME)
 
 @task

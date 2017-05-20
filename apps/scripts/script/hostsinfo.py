@@ -86,7 +86,8 @@ def get_all_saltversion():
 def get_all_fqdn_ip4():
     all_fqdn_ip4 = {}
     for minion in minions:
-        get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
+        #get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
+        get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    /:/g'"
         get_fqdn_ip4 = subprocess.Popen(get_fqdn_ip4_cmd,stdout=subprocess.PIPE,shell=True)
         fqdn_ip4 = get_fqdn_ip4.communicate()[0].strip().split(':')
         all_fqdn_ip4[str(minion)] = str(fqdn_ip4[1])
@@ -95,7 +96,8 @@ def get_all_fqdn_ip4():
 def get_all_host():
     all_host = {}
     for minion in minions:
-        get_host_cmd = "salt " + str(minion) + " grains.get host|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
+        #get_host_cmd = "salt " + str(minion) + " grains.get host|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
+        get_host_cmd = "salt " + str(minion) + " grains.get host|head -2|sed 'N;s/\\n//g'|sed 's/:    /:/g'"
         get_host = subprocess.Popen(get_host_cmd,stdout=subprocess.PIPE,shell=True)
         host = get_host.communicate()[0].strip().split(':')
         all_host[str(minion)] = str(host[1])

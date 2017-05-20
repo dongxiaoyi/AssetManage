@@ -68,10 +68,12 @@ def deploy():
         nginx_file = ('/data/projects/html/%s/script/nginx_asset.conf' % version)
         remote_nginx_file = '/etc/nginx/conf.d/django_asset.conf'
         print('复制 nginx 配置文件 %s' % nginx_file)
-        run('/usr/bin/cp %s %s' % (nginx_file, remote_nginx_file))
+        run('\cp -a %s %s' % (nginx_file, remote_nginx_file))
+        print('创建与删除工作目录软链接 ')
+        run('rm -fr /etc/nginx/html/django && ln -s /data/projects/html/%s /etc/nginx/html/django' % version)
 
 
-#migrate数据库结构
+#migrate数据库结构,看具体app情况更改，在CI执行！
 @task
 @runs_once
 def migrate():
@@ -84,4 +86,4 @@ def reload_nginx():
     # 重新加载 nginx 的配置文件
     run('nginx -t && nginx -s reload')
     # 删除本地的打包文件
-    local('rm -f %s' % TAR_FILE_NAME)
+    local('rm -f /data/projects/tar/%s' % TAR_FILE_NAME)

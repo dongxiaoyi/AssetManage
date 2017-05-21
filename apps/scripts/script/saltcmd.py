@@ -1,10 +1,16 @@
 #_*_coding:utf-8_*_
 from __future__ import unicode_literals
 
-import os,sys,subprocess
+import os,sys,subprocess,commands
 import json
 '''命令执行交互返回前端操作'''
 def saltcommands(minionlist,cmd):
+    cmd_head = str(cmd).split(' ')[0]
+    space = ' '
+    cmd_body = space.join(str(cmd).split(' ')[1:])
+    cmd_head_which = commands.getoutput('/usr/bin/which %s' % cmd_head)
+    cmd_head = str(cmd_head_which)
+    cmd = cmd_head + ' ' + cmd_body
     result = []
     for minion in minionlist:
         command = "salt "+ "\'" + str(minion) + "\' " + "cmd.run " + "\'" + cmd +"\'"

@@ -86,8 +86,8 @@ def get_all_saltversion():
 def get_all_fqdn_ip4():
     all_fqdn_ip4 = {}
     for minion in minions:
-        #get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
-        get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    /:/g'"
+        get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    - /:/g'"
+        #get_fqdn_ip4_cmd = "salt " + str(minion) + " grains.get fqdn_ip4|head -2|sed 'N;s/\\n//g'|sed 's/:    /:/g'"
         get_fqdn_ip4 = subprocess.Popen(get_fqdn_ip4_cmd,stdout=subprocess.PIPE,shell=True)
         fqdn_ip4 = get_fqdn_ip4.communicate()[0].strip().split(':')
         all_fqdn_ip4[str(minion)] = str(fqdn_ip4[1])
@@ -171,7 +171,7 @@ def GetMinionInfo():
             for acc_id in acc_stdout:
                 acc_minion = AccHostList.objects.create(minionid=str(acc_id),
                                           hostname=all_host[str(acc_id)],
-                                          wip=all_fqdn_ip4[str(acc_id)],
+                                          nip=all_fqdn_ip4[str(acc_id)],
                                           osfinger=all_osfinger[str(acc_id)],
                                           mem_total=all_mem_total[str(acc_id)],
                                           cpu_model=all_cpu_model[str(acc_id)],
@@ -205,7 +205,7 @@ def GetMinionInfo():
                 if acc_id not in all_acc_minionid:
                     acc_minion = AccHostList.objects.create(minionid=str(acc_id),
                                                             hostname=all_host[str(acc_id)],
-                                                            wip=all_fqdn_ip4[str(acc_id)],
+                                                            nip=all_fqdn_ip4[str(acc_id)],
                                                             osfinger=all_osfinger[str(acc_id)],
                                                             mem_total=all_mem_total[str(acc_id)],
                                                             cpu_model=all_cpu_model[str(acc_id)],
@@ -228,7 +228,7 @@ def GetMinionInfo():
                         error.save()
                 elif acc_id in all_acc_minionid:
                     '''数据库的acc minionid不为空,先查看获取到的minionid在不在数据库，在的就更新数据'''
-                    acc_minion = AccHostList.objects.filter(minionid=str(acc_id)).update(wip=all_fqdn_ip4[str(acc_id)],
+                    acc_minion = AccHostList.objects.filter(minionid=str(acc_id)).update(nip=all_fqdn_ip4[str(acc_id)],
                                                                            hostname=all_host[str(acc_id)],
                                                                            osfinger=all_osfinger[str(acc_id)],
                                                                            mem_total=all_mem_total[str(acc_id)],

@@ -26,7 +26,7 @@
     <SUITE FILE_PATH="coverage/assetmanage$test_info.coverage" NAME="test_info Coverage Results" MODIFIED="1490028888853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/scripts/script" />
     <SUITE FILE_PATH="coverage/assetmanage$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1492635811171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/dashboard" />
     <SUITE FILE_PATH="coverage/MadKing$hostsinfo.coverage" NAME="hostsinfo Coverage Results" MODIFIED="1489219546999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/scripts/script" />
-    <SUITE FILE_PATH="coverage/assetmanage$test_split_cmd.coverage" NAME="test_split_cmd Coverage Results" MODIFIED="1495362687663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/scripts/script/data/test" />
+    <SUITE FILE_PATH="coverage/assetmanage$test_split_cmd.coverage" NAME="test_split_cmd Coverage Results" MODIFIED="1495363960919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/scripts/script/data/test" />
     <SUITE FILE_PATH="coverage/MadKing$getinfo.coverage" NAME="getinfo Coverage Results" MODIFIED="1488875676840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/hostlist/utils" />
     <SUITE FILE_PATH="coverage/MadKing$manage.coverage" NAME="manage Coverage Results" MODIFIED="1489997196343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MadKing$disk.coverage" NAME="disk Coverage Results" MODIFIED="1488348634061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tt" />
@@ -87,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/apps/scripts/script/saltcmd.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
-              <caret line="13" column="41" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="17" />
+              <caret line="13" column="45" lean-forward="false" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
               <folding>
                 <element signature="e#20#59#0" expanded="true" />
               </folding>
@@ -98,8 +98,8 @@
       <file leaf-file-name="test_split_cmd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/scripts/script/data/test/test_split_cmd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="41" />
               <folding>
                 <element signature="e#20#59#0" expanded="true" />
               </folding>
@@ -260,8 +260,8 @@
         <option value="$PROJECT_DIR$/AssetManage/settings.py" />
         <option value="$PROJECT_DIR$/apps/scripts/script/data/test/version_rollback.py" />
         <option value="$PROJECT_DIR$/fabfile.py" />
-        <option value="$PROJECT_DIR$/apps/scripts/script/saltcmd.py" />
         <option value="$PROJECT_DIR$/apps/scripts/script/data/test/test_split_cmd.py" />
+        <option value="$PROJECT_DIR$/apps/scripts/script/saltcmd.py" />
       </list>
     </option>
   </component>
@@ -925,7 +925,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4559915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4559915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1361,8 +1361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/scripts/script/data/test/test_split_cmd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="41" />
           <folding>
             <element signature="e#20#59#0" expanded="true" />
           </folding>
@@ -1372,7 +1372,7 @@
     <entry file="file://$PROJECT_DIR$/apps/scripts/script/saltcmd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="13" column="41" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="17" />
+          <caret line="13" column="45" lean-forward="false" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
           <folding>
             <element signature="e#20#59#0" expanded="true" />
           </folding>

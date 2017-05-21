@@ -11,6 +11,7 @@ def saltcommands(minionlist,cmd):
     cmd_head_which = commands.getoutput('/usr/bin/which %s' % cmd_head)
     cmd_head = str(cmd_head_which)
     cmd = cmd_head + ' ' + cmd_body
+    cmd = "salt-call cmd.run \'" + cmd + "\'"
     result = []
     for minion in minionlist:
         command = "salt "+ "\'" + str(minion) + "\' " + "cmd.run " + "\'" + cmd +"\'"

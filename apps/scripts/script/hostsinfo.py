@@ -77,7 +77,7 @@ def get_all_kernelrelease():
 def get_all_saltversion():
     all_saltversion = {}
     for minion in minions:
-        get_saltversion_cmd = "salt " + str(minion) + " grains.get saltversion|sed 'N;s/\\n//g'"
+        get_saltversion_cmd = "salt " + str(minion) + " grains.get saltversion|grep -v '\- 172'|sed 'N;s/\\n//g'"
         get_saltversion = subprocess.Popen(get_saltversion_cmd,stdout=subprocess.PIPE,shell=True)
         saltversion = get_saltversion.communicate()[0].strip().split(':    ')
         all_saltversion[str(minion)] = str(saltversion[1])

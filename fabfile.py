@@ -84,6 +84,7 @@ def migrate():
 @roles('web')
 def reload_nginx():
     # 重新加载 nginx 的配置文件
+    run("kill -HUP '/etc/nginx/html/django/uwsgi.pid'")
     run('nginx -t && nginx -s reload')
     # 删除本地的打包文件
     local('rm -f /data/projects/tar/%s' % TAR_FILE_NAME)

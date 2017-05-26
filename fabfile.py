@@ -13,7 +13,7 @@ env.hosts = ['salt-master',]
 #定义分组
 env.roledefs = {'web':['192.168.0.4',],'db_master':['192.168.0.5',]}
 
-version = 'v1.2'
+version = 'v1.3'
 
 TAR_FILE_NAME = 'deploy-assetmanage-' + version + '.tar.gz'
 

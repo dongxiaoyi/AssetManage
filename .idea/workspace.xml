@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c23e1e6d-914c-45aa-b241-57d409f279b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/salt_deploy_dev.html" afterPath="$PROJECT_DIR$/templates/salt_deploy_dev.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/scripts/script/hostsinfo.py" afterPath="$PROJECT_DIR$/apps/scripts/script/hostsinfo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,18 +54,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="171" column="33" lean-forward="false" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salt_deploy_dev.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="110" column="110" lean-forward="false" selection-start-line="110" selection-start-column="110" selection-end-line="110" selection-end-column="110" />
+            <state relative-caret-position="52">
+              <caret line="156" column="40" lean-forward="true" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -147,11 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hostsinfo.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hostsinfo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/scripts/script/hostsinfo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="79" column="95" lean-forward="false" selection-start-line="79" selection-start-column="95" selection-end-line="79" selection-end-column="95" />
+            <state relative-caret-position="299">
+              <caret line="88" column="90" lean-forward="false" selection-start-line="88" selection-start-column="90" selection-end-line="88" selection-end-column="90" />
               <folding>
                 <element signature="e#20#59#0" expanded="true" />
               </folding>
@@ -259,9 +249,9 @@
         <option value="$PROJECT_DIR$/apps/scripts/script/saltcmd.py" />
         <option value="$PROJECT_DIR$/apps/scripts/script/data/test/version_rollback.py" />
         <option value="$PROJECT_DIR$/apps/scripts/script/bak_sql.py" />
-        <option value="$PROJECT_DIR$/apps/scripts/script/hostsinfo.py" />
         <option value="$PROJECT_DIR$/fabfile.py" />
         <option value="$PROJECT_DIR$/templates/salt_deploy_dev.html" />
+        <option value="$PROJECT_DIR$/apps/scripts/script/hostsinfo.py" />
       </list>
     </option>
   </component>
@@ -1267,14 +1257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="171" column="33" lean-forward="false" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/scripts/script/data/test/test_split_cmd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1319,16 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/scripts/script/hostsinfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="79" column="95" lean-forward="false" selection-start-line="79" selection-start-column="95" selection-end-line="79" selection-end-column="95" />
-          <folding>
-            <element signature="e#20#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fabfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -1341,9 +1313,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/salt_deploy_dev.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="110" column="110" lean-forward="false" selection-start-line="110" selection-start-column="110" selection-end-line="110" selection-end-column="110" />
+        <state relative-caret-position="252">
+          <caret line="99" column="75" lean-forward="true" selection-start-line="99" selection-start-column="75" selection-end-line="99" selection-end-column="75" />
+          <folding>
+            <element signature="e#5929#5988#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/saltstack/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="156" column="40" lean-forward="true" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/scripts/script/hostsinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="88" column="90" lean-forward="false" selection-start-line="88" selection-start-column="90" selection-end-line="88" selection-end-column="90" />
+          <folding>
+            <element signature="e#20#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

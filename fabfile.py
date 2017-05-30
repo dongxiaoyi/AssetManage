@@ -13,7 +13,7 @@ env.hosts = ['salt-master',]
 #定义分组
 env.roledefs = {'web':['192.168.0.4',],'db_master':['192.168.0.5',]}
 
-version = 'v1.3'
+version = 'v1.4'
 
 TAR_FILE_NAME = 'deploy-assetmanage-' + version + '.tar.gz'
 
@@ -78,7 +78,8 @@ def deploy():
 @runs_once
 def migrate():
     #更新数据库表结构
-    local('python /data/projects/html/%s/manage.py makemigrations  && python /data/projects/html/%s/manage.py makemigrate')
+    #v1.4更新表结构，添加app
+    local('python /etc/nginx/html/django/manage.py makemigrations weblog && python /etc/nginx/html/django/manage.py makemigrate weblog')
 
 @task
 @roles('web')

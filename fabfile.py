@@ -79,7 +79,7 @@ def deploy():
 def migrate():
     #更新数据库表结构
     #v1.4更新表结构，添加app
-    local('python /etc/nginx/html/django/manage.py makemigrations weblog && python /etc/nginx/html/django/manage.py makemigrate weblog')
+    local('python /etc/nginx/html/django/manage.py makemigrations weblog && python /etc/nginx/html/django/manage.py migrate weblog')
 
 @task
 @roles('web')

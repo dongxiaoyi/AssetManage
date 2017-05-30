@@ -23,6 +23,7 @@ from celery import shared_task,task
 from scripts.script.hostsinfo import GetMinionInfo
 from scripts.script.dashboardinfo import DashboardInfos
 from scripts.script.get_master_info import MasterInfo,Masterprocessstatus,Miniononline
+from scripts.script.weblogrecord import log_sql_data
 
 @task
 def hostsinfo():
@@ -43,3 +44,7 @@ def masterprocessstatus():
 @task
 def miniononline():
     Miniononline()
+
+@task
+def weblogrecord():
+    log_sql_data()

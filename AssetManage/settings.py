@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'scripts',
     'fileupload',
     'dashboard',
+    'weblog',
 ]
 
 

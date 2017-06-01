@@ -6,7 +6,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssetManage.settings')
 import django
 django.setup()
 import os.path, datetime, glob, time, gzip, re
-from weblog.models import WebLog
+from weblog.models import WebLog,UvModel,PvModel,IvModel
 
 def get_log_cutting_list():
     list_files = glob.glob('/var/log/nginx/*log*gz')
@@ -22,7 +22,7 @@ def get_log_cutting_list():
         now_timestamp = time.mktime(time.strptime(str(now_formatted), "%Y-%m-%d"))
         if int(mtime_timestamp) == int(now_timestamp):
             log_cutting_list.append(file)
-    return log_cutting_list
+    return log_cutting_list,now_formatted
 
 
 def get_data_log(log):
@@ -32,10 +32,19 @@ def get_data_log(log):
 
 
 def log_sql_data():
-    log_list = get_log_cutting_list()
+    log_list = get_log_cutting_list()[0]
+    timestamps = get_log_cutting_list()[1]
+    log_uv_count = {}
+    log_pv_count = {}
+    log_ip_count = {}
     for log in log_list:
         data = get_data_log(log)
         if getattr(data, '__iter__', None):
+            uv_list = []
+            ip_list = []
+            count_pv = 0
+            count_uv = 0
+            count_ip = 0
             for line in data:
                 matchdata = re.match(r'(.*) - (.*) \[(.*)\] \"(.*) (\/.*) (.*)\" (.*) (.*) \"(.*)\" \"(.*)\" \"(.*)\"',
                                      line, re.I)
@@ -59,7 +68,39 @@ def log_sql_data():
                                                            status=str(status),
                                                            body_bytes_sent=str(body_bytes_sent),
                                                            http_referer=str(http_referer),
-                                                           http_user_agent=str(http_user_agent))
+                                                           http_user_agent=str(http_user_agent),
+                                                           timestamps = timestamps
+                                                           )
                     add_log_record.save()
+                    count_pv += 1
+                    if str(remote_user) in uv_list:
+                        pass
+                    else:
+                        uv_list.append(str(remote_user))
+                        count_uv += 1
+                    if str(remote_addr) in ip_list:
+                        pass
+                    else:
+                        ip_list.append(str(remote_addr))
+                        count_ip += 1
+            log_ip_count[str(log)] = int(count_ip)
+            log_uv_count[str(log)] = int(count_uv)
+            log_pv_count[str(log)] = int(count_pv)
+    for log,uv in log_uv_count.items():
+        uv_obj = UvModel.objects.create(logname=str(log),
+                                        uv=int(uv),
+                                        timestamps=timestamps)
+        uv_obj.save()
+    for log,pv in log_pv_count.items():
+        pv_obj = PvModel.objects.create(logname=str(log),
+                                        pv=int(pv),
+                                        timestamps=timestamps)
+        pv_obj.save()
+    for log,iv in log_ip_count.items():
+        iv_obj = UvModel.objects.create(logname=str(log),
+                                        iv=int(iv),
+                                        timestamps=timestamps)
+        iv_obj.save()
+log_sql_data()
 
 

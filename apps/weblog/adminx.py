@@ -30,6 +30,10 @@ class UvAdminx(object):
     #list_editable = ['name']
     readonly_fields = ['logname','uv','timestamps']
     refresh_times = [3,5]
+    data_charts = {
+        "uv": {'title': u"UV", "x-field": "timestamps", "y-field": ("uv"),
+                       "order": ('timestamps',)},
+    }
 
 xadmin.site.register(UvModel,UvAdminx)
 

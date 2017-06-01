@@ -9,7 +9,7 @@ import os.path, datetime, glob, time, gzip, re
 from weblog.models import WebLog,UvModel,PvModel,IvModel
 
 def get_log_cutting_list():
-    list_files = glob.glob('/var/log/nginx/*log*gz')
+    list_files = glob.glob('/var/log/nginx/access*log*gz')
     list_files_timestamp = {}
     for file in list_files:
         list_files_timestamp[str(file)] = str(datetime.datetime.fromtimestamp(os.path.getmtime(file))).split(' ')[0]
@@ -97,7 +97,7 @@ def log_sql_data():
                                         timestamps=timestamps)
         pv_obj.save()
     for log,iv in log_ip_count.items():
-        iv_obj = UvModel.objects.create(logname=str(log),
+        iv_obj = IvModel.objects.create(logname=str(log),
                                         iv=int(iv),
                                         timestamps=timestamps)
         iv_obj.save()

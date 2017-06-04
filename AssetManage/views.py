@@ -19,6 +19,8 @@ from users.models import UserMessage,EmaliVerifyRecord
 from users.utils.mixin_utils import LoginRequiredMixin
 from hostlist.models import AccHostList,UnAccHostList,ErrorHostList
 from dashboard.models import MasterLoadAvg,MasterProcessStatus,MinionOnlineNumber
+from weblog.models import PvModel,UvModel,IvModel
+import datetime
 
 class IndexView(LoginRequiredMixin,View):
     '''
@@ -90,6 +92,77 @@ class IndexView(LoginRequiredMixin,View):
         for online_query in all_online:
             online_list.append(online_query)
         online = online_list[-1]
+        '''PV,IV,IP数据'''
+        now = datetime.datetime.now()
+        twodays = now + datetime.timedelta(days=-1)
+        threedays = now + datetime.timedelta(days=-2)
+        fourdays = now + datetime.timedelta(days=-3)
+        fivedays = now + datetime.timedelta(days=-4)
+        sixdays = now + datetime.timedelta(days=-5)
+        sevendays = now + datetime.timedelta(days=-6)
+        one_formatted = now.strftime("%Y-%m-%d")
+        two_formatted = twodays.strftime("%Y-%m-%d")
+        three_formatted = threedays.strftime("%Y-%m-%d")
+        four_formatted = fourdays.strftime("%Y-%m-%d")
+        five_formatted = fivedays.strftime("%Y-%m-%d")
+        six_formatted = sixdays.strftime("%Y-%m-%d")
+        seven_formatted = sevendays.strftime("%Y-%m-%d")
+        seven_pv = {}
+        seven_uv = {}
+        seven_ip = {}
+        sevendays_pv = PvModel.objects.filter(timestamps_lte=seven_formatted)
+        for pv_query in sevendays_pv:
+            pv_num = pv_query.pv
+            logname = pv_query.logname
+            timstamps = pv_query.timestamps
+            seven_pv[logname] = {timstamps:pv_num}
+        sevendays_uv = UvModel.objects.filter(timestamps_lte=seven_formatted)
+        for uv_query in sevendays_uv:
+            uv_num = uv_query.uv
+            logname = uv_query.logname
+            timstamps = uv_query.timestamps
+            seven_uv[logname] = {timstamps:uv_num}
+        sevendays_iv = IvModel.objects.filter(timestamps_lte=seven_formatted)
+        for iv_query in sevendays_pv:
+            iv_num = iv_query.pv
+            logname = iv_query.logname
+            timstamps = iv_query.timestamps
+            seven_ip[logname] = {timstamps:iv_num}
+        '''PV,IV,IP图'''
+       #from matplotlib.figure import Figure
+       #from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
+       #import numpy as np
+       #import matplotlib.pyplot as plt
+       #fig = Figure(1)
+       #n_groups = 7
+
+       #fig, ax = plt.subplots()
+
+       #index = np.arange(n_groups)
+       #bar_width = 0.35
+
+       #opacity = 0.4
+       #error_config = {'ecolor': '0.3'}
+       #for log,pv in sevendays_pv:
+       #    locals()['pv_%s' % log] = (pv[one_formatted],pv[two_formatted], pv[three_formatted], pv[four_formatted], pv[five_formatted],pv[six_formatted],pv[seven_formatted])
+       #    locals()[log] = plt.bar(index, locals()['pv_%s' % log], bar_width,
+       #                 alpha=opacity,
+       #                 color='b',
+       #                 error_kw=error_config,
+       #                 label='Men')
+
+       #plt.xlabel(u'时间')
+       #plt.ylabel(u'次数')
+       #plt.title(u'七天内PV,UV,IP变化')
+       #plt.xticks(index + bar_width, (one_formatted, two_formatted, three_formatted, four_formatted, five_formatted,six_formatted,seven_formatted))
+       #plt.legend()
+
+       #plt.tight_layout()
+       #fig.autofmt_xdate()
+       #canvas = FigureCanvas(fig)
+       #pv_plt = HttpResponse(content_type='image/png')
+       #canvas.print_png(pv_plt)
+
         return render(request,'index.html',{'now_time':now_time,
                                             'loadavg':loadavg,
                                             'mem':mem,
@@ -99,6 +172,7 @@ class IndexView(LoginRequiredMixin,View):
                                             'unacc_minions_count':unacc_minions_count,
                                             'error_minions_count':error_minions_count,
                                             'online':online,
+                                            #'pv_plt':pv_plt
                                             })
 
 

@@ -138,12 +138,12 @@ class IndexView(LoginRequiredMixin,View):
             uv_sort[timstamps] = uv_num
             for key,value in uv_sort.items():
                 sort_uv_key.append(key)
-            for key in sorted(sort_uv_key):
+            for key in sorted(sort_uv_key,reverse=True):
                 sortd_uv_key.append(uv_sort[key])
             seven_uv[logname] = sortd_uv_key
         sevendays_iv = IvModel.objects.filter(timestamps__gte=seven_formatted)
         for iv_query in sevendays_iv:
-            iv_num = iv_query.pv
+            iv_num = iv_query.iv
             logname = iv_query.logname
             timstamps = iv_query.timestamps
             ip_sort[timstamps] = iv_num

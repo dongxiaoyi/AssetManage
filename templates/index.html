@@ -92,9 +92,9 @@ Dashboard
                     </div>
                     <div class="panel-body">
                       <pre>
-                          <div id="main1" style="width: 1000px;height:400px;"></div>
+                              <div id="main" style="width: 1350px;height:400px;"></div>
     <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('main1'));
+            var myChart = echarts.init(document.getElementById('main'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -105,7 +105,7 @@ Dashboard
         trigger: 'axis'
     },
     legend: {
-        data:[{% for log,data in seven_pv.items %}{{ log }}{% endfor %} ]
+        data:[{% for log,data in seven_pv.items %}'{{ log }}',{% endfor %} ]
     },
     toolbox: {
         show : true,
@@ -115,13 +115,13 @@ Dashboard
             restore : {show: true},
             saveAsImage : {show: true}
         },
-        bottom: 10,
+        bottom: 10
     },
     calculable : true,
     xAxis : [
         {
             type : 'category',
-            data : ["{{ seven_formatted }},{{ six_formatted }},{{ five_formatted }},{{ four_formatted }},{{ three_formatted }},{{ two_formatted }},{{ one_formatted }}"]
+            data : ["{{ seven_formatted }}","{{ six_formatted }}","{{ five_formatted }}","{{ four_formatted }}","{{ three_formatted }}","{{ two_formatted }}","{{ one_formatted }}"]
         }
     ],
     yAxis : [
@@ -134,7 +134,7 @@ Dashboard
         {
             name:'{{ log }}',
             type:'bar',
-            data:[{% for pv in data %}{{ pv }},{% endfor %}],
+            data:{{ data }},
             markPoint : {
                 data : [
                     {type : 'max', name: '最大值'},
@@ -153,128 +153,7 @@ Dashboard
                                   // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
-    <div id="main2" style="width: 1000px;height:400px;"></div>
-    <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('main2'));
 
-        // 指定图表的配置项和数据
-        var option = {
-    title : {
-        text: 'UV',
-    },
-    tooltip : {
-        trigger: 'axis'
-    },
-    legend: {
-        data:[{% for log,data in seven_uv.items %}{{ log }}{% endfor %} ]
-    },
-    toolbox: {
-        show : true,
-        feature : {
-            dataView : {show: true, readOnly: false},
-            magicType : {show: true, type: ['line', 'bar']},
-            restore : {show: true},
-            saveAsImage : {show: true}
-        },
-        bottom: 10,
-    },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            data : ["{{ seven_formatted }},{{ six_formatted }},{{ five_formatted }},{{ four_formatted }},{{ three_formatted }},{{ two_formatted }},{{ one_formatted }}"]
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value'
-        }
-    ],
-    series : [
-        {% for log,data in seven_uv.items  %}
-        {
-            name:'{{ log }}',
-            type:'bar',
-            data:[{% for uv in data %}{{ uv }},{% endfor %}],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
-            markLine : {
-                data : [
-                    {type : 'average', name: '平均值'}
-                ]
-            }
-        },
-        {% endfor %}
-    ]
-};
-                                  // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    </script>
-    <div id="main3" style="width: 1000px;height:400px;"></div>
-    <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('main3'));
-
-        // 指定图表的配置项和数据
-        var option = {
-    title : {
-        text: 'PV',
-    },
-    tooltip : {
-        trigger: 'axis'
-    },
-    legend: {
-        data:[{% for log,data in seven_ip.items %}{{ log }}{% endfor %} ]
-    },
-    toolbox: {
-        show : true,
-        feature : {
-            dataView : {show: true, readOnly: false},
-            magicType : {show: true, type: ['line', 'bar']},
-            restore : {show: true},
-            saveAsImage : {show: true}
-        },
-        bottom: 10,
-    },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            data : ["{{ seven_formatted }},{{ six_formatted }},{{ five_formatted }},{{ four_formatted }},{{ three_formatted }},{{ two_formatted }},{{ one_formatted }}"]
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value'
-        }
-    ],
-    series : [
-        {% for log,data in seven_ip.items  %}
-        {
-            name:'{{ log }}',
-            type:'bar',
-            data:[{% for ip in data %}{{ ip }},{% endfor %}],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
-            markLine : {
-                data : [
-                    {type : 'average', name: '平均值'}
-                ]
-            }
-        },
-        {% endfor %}
-    ]
-};
-                                  // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-    </script>
                       </pre>
                     </div>
                   </div>

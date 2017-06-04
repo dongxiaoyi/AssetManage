@@ -139,7 +139,7 @@ DATABASES = {
         'NAME': 'dongxiaoyi',
         'USER': 'dongxiaoyi',
         'PASSWORD': 'assetmanage',
-        'HOST': '192.168.0.5',
+        'HOST': '192.168.0.4',
         'PORT': '3306',
     }
 }

@@ -110,24 +110,52 @@ class IndexView(LoginRequiredMixin,View):
         seven_pv = {}
         seven_uv = {}
         seven_ip = {}
-        sevendays_pv = PvModel.objects.filter(timestamps_lte=seven_formatted)
+        time_pv_sort = []
+        time_uv_sort = []
+        time_ip_sort = []
+        sort_pv_key = []
+        sort_uv_key = []
+        sort_ip_key = []
+        sortd_pv_key = []
+        sortd_uv_key = []
+        sortd_ip_key = []
+        pv_sort = {}
+        uv_sort = {}
+        ip_sort = {}
+
+        sevendays_pv = PvModel.objects.filter(timestamps__lte=seven_formatted)
         for pv_query in sevendays_pv:
             pv_num = pv_query.pv
             logname = pv_query.logname
             timstamps = pv_query.timestamps
-            seven_pv[logname] = {timstamps:pv_num}
-        sevendays_uv = UvModel.objects.filter(timestamps_lte=seven_formatted)
+            pv_sort[timstamps] = pv_num
+            for key,value in pv_sort.items():
+                sort_pv_key.append(key)
+            for key in sorted(sort_pv_key):
+                sortd_pv_key.append(pv_sort[key])
+            seven_pv[logname] = sortd_pv_key
+        sevendays_uv = UvModel.objects.filter(timestamps__lte=seven_formatted)
         for uv_query in sevendays_uv:
             uv_num = uv_query.uv
             logname = uv_query.logname
             timstamps = uv_query.timestamps
-            seven_uv[logname] = {timstamps:uv_num}
-        sevendays_iv = IvModel.objects.filter(timestamps_lte=seven_formatted)
+            uv_sort[timstamps] = uv_num
+            for key,value in uv_sort.items():
+                sort_uv_key.append(key)
+            for key in sorted(sort_uv_key):
+                sortd_uv_key.append(uv_sort[key])
+            seven_uv[logname] = sortd_uv_key
+        sevendays_iv = IvModel.objects.filter(timestamps__lte=seven_formatted)
         for iv_query in sevendays_pv:
             iv_num = iv_query.pv
             logname = iv_query.logname
             timstamps = iv_query.timestamps
-            seven_ip[logname] = {timstamps:iv_num}
+            ip_sort[timstamps] = iv_num
+            for key,value in ip_sort.items():
+                sort_ip_key.append(key)
+            for key in sorted(sort_ip_key):
+                sortd_ip_key.append(ip_sort[key])
+            seven_ip[logname] = sortd_ip_key
         '''PV,IV,IP图'''
        #from matplotlib.figure import Figure
        #from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
@@ -172,7 +200,16 @@ class IndexView(LoginRequiredMixin,View):
                                             'unacc_minions_count':unacc_minions_count,
                                             'error_minions_count':error_minions_count,
                                             'online':online,
-                                            #'pv_plt':pv_plt
+                                            'one_formatted':one_formatted,
+                                            'two_formatted':two_formatted,
+                                            'three_formatted':three_formatted,
+                                            'four_formatted':four_formatted,
+                                            'five_formatted':five_formatted,
+                                            'six_formatted':six_formatted,
+                                            'seven_formatted':seven_formatted,
+                                            'seven_pv':seven_pv,
+                                            'seven_uv':seven_uv,
+                                            'seven_ip':seven_ip,
                                             })
 
 

@@ -110,20 +110,15 @@ class IndexView(LoginRequiredMixin,View):
         seven_pv = {}
         seven_uv = {}
         seven_ip = {}
-        time_pv_sort = []
-        time_uv_sort = []
-        time_ip_sort = []
         sort_pv_key = []
         sort_uv_key = []
         sort_ip_key = []
-        sortd_pv_key = []
         sortd_uv_key = []
         sortd_ip_key = []
         pv_sort = {}
         uv_sort = {}
         ip_sort = {}
-
-        sevendays_pv = PvModel.objects.filter(timestamps__lte=seven_formatted)
+        sevendays_pv = PvModel.objects.filter(timestamps__gte=seven_formatted)
         for pv_query in sevendays_pv:
             pv_num = pv_query.pv
             logname = pv_query.logname
@@ -131,10 +126,11 @@ class IndexView(LoginRequiredMixin,View):
             pv_sort[timstamps] = pv_num
             for key,value in pv_sort.items():
                 sort_pv_key.append(key)
+            sortd_pv_key = []
             for key in sorted(sort_pv_key):
                 sortd_pv_key.append(pv_sort[key])
             seven_pv[logname] = sortd_pv_key
-        sevendays_uv = UvModel.objects.filter(timestamps__lte=seven_formatted)
+        sevendays_uv = UvModel.objects.filter(timestamps__gte=seven_formatted)
         for uv_query in sevendays_uv:
             uv_num = uv_query.uv
             logname = uv_query.logname
@@ -145,8 +141,8 @@ class IndexView(LoginRequiredMixin,View):
             for key in sorted(sort_uv_key):
                 sortd_uv_key.append(uv_sort[key])
             seven_uv[logname] = sortd_uv_key
-        sevendays_iv = IvModel.objects.filter(timestamps__lte=seven_formatted)
-        for iv_query in sevendays_pv:
+        sevendays_iv = IvModel.objects.filter(timestamps__gte=seven_formatted)
+        for iv_query in sevendays_iv:
             iv_num = iv_query.pv
             logname = iv_query.logname
             timstamps = iv_query.timestamps
@@ -156,41 +152,6 @@ class IndexView(LoginRequiredMixin,View):
             for key in sorted(sort_ip_key):
                 sortd_ip_key.append(ip_sort[key])
             seven_ip[logname] = sortd_ip_key
-        '''PV,IV,IP图'''
-       #from matplotlib.figure import Figure
-       #from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigureCanvas
-       #import numpy as np
-       #import matplotlib.pyplot as plt
-       #fig = Figure(1)
-       #n_groups = 7
-
-       #fig, ax = plt.subplots()
-
-       #index = np.arange(n_groups)
-       #bar_width = 0.35
-
-       #opacity = 0.4
-       #error_config = {'ecolor': '0.3'}
-       #for log,pv in sevendays_pv:
-       #    locals()['pv_%s' % log] = (pv[one_formatted],pv[two_formatted], pv[three_formatted], pv[four_formatted], pv[five_formatted],pv[six_formatted],pv[seven_formatted])
-       #    locals()[log] = plt.bar(index, locals()['pv_%s' % log], bar_width,
-       #                 alpha=opacity,
-       #                 color='b',
-       #                 error_kw=error_config,
-       #                 label='Men')
-
-       #plt.xlabel(u'时间')
-       #plt.ylabel(u'次数')
-       #plt.title(u'七天内PV,UV,IP变化')
-       #plt.xticks(index + bar_width, (one_formatted, two_formatted, three_formatted, four_formatted, five_formatted,six_formatted,seven_formatted))
-       #plt.legend()
-
-       #plt.tight_layout()
-       #fig.autofmt_xdate()
-       #canvas = FigureCanvas(fig)
-       #pv_plt = HttpResponse(content_type='image/png')
-       #canvas.print_png(pv_plt)
-
         return render(request,'index.html',{'now_time':now_time,
                                             'loadavg':loadavg,
                                             'mem':mem,

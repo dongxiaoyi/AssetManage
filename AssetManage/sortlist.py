@@ -1,9 +1,9 @@
 a = ['1992-03-13','1992-03-14','1992-03-11','1992-03-01']
-print sorted(a)
+b = {}
+d = []
 for i in sorted(a):
-    print i
+    for c in [1,2,3]:
+        d.append(c)
+    b[i] = d
+print b
 
-b = '1992-03-13'
-c = '1992-03-11'
-if b > c:
-    print b

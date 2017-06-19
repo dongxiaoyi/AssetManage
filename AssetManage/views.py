@@ -119,6 +119,13 @@ class IndexView(LoginRequiredMixin,View):
         uv_sort = {}
         ip_sort = {}
         sevendays_pv = PvModel.objects.filter(timestamps__gte=seven_formatted)
+        all_pv = PvModel.objects.all()
+        pv_timestamps_list = []
+        for pv_que in all_pv:
+            pv_timestamps = pv_que.timestamps
+            pv_timestamps_list.append(pv_timestamps)
+            pv_timestamps_list = list(set(pv_timestamps_list))
+        sevendays_pv_count = len(pv_timestamps_list)
         for pv_query in sevendays_pv:
             pv_num = pv_query.pv
             logname = pv_query.logname
@@ -126,9 +133,17 @@ class IndexView(LoginRequiredMixin,View):
             pv_sort[timstamps] = pv_num
             for key,value in pv_sort.items():
                 sort_pv_key.append(key)
+                sort_pv_key = list(set(sort_pv_key))
             sortd_pv_key = []
-            for key in sorted(sort_pv_key):
-                sortd_pv_key.append(pv_sort[key])
+            if sevendays_pv_count < 7:
+                coun = 7 - sevendays_pv_count
+                for i in range(0,coun-1):
+                    sortd_pv_key.append(0)
+                for key in sorted(sort_pv_key,reverse=True):
+                    sortd_pv_key.append(pv_sort[key])
+            else:
+                for key in sorted(sort_pv_key):
+                    sortd_pv_key.append(pv_sort[key])
             seven_pv[logname] = sortd_pv_key
         sevendays_uv = UvModel.objects.filter(timestamps__gte=seven_formatted)
         for uv_query in sevendays_uv:

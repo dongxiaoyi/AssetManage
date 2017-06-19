@@ -6,7 +6,7 @@ from celery import Celery,platforms
 from django.conf import settings
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AssetManage.settings')
-app = Celery('celery',broker='redis://192.168.0.5:6379/0',backend='redis://192.168.0.5:6379/1')
+app = Celery('celery',broker='redis://192.168.0.4:3299/0',backend='redis://192.168.0.5:3299/1')
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.

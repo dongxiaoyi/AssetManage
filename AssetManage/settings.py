@@ -27,10 +27,10 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 #celery相关
 import djcelery
 djcelery.setup_loader()
-BROKER_URL = 'redis://192.168.0.5:6379/0'
+BROKER_URL = 'redis://192.168.0.4:3299/0'
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler' # 定时任务
 CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
-CELERY_RESULT_BACKEND = 'redis://192.168.0.5:6379/1'
+CELERY_RESULT_BACKEND = 'redis://192.168.0.4:3299/1'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
@@ -213,5 +213,5 @@ LOGGING = {
 }
 
 ###配置Broker
-BROKER_URL = 'redis://192.168.0.5:6379/0'
+BROKER_URL = 'redis://192.168.0.4:3299/0'
 BROKER_TRANSPORT = 'redis'

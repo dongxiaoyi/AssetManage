@@ -44,7 +44,7 @@ mongoengine==0.11.0
 msgpack-python==0.4.8
 netaddr==0.7.18
 netifaces==0.10.4
-numpy==1.11.0
+numpy==1.21.0
 olefile==0.44
 Pillow==4.0.0
 pycollada==0.4

@@ -65,7 +65,7 @@ redis==2.10.5
 repoze.lru==0.6
 requests==2.9.1
 Routes==2.2
-setuptools==20.10.1
+setuptools==65.5.1
 simplejson==3.8.1
 singledispatch==3.4.0.3
 sis==0.1.5
